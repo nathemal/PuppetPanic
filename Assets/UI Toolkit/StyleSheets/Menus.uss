@@ -38,3 +38,10 @@
     transition-duration: 0.8s;
     transition-delay: 0.2s;
 }
+
+.button:focus {
+    scale: 1.2 1.2;
+    background-color: rgb(226, 87, 202);
+    transition-duration: 0.8s;
+    transition-delay: 0.2s;
+}
