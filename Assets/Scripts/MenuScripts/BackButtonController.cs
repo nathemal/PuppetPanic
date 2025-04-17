@@ -36,7 +36,7 @@ public class BackButtonController : MonoBehaviour
     {
         backButton.clicked += OnBackButtonClicked;
         
-        backButton.clicked -= OnAllButtonsClicked;
+        backButton.clicked += OnAllButtonsClicked;
     }
 
     private void ButtonActionsUnsubscribe()

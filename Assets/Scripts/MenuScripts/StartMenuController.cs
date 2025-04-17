@@ -12,11 +12,16 @@ public class StartMenuController : MonoBehaviour
     public GameObject controlsScreen;
     public GameObject creditsScreen;
 
+    private MenuEvents menuEvents;
+    private string startGame = "SampleScene"; // TODO: Replace SampleScene with the name of the first game scene
+
     private void OnEnable()
     {
         controlsScreen.SetActive(false);
         creditsScreen.SetActive(false);
         
+        menuEvents = GetComponent<MenuEvents>();
+
         InitializeUiToolkit();
         ButtonActionsSubscribe();
 
@@ -67,7 +72,7 @@ public class StartMenuController : MonoBehaviour
 
     private void OnStartButtonClicked()
     {
-        return; // This is a placeholder, load the playing scene here
+        menuEvents.LoadScene(startGame);
     }
 
     private void OnControlsButtonClicked()
@@ -80,8 +85,8 @@ public class StartMenuController : MonoBehaviour
         creditsScreen.SetActive(true);
     }
 
-    private void OnAllButtonsClicked() // This runs when any button is clicked so we can add sounds and other stuff that should happen at any button click
+    private void OnAllButtonsClicked()
     {
-        return;
+        menuEvents.ButtonClickedEvent();
     }
 }
