@@ -1,0 +1,10 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/StyleSheets/Menus.uss?fileID=7433441132597879392&amp;guid=8f6c888a201dfee4ab578606f6caed98&amp;type=3#Menus" />
+    <ui:VisualElement name="Container" class="base-container" style="flex-grow: 1;">
+        <ui:Label text="Controls" name="Title" class="title" />
+        <ui:Label text="    [W] to jump&#10;    [A] to move left&#10;    [S] to duck&#10;    [D] to move right&#10;    [E] to interact&#10;" class="text" style="margin-right: 0; margin-left: 0; margin-top: 120px; margin-bottom: 0;" />
+        <ui:VisualElement name="ButtonContainer" class="button-container" style="flex-grow: 1; justify-content: flex-end;">
+            <ui:Button text="Back&#10;" name="BackButton" class="button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
