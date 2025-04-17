@@ -9,7 +9,23 @@ public class StartMenuController : MonoBehaviour
 
     Button[] allButtons = new Button[3];
 
-    private void Awake()
+
+    private void OnEnable()
+    {
+        InitializeUiToolkit();
+        ButtonActionsSubscribe();
+
+        startButton.Focus();
+    }
+
+    private void OnDisable()
+    {
+        ButtonActionsUnsubscribe();
+
+        Debug.Log("Script Was Disabled");
+    }
+
+    private void InitializeUiToolkit()
     {
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
 
@@ -20,18 +36,6 @@ public class StartMenuController : MonoBehaviour
         allButtons[0] = startButton;
         allButtons[1] = controlsButton;
         allButtons[2] = creditsButton;
-    }
-
-    private void OnEnable()
-    {
-        ButtonActionsSubscribe();
-
-        startButton.Focus();
-    }
-
-    private void OnDisable()
-    {
-        ButtonActionsUnsubscribe();
     }
 
     private void ButtonActionsSubscribe()
