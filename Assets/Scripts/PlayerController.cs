@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     float playerDirection;
 
     public float playerMovementSpeed = 1;
+    public float jumpSpeed = 5;
 
     private void Start()
     {
@@ -21,11 +22,12 @@ public class PlayerController : MonoBehaviour
 
         moveAction = InputSystem.actions.FindAction("Move");
         lookAction = InputSystem.actions.FindAction("Look");
+        jumpAction = InputSystem.actions.FindAction("Jump");
     }
 
     private void Update()
     {
-        
+        JumpPlayer();
     }
 
     private void FixedUpdate()
@@ -46,4 +48,10 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void JumpPlayer()
+    {
+        playerMovement = jumpAction.ReadValue<Vector2>() * jumpSpeed;
+
+        playerRigidBody2D.AddForce(playerMovement);
+    }
 }
