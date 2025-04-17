@@ -9,9 +9,14 @@ public class StartMenuController : MonoBehaviour
 
     Button[] allButtons = new Button[3];
 
+    public GameObject controlsScreen;
+    public GameObject creditsScreen;
 
     private void OnEnable()
     {
+        controlsScreen.SetActive(false);
+        creditsScreen.SetActive(false);
+        
         InitializeUiToolkit();
         ButtonActionsSubscribe();
 
@@ -21,8 +26,6 @@ public class StartMenuController : MonoBehaviour
     private void OnDisable()
     {
         ButtonActionsUnsubscribe();
-
-        Debug.Log("Script Was Disabled");
     }
 
     private void InitializeUiToolkit()
@@ -62,18 +65,23 @@ public class StartMenuController : MonoBehaviour
         }
     }
 
-    // The code bellow this comment is mostly placeholders that will be replaced with the actual functions of the buttons later
-    private void OnStartButtonClicked() => ButtonClickedEvent("Start");
-    private void OnControlsButtonClicked() => ButtonClickedEvent("Controls");
-    private void OnCreditsButtonClicked() => ButtonClickedEvent("Credits");
-
-    private void OnAllButtonsClicked()
+    private void OnStartButtonClicked()
     {
-        // This runs when any button is clicked so we can add sounds and other stuff that should happen at any button click
+        return; // This is a placeholder, load the playing scene here
     }
 
-    private void ButtonClickedEvent(string buttonType)
+    private void OnControlsButtonClicked()
     {
-        Debug.Log(buttonType + " Button was clicked");
+        controlsScreen.SetActive(true);
+    }
+
+    private void OnCreditsButtonClicked()
+    {
+        creditsScreen.SetActive(true);
+    }
+
+    private void OnAllButtonsClicked() // This runs when any button is clicked so we can add sounds and other stuff that should happen at any button click
+    {
+        return;
     }
 }

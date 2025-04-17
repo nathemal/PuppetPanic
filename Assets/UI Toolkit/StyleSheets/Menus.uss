@@ -8,6 +8,7 @@
 
 .button-container {
     width: 500px;
+    align-items: center;
 }
 
 .title {
@@ -16,6 +17,13 @@
     margin-left: 0;
     margin-right: 0;
     margin-bottom: 0;
+}
+
+.text {
+    align-content: center;
+    align-self: center;
+    font-size: 50px;
+    -unity-text-align: middle-center;
 }
 
 .button {

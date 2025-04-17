@@ -1,0 +1,10 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/StyleSheets/Menus.uss?fileID=7433441132597879392&amp;guid=8f6c888a201dfee4ab578606f6caed98&amp;type=3#Menus" />
+    <ui:VisualElement name="Container" class="base-container" style="flex-grow: 1;">
+        <ui:Label text="Credits" name="Title" class="title" />
+        <ui:Label text="Marcel Shiller - Project Manager&#10;Martin Carlsten - Programmer&#10;Martina Diaz Bergstedt - Artist&#10;Natalie Egertz - Artist&#10;Nea Rosswill - Artist&#10;Salem Giesinger - Programmer" name="Credits" class="text" style="margin-right: 0; margin-left: 0; margin-top: 110px; margin-bottom: 0;" />
+        <ui:VisualElement name="ButtonContainer" class="button-container" style="flex-grow: 1; justify-content: flex-end;">
+            <ui:Button text="Back&#10;" name="BackButton" class="button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
