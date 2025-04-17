@@ -6,10 +6,13 @@ public class BackButtonController : MonoBehaviour
     Button backButton;
     
     public GameObject startMenu;
+    private MenuEvents menuEvents;
 
     private void OnEnable()
     {
         startMenu.SetActive(false);
+
+        menuEvents = startMenu.GetComponent<MenuEvents>();
 
         InitializeUiToolkit();
         ButtonActionsSubscribe();
@@ -48,8 +51,8 @@ public class BackButtonController : MonoBehaviour
         startMenu.SetActive(true);
     }
 
-    private void OnAllButtonsClicked() // This runs when any button is clicked so we can add sounds and other stuff that should happen at any button click
+    private void OnAllButtonsClicked()
     {
-        return;
+        menuEvents.ButtonClickedEvent();
     }
 }
