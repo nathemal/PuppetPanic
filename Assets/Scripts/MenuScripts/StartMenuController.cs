@@ -63,7 +63,10 @@ public class StartMenuController : MonoBehaviour
     private void OnControlsButtonClicked() => ButtonClickedEvent("Controls");
     private void OnCreditsButtonClicked() => ButtonClickedEvent("Credits");
 
-    private void OnAllButtonsClicked() => ButtonClickedEvent("A"); // This runs when any button is clicked so we can add sounds and other stuff that should happen at any button click
+    private void OnAllButtonsClicked()
+    {
+        // This runs when any button is clicked so we can add sounds and other stuff that should happen at any button click
+    }
 
     private void ButtonClickedEvent(string buttonType)
     {
