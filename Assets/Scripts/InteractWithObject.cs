@@ -1,10 +1,12 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
 
 public class InteractWithObject : MonoBehaviour
 {
     public Transform player;
-    public Vector3 offset = new Vector3(0, 7, 0);
+    public Vector3 offset = new Vector3(1, 0, 0);
+    public GameObject Object;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -14,9 +16,11 @@ public class InteractWithObject : MonoBehaviour
             MainManager.objectCounter++;
         }
 
-        if(collision.gameObject.tag == "PushableObject" && Input.GetKeyDown(KeyCode.E))
+        if(collision.gameObject.tag == "PushableObject" && Input.GetKey(KeyCode.E))
         {
-            gameObject.transform.position = player.position + offset;
+            //gameObject.transform.position = player.position + offset;
+
+            Object.transform.position = player.position + offset;
         }
     }
 }
