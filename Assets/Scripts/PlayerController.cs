@@ -4,15 +4,14 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     InputAction moveAction;
-    InputAction lookAction;
     InputAction jumpAction;
+    InputAction crouchAction;
 
     Rigidbody2D playerRigidBody2D;
     SpriteRenderer playerSpriteRenderer;
+    BoxCollider2D playerCollider2D;
 
     Vector2 playerMovement;
-    Vector2 lookDirection;
-    float playerDirection;
 
     public float playerMovementSpeed = 1;
     public float jumpSpeed = 5;
@@ -22,16 +21,17 @@ public class PlayerController : MonoBehaviour
     {
         playerRigidBody2D = GetComponent<Rigidbody2D>();
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
+        playerCollider2D = GetComponent<BoxCollider2D>();
 
         moveAction = InputSystem.actions.FindAction("Move");
-        lookAction = InputSystem.actions.FindAction("Look");
         jumpAction = InputSystem.actions.FindAction("Jump");
+        crouchAction = InputSystem.actions.FindAction("Crouch");
     }
 
     private void Update()
     {
         JumpPlayer();
-
+        CrouchPlayer();
     }
 
     private void FixedUpdate()
@@ -66,7 +66,25 @@ public class PlayerController : MonoBehaviour
             Vector2 jumpForce = new Vector2(0,jumpSpeed);
 
             playerRigidBody2D.AddForce(jumpForce);
+
             IsGrounded = false;
+        }
+    }
+
+    public void CrouchPlayer()
+    {
+        Vector2 colliderSize = new Vector2(1.35f, 4.29f);
+        Vector2 colliderOffset = new Vector2(0, 0);
+
+        if(crouchAction.IsPressed())
+        {
+            playerCollider2D.size = new Vector2(playerCollider2D.size.x, 2);
+            playerCollider2D.offset = new Vector2(playerCollider2D.offset.x, -1.15f);
+        }
+        else
+        {
+            playerCollider2D.size = colliderSize;
+            playerCollider2D.offset = colliderOffset;
         }
     }
 
