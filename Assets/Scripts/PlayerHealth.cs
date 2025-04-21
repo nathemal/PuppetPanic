@@ -1,11 +1,11 @@
 using UnityEngine;
+using Unity.Cinemachine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public CinemachineImpulseSource DamageInpuse;
+    public CinemachineImpulseSource LowHealthImpulse;
     private bool IsAlive;
-
-    public float cameraShakeAmount;
-    public float cameraShakeTime;
 
     private void Start()
     {
@@ -23,7 +23,7 @@ public class PlayerHealth : MonoBehaviour
     public void ReduceHealth()
     {
         MainManager.health--;
-        Camera.main.GetComponent<CameraShake>().ShakeCamera(cameraShakeAmount, cameraShakeTime, true, true);
+        DamageInpuse.GenerateImpulse();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -31,6 +31,14 @@ public class PlayerHealth : MonoBehaviour
         if(collision.gameObject.tag == "Enemy")
         {
             ReduceHealth();
+        }
+    }
+
+    public void LowHealth()
+    {
+        if (MainManager.health < 5)
+        {
+            LowHealthImpulse.GenerateImpulse();
         }
     }
 }

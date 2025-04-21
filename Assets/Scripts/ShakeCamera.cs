@@ -1,13 +1,15 @@
 using UnityEngine;
+using Unity.Cinemachine;
 
 public class ShakeCamera : MonoBehaviour
 {
-    public Transform cameraTransform = default;
-    private Vector2 _originalPosOfCam = default;
-    public float shakeFrequency = default;
+    public CinemachineImpulseSource _impulseScore;
 
-    private void Start()
+    private void Update()
     {
-        _originalPosOfCam = cameraTransform.position;
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            _impulseScore.GenerateImpulse();
+        }
     }
 }
