@@ -17,6 +17,10 @@ public class PlayerController : MonoBehaviour
     public float jumpSpeed = 5;
     private bool IsGrounded;
 
+    public AudioSource WalkingSound;
+    public AudioSource JumpSound;
+    public AudioSource CrouchSound;
+
     private void Start()
     {
         playerRigidBody2D = GetComponent<Rigidbody2D>();
@@ -45,6 +49,16 @@ public class PlayerController : MonoBehaviour
         playerMovement = moveAction.ReadValue<Vector2>() * playerMovementSpeed;
 
         playerRigidBody2D.AddForce(playerMovement);
+
+        if (IsGrounded)
+        {
+            WalkingSound.Play();
+        }
+        else
+        {
+            WalkingSound.Pause();
+        }
+       
     }
 
     public void RotatePlayer()
@@ -68,6 +82,8 @@ public class PlayerController : MonoBehaviour
             playerRigidBody2D.AddForce(jumpForce);
 
             IsGrounded = false;
+
+            JumpSound.Play();
         }
     }
 
@@ -76,7 +92,7 @@ public class PlayerController : MonoBehaviour
         Vector2 colliderSize = new Vector2(1.35f, 4.29f);
         Vector2 colliderOffset = new Vector2(0, 0);
 
-        if(crouchAction.IsPressed())
+        if (crouchAction.IsPressed())
         {
             playerCollider2D.size = new Vector2(playerCollider2D.size.x, 2);
             playerCollider2D.offset = new Vector2(playerCollider2D.offset.x, -1.15f);

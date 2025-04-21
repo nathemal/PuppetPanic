@@ -7,6 +7,8 @@ public class PlayerHealth : MonoBehaviour
     public CinemachineImpulseSource LowHealthImpulse;
     private bool IsAlive;
 
+    public AudioSource TakeDamageSound;
+
     private void Start()
     {
         IsAlive = true;
@@ -21,9 +23,10 @@ public class PlayerHealth : MonoBehaviour
     }
 
     public void ReduceHealth()
-    {
+    {   
         MainManager.health--;
         DamageInpuse.GenerateImpulse();
+        TakeDamageSound.Play();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
