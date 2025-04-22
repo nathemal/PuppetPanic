@@ -600,11 +600,11 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 159
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -983,6 +983,7 @@ MonoBehaviour:
   DamageInpuse: {fileID: 0}
   LowHealthImpulse: {fileID: 0}
   TakeDamageSound: {fileID: 0}
+  LowHealthSound: {fileID: 0}
 --- !u!114 &6116328779957926450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -997,6 +998,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovementSpeed: 20
   jumpSpeed: 5
+  WalkingSound: {fileID: 0}
+  JumpSound: {fileID: 0}
+  CrouchSound: {fileID: 0}
 --- !u!114 &8985027785295837961
 MonoBehaviour:
   m_ObjectHideFlags: 0

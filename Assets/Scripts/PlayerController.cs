@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
     {
         MovePlayer();
         RotatePlayer();
+        PlayAudio();
     }
 
     public void MovePlayer()
@@ -49,16 +50,6 @@ public class PlayerController : MonoBehaviour
         playerMovement = moveAction.ReadValue<Vector2>() * playerMovementSpeed;
 
         playerRigidBody2D.AddForce(playerMovement);
-
-        if (IsGrounded)
-        {
-            WalkingSound.Play();
-        }
-        else
-        {
-            WalkingSound.Pause();
-        }
-       
     }
 
     public void RotatePlayer()
@@ -101,6 +92,19 @@ public class PlayerController : MonoBehaviour
         {
             playerCollider2D.size = colliderSize;
             playerCollider2D.offset = colliderOffset;
+        }
+    }
+
+    public void PlayAudio()
+    {
+        if(Input.GetKeyDown(KeyCode.S))
+        {
+            CrouchSound.Play();
+        }
+        
+        while(moveAction.IsInProgress() && IsGrounded)
+        {
+            WalkingSound.Play();
         }
     }
 

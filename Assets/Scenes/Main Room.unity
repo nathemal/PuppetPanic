@@ -384,6 +384,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &213123218 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5322047521431552700, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
+  m_PrefabInstance: {fileID: 626588177}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &296826945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -541,10 +546,26 @@ PrefabInstance:
       propertyPath: m_LinearDamping
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5110369593905958319, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
+      propertyPath: Priority
+      value: 184
+      objectReference: {fileID: 0}
+    - target: {fileID: 6116328779957926450, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
+      propertyPath: JumpSound
+      value: 
+      objectReference: {fileID: 213123218}
     - target: {fileID: 6116328779957926450, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
       propertyPath: jumpSpeed
       value: 3500
       objectReference: {fileID: 0}
+    - target: {fileID: 6116328779957926450, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
+      propertyPath: CrouchSound
+      value: 
+      objectReference: {fileID: 1090451784}
+    - target: {fileID: 6116328779957926450, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
+      propertyPath: WalkingSound
+      value: 
+      objectReference: {fileID: 1953963568}
     - target: {fileID: 6116328779957926450, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
       propertyPath: playerMovementSpeed
       value: 250
@@ -553,6 +574,14 @@ PrefabInstance:
       propertyPath: DamageInpuse
       value: 
       objectReference: {fileID: 1526362400}
+    - target: {fileID: 8099647083979846304, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
+      propertyPath: LowHealthSound
+      value: 
+      objectReference: {fileID: 916826384}
+    - target: {fileID: 8099647083979846304, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
+      propertyPath: TakeDamageSound
+      value: 
+      objectReference: {fileID: 1527301520}
     - target: {fileID: 8099647083979846304, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
       propertyPath: cameraShakeTime
       value: 10
@@ -622,6 +651,11 @@ PrefabInstance:
       insertIndex: 3
       addedObject: {fileID: 574011721}
   m_SourcePrefab: {fileID: 100100000, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
+--- !u!82 &916826384 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5110369593905958319, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
+  m_PrefabInstance: {fileID: 626588177}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &922077995
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,6 +700,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1090451784 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 557706245121316646, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
+  m_PrefabInstance: {fileID: 626588177}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1166101670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1031,6 +1070,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1527301520 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6086253004864641494, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
+  m_PrefabInstance: {fileID: 626588177}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1646624365
 GameObject:
   m_ObjectHideFlags: 0
@@ -1350,6 +1394,11 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!82 &1953963568 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1904344343510533459, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
+  m_PrefabInstance: {fileID: 626588177}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

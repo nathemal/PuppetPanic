@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
     private bool IsAlive;
 
     public AudioSource TakeDamageSound;
+    public AudioSource LowHealthSound;
 
     private void Start()
     {
@@ -20,12 +21,13 @@ public class PlayerHealth : MonoBehaviour
         {
             IsAlive = false;
         }
+
+        LowHealth();
     }
 
     public void ReduceHealth()
     {   
         MainManager.health--;
-        DamageInpuse.GenerateImpulse();
         TakeDamageSound.Play();
     }
 
@@ -39,9 +41,12 @@ public class PlayerHealth : MonoBehaviour
 
     public void LowHealth()
     {
-        if (MainManager.health < 5)
+        if (MainManager.health <= 5)
         {
-            LowHealthImpulse.GenerateImpulse();
+            if (!TakeDamageSound.isPlaying)
+            {
+                LowHealthSound.Play();
+            }
         }
     }
 }
