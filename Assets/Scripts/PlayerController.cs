@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     public AudioSource JumpSound;
     public AudioSource CrouchSound;
     public AudioSource LandingSound;
-    public float LandingSoundStartTime = 0.35f;
+    private const float LandingSoundStartTime = 0.21f;
 
     private void Start()
     {
