@@ -1,3 +1,4 @@
+using Microsoft.Win32.SafeHandles;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,10 +12,14 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer playerSpriteRenderer;
     BoxCollider2D playerCollider2D;
 
+    public Transform player;
+    public Vector3 offset = new Vector3(1, 0, 0);
+
     Vector2 playerMovement;
 
     public float playerMovementSpeed = 1;
     public float jumpSpeed = 5;
+    public float pushForce = 2.0f;
     private bool IsGrounded;
 
     public AudioSource WalkingSound;
@@ -35,15 +40,14 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        JumpPlayer();
-        CrouchPlayer();
+        InputHandler();
+        RotatePlayer();
+        PlayAudio();
     }
 
     private void FixedUpdate()
     {
         MovePlayer();
-        RotatePlayer();
-        PlayAudio();
     }
 
     public void MovePlayer()
@@ -66,20 +70,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void JumpPlayer()
+    public void InputHandler()
     {
         if (jumpAction.IsPressed() && IsGrounded)
         {
-            Vector2 jumpForce = new Vector2(0,jumpSpeed);
+            Vector2 jumpForce = new Vector2(0, jumpSpeed);
 
             playerRigidBody2D.AddForce(jumpForce);
 
             IsGrounded = false;
         }
-    }
 
-    public void CrouchPlayer()
-    {
         Vector2 colliderSize = new Vector2(1.35f, 4.29f);
         Vector2 colliderOffset = new Vector2(0, 0);
 
@@ -126,9 +127,12 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if(jumpAction.IsPressed() && IsGrounded)
+        if(Input.GetKeyDown(KeyCode.W))
         {
-            JumpSound.Play();
+            if (!JumpSound.isPlaying)
+            {
+                JumpSound.Play();
+            }
         }
     }
 
@@ -138,10 +142,6 @@ public class PlayerController : MonoBehaviour
         {
             IsGrounded = true;
         }
-        else
-        {
-            IsGrounded = false;
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -149,6 +149,34 @@ public class PlayerController : MonoBehaviour
         if(collision.gameObject.tag == "Ground")
         {
             LandingSound.Play();
+        }
+
+        if (collision.gameObject.tag == "PushableObject")
+        {
+            Rigidbody2D objectBody = collision.collider.attachedRigidbody;
+
+            if (collision.contacts[0].normal.y > 10f)
+            {
+                objectBody.linearVelocity = Vector2.zero;
+                return;
+            }
+
+            Vector2 pushDirection = new Vector2(collision.relativeVelocity.x, 0);
+            objectBody.linearVelocity = pushDirection * pushForce;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Object" && Input.GetKeyDown(KeyCode.E))
+        {
+            Destroy(collision.gameObject);
+            MainManager.objectCounter++;
+        }
+
+        if (collision.gameObject.tag == "Ground")
+        {
+            IsGrounded = true;
         }
     }
 }

@@ -2,17 +2,12 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private bool IsAlive;
+    private bool IsAlive = true;
 
     public AudioSource TakeDamageSound;
     public AudioSource LowHealthSound;
 
     bool HealthIsLow;
-
-    private void Start()
-    {
-        IsAlive = true;
-    }
 
     private void Update()
     {

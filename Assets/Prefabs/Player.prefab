@@ -822,10 +822,9 @@ GameObject:
   - component: {fileID: 8684920755160966915}
   - component: {fileID: 7796179815623795051}
   - component: {fileID: 3079080962020071487}
-  - component: {fileID: 2772388163902522965}
   - component: {fileID: 8099647083979846304}
   - component: {fileID: 6116328779957926450}
-  - component: {fileID: 8985027785295837961}
+  - component: {fileID: 5746699938353105082}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -916,10 +915,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1.5
-  m_LinearDamping: 5
+  m_Mass: 4
+  m_LinearDamping: 4
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -931,8 +930,43 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &2772388163902522965
-CapsuleCollider2D:
+--- !u!114 &8099647083979846304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9061835073485470056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3df39327e40b8114f91f19320dd0b675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TakeDamageSound: {fileID: 0}
+  LowHealthSound: {fileID: 0}
+--- !u!114 &6116328779957926450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9061835073485470056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 789963ca7f53cec4a9831ec1d0c5cf53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  offset: {x: 1, y: 0, z: 0}
+  playerMovementSpeed: 250
+  jumpSpeed: 3500
+  pushForce: 5
+  WalkingSound: {fileID: 0}
+  JumpSound: {fileID: 0}
+  CrouchSound: {fileID: 0}
+  LandingSound: {fileID: 0}
+--- !u!61 &5746699938353105082
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -965,54 +999,15 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.036019325, y: 0.009004831}
-  m_Size: {x: 1.4682508, y: 4.2151875}
-  m_Direction: 0
---- !u!114 &8099647083979846304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9061835073485470056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3df39327e40b8114f91f19320dd0b675, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DamageInpuse: {fileID: 0}
-  LowHealthImpulse: {fileID: 0}
-  TakeDamageSound: {fileID: 0}
-  LowHealthSound: {fileID: 0}
---- !u!114 &6116328779957926450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9061835073485470056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 789963ca7f53cec4a9831ec1d0c5cf53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerMovementSpeed: 20
-  jumpSpeed: 5
-  WalkingSound: {fileID: 0}
-  JumpSound: {fileID: 0}
-  CrouchSound: {fileID: 0}
---- !u!114 &8985027785295837961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9061835073485470056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d655e58fc8384049943325a97946a18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  offset: {x: 1, y: 0, z: 0}
-  Object: {fileID: 0}
+  m_Offset: {x: 0.0152077675, y: 0.01488471}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.06, y: 4.29}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.5733562, y: 4.2602305}
+  m_EdgeRadius: 0
