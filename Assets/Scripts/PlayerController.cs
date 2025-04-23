@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     public AudioSource JumpSound;
     public AudioSource CrouchSound;
     public AudioSource LandingSound;
+    public float LandingSoundStartTime = 0.35f;
 
     private void Start()
     {
@@ -148,6 +149,7 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.gameObject.tag == "Ground")
         {
+            LandingSound.time = LandingSoundStartTime;
             LandingSound.Play();
         }
 
