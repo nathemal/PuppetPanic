@@ -1,14 +1,13 @@
 using UnityEngine;
-using Unity.Cinemachine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public CinemachineImpulseSource DamageInpuse;
-    public CinemachineImpulseSource LowHealthImpulse;
     private bool IsAlive;
 
     public AudioSource TakeDamageSound;
     public AudioSource LowHealthSound;
+
+    bool HealthIsLow;
 
     private void Start()
     {
@@ -43,9 +42,21 @@ public class PlayerHealth : MonoBehaviour
     {
         if (MainManager.health <= 5)
         {
-            if (!TakeDamageSound.isPlaying)
+            HealthIsLow = true;
+        }
+
+        if (HealthIsLow)
+        {
+            if (!LowHealthSound.isPlaying)
             {
                 LowHealthSound.Play();
+            }
+        }
+        else
+        {
+            if (LowHealthSound.isPlaying)
+            {
+                LowHealthSound.Stop();
             }
         }
     }

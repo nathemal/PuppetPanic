@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public AudioSource WalkingSound;
     public AudioSource JumpSound;
     public AudioSource CrouchSound;
+    public AudioSource LandingSound;
 
     private void Start()
     {
@@ -50,6 +51,7 @@ public class PlayerController : MonoBehaviour
         playerMovement = moveAction.ReadValue<Vector2>() * playerMovementSpeed;
 
         playerRigidBody2D.AddForce(playerMovement);
+
     }
 
     public void RotatePlayer()
@@ -73,8 +75,6 @@ public class PlayerController : MonoBehaviour
             playerRigidBody2D.AddForce(jumpForce);
 
             IsGrounded = false;
-
-            JumpSound.Play();
         }
     }
 
@@ -97,14 +97,38 @@ public class PlayerController : MonoBehaviour
 
     public void PlayAudio()
     {
+        Vector2 movementInput = moveAction.ReadValue<Vector2>();
+
+        bool IsWalking = movementInput != Vector2.zero;
+
         if(Input.GetKeyDown(KeyCode.S))
         {
             CrouchSound.Play();
+            WalkingSound.volume = 0.6f;
         }
-        
-        while(moveAction.IsInProgress() && IsGrounded)
+        else if (Input.GetKeyUp(KeyCode.S))
         {
-            WalkingSound.Play();
+            WalkingSound.volume = 1;
+        }
+
+        if(IsWalking && IsGrounded)
+        {
+            if(!WalkingSound.isPlaying)
+            {
+                WalkingSound.Play();
+            }
+        }
+        else
+        {
+            if (WalkingSound.isPlaying)
+            {
+                WalkingSound.Stop();
+            }
+        }
+
+        if(jumpAction.IsPressed() && IsGrounded)
+        {
+            JumpSound.Play();
         }
     }
 
@@ -117,6 +141,14 @@ public class PlayerController : MonoBehaviour
         else
         {
             IsGrounded = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Ground")
+        {
+            LandingSound.Play();
         }
     }
 }

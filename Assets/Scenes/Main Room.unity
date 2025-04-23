@@ -411,7 +411,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2615987699230049697, guid: 5e7dddb2177b0a7469bb3d3832a41f9f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.37
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 2615987699230049697, guid: 5e7dddb2177b0a7469bb3d3832a41f9f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -562,6 +562,10 @@ PrefabInstance:
       propertyPath: CrouchSound
       value: 
       objectReference: {fileID: 1090451784}
+    - target: {fileID: 6116328779957926450, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
+      propertyPath: LandingSound
+      value: 
+      objectReference: {fileID: 1865346256}
     - target: {fileID: 6116328779957926450, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
       propertyPath: WalkingSound
       value: 
@@ -1394,6 +1398,11 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!82 &1865346256 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4005277400585209872, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
+  m_PrefabInstance: {fileID: 626588177}
+  m_PrefabAsset: {fileID: 0}
 --- !u!82 &1953963568 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 1904344343510533459, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
