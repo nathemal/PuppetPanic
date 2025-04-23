@@ -1,0 +1,12 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/StyleSheets/Menus.uss?fileID=7433441132597879392&amp;guid=8f6c888a201dfee4ab578606f6caed98&amp;type=3#Menus" />
+    <ui:VisualElement name="Container" class="base-container" style="flex-grow: 1; background-color: rgb(19, 115, 24);">
+        <ui:Label text="You Won!" name="Title" class="title" />
+        <ui:Label text="Rounds: " name="Rounds" class="text" />
+        <ui:Label text="Time:" name="Time" class="text" />
+        <ui:VisualElement name="ButtonContainer" class="button-container" style="flex-grow: 1;">
+            <ui:Button text="Play Again" name="PlayAgainButton" class="button" />
+            <ui:Button text="Main Menu" name="MainMenuButton" class="button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
