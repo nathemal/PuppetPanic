@@ -1,4 +1,3 @@
-using Microsoft.Win32.SafeHandles;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -22,11 +21,11 @@ public class PlayerController : MonoBehaviour
     public float pushForce = 2.0f;
     private bool IsGrounded;
 
-    public AudioSource WalkingSound;
-    public AudioSource JumpSound;
-    public AudioSource CrouchSound;
-    public AudioSource LandingSound;
-    private const float LandingSoundStartTime = 0.21f;
+    public AudioSource walkingSound;
+    public AudioSource jumpSound;
+    public AudioSource crouchSound;
+    public AudioSource landingSound;
+    private const float landingSoundStartTime = 0.21f;
 
     private void Start()
     {
@@ -42,37 +41,20 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         InputHandler();
-        RotatePlayer();
         PlayAudio();
     }
 
     private void FixedUpdate()
     {
         MovePlayer();
+        RotatePlayer();
+
     }
 
     public void MovePlayer()
     {
-        playerMovement = moveAction.ReadValue<Vector2>() * playerMovementSpeed;
+        playerRigidBody2D.AddForce(playerMovement * playerMovementSpeed);
 
-        playerRigidBody2D.AddForce(playerMovement);
-
-    }
-
-    public void RotatePlayer()
-    {
-        if (moveAction.ReadValue<Vector2>().x == -1)
-        {
-            playerSpriteRenderer.flipX = true;
-        }
-        else if (moveAction.ReadValue<Vector2>().x == 1)
-        {
-            playerSpriteRenderer.flipX = false;
-        }
-    }
-
-    public void InputHandler()
-    {
         if (jumpAction.IsPressed() && IsGrounded)
         {
             Vector2 jumpForce = new Vector2(0, jumpSpeed);
@@ -81,6 +63,23 @@ public class PlayerController : MonoBehaviour
 
             IsGrounded = false;
         }
+    }
+
+    public void RotatePlayer()
+    {
+        if (playerMovement.x == -1)
+        {
+            playerSpriteRenderer.flipX = true;
+        }
+        else if (playerMovement.x == 1)
+        {
+            playerSpriteRenderer.flipX = false;
+        }
+    }
+
+    public void InputHandler()
+    {
+        playerMovement = moveAction.ReadValue<Vector2>();
 
         Vector2 colliderSize = new Vector2(1.35f, 4.29f);
         Vector2 colliderOffset = new Vector2(0, 0);
@@ -99,49 +98,30 @@ public class PlayerController : MonoBehaviour
 
     public void PlayAudio()
     {
-        Vector2 movementInput = moveAction.ReadValue<Vector2>();
-
-        bool IsWalking = movementInput != Vector2.zero;
+        bool IsWalking = playerMovement != Vector2.zero;
 
         if(Input.GetKeyDown(KeyCode.S))
         {
-            CrouchSound.Play();
-            WalkingSound.volume = 0.6f;
+            crouchSound.Play();
+            walkingSound.volume = 0.6f;
         }
         else if (Input.GetKeyUp(KeyCode.S))
         {
-            WalkingSound.volume = 1;
+            walkingSound.volume = 1;
         }
 
-        if(IsWalking && IsGrounded)
+        if(IsWalking && IsGrounded && !walkingSound.isPlaying)
         {
-            if(!WalkingSound.isPlaying)
-            {
-                WalkingSound.Play();
-            }
+            walkingSound.Play();
         }
-        else
+        else if (walkingSound.isPlaying)
         {
-            if (WalkingSound.isPlaying)
-            {
-                WalkingSound.Stop();
-            }
+                walkingSound.Stop();
         }
 
-        if(Input.GetKeyDown(KeyCode.W))
+        if(Input.GetKeyDown(KeyCode.W) && !jumpSound.isPlaying)
         {
-            if (!JumpSound.isPlaying)
-            {
-                JumpSound.Play();
-            }
-        }
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag == "Ground")
-        {
-            IsGrounded = true;
+                jumpSound.Play();
         }
     }
 
@@ -149,22 +129,10 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.gameObject.tag == "Ground")
         {
-            LandingSound.time = LandingSoundStartTime;
-            LandingSound.Play();
-        }
+            IsGrounded = true;
 
-        if (collision.gameObject.tag == "PushableObject")
-        {
-            Rigidbody2D objectBody = collision.collider.attachedRigidbody;
-
-            if (collision.contacts[0].normal.y > 10f)
-            {
-                objectBody.linearVelocity = Vector2.zero;
-                return;
-            }
-
-            Vector2 pushDirection = new Vector2(collision.relativeVelocity.x, 0);
-            objectBody.linearVelocity = pushDirection * pushForce;
+            landingSound.time = landingSoundStartTime;
+            landingSound.Play();
         }
     }
 
@@ -174,11 +142,6 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(collision.gameObject);
             MainManager.objectCounter++;
-        }
-
-        if (collision.gameObject.tag == "Ground")
-        {
-            IsGrounded = true;
         }
     }
 }
