@@ -6,11 +6,19 @@ public class Manager : MonoBehaviour
 
     public static int health = 10;
     public static int objectCounter = 0;
-    public static int timer = 100;
+    public static float remainingTime = 10; // TODO: Change this variable to the desire timer lenght
     
-    public static bool wereCaught = false;
-    public static bool wonGame = false;
 
+    //
+    //
+    // Everything bellow this comment should maybe be put in it's own script but this works for now 
+    //
+    //
+
+
+    private bool isCaught = false;
+    private bool wonGame = false;
+    
     public GameObject CaughtScreen;
     public GameObject WinScreen;
 
@@ -22,7 +30,7 @@ public class Manager : MonoBehaviour
 
     private void ActivateCaughtScreen()
     {
-        if (timer <= 0 || wereCaught)
+        if (isCaught)
         {
             CaughtScreen.SetActive(true);
         }
@@ -34,5 +42,15 @@ public class Manager : MonoBehaviour
         {
             WinScreen.SetActive(true);
         }
+    }
+
+    public void PuppetIsCaught()
+    {
+        isCaught = true;
+    }
+
+    public void PuppetEscapes()
+    {
+        wonGame = true;
     }
 }
