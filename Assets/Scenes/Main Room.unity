@@ -399,6 +399,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1451252168}
     - target: {fileID: 6116328779957926450, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
+      propertyPath: jumpSpeed
+      value: 7000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6116328779957926450, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
       propertyPath: CrouchSound
       value: 
       objectReference: {fileID: 2129069643}
