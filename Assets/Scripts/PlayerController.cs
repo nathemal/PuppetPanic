@@ -19,7 +19,8 @@ public class PlayerController : MonoBehaviour
     public float playerMovementSpeed = 1;
     public float jumpSpeed = 5;
     public float pushForce = 2.0f;
-    private bool IsGrounded;
+    private bool isGrounded;
+    private bool shouldJump;
 
     public AudioSource walkingSound;
     public AudioSource jumpSound;
@@ -48,33 +49,6 @@ public class PlayerController : MonoBehaviour
     {
         MovePlayer();
         RotatePlayer();
-
-    }
-
-    public void MovePlayer()
-    {
-        playerRigidBody2D.AddForce(playerMovement * playerMovementSpeed);
-
-        if (jumpAction.IsPressed() && IsGrounded)
-        {
-            Vector2 jumpForce = new Vector2(0, jumpSpeed);
-
-            playerRigidBody2D.AddForce(jumpForce);
-
-            IsGrounded = false;
-        }
-    }
-
-    public void RotatePlayer()
-    {
-        if (playerMovement.x == -1)
-        {
-            playerSpriteRenderer.flipX = true;
-        }
-        else if (playerMovement.x == 1)
-        {
-            playerSpriteRenderer.flipX = false;
-        }
     }
 
     public void InputHandler()
@@ -94,13 +68,19 @@ public class PlayerController : MonoBehaviour
             playerCollider2D.size = colliderSize;
             playerCollider2D.offset = colliderOffset;
         }
+
+        if(jumpAction.IsPressed() && isGrounded)
+        {
+            shouldJump = true;
+            isGrounded = false;
+        }
     }
 
     public void PlayAudio()
     {
-        bool IsWalking = playerMovement != Vector2.zero;
+        bool isWalking = playerMovement != Vector2.zero;
 
-        if(Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             crouchSound.Play();
             walkingSound.volume = 0.6f;
@@ -110,18 +90,44 @@ public class PlayerController : MonoBehaviour
             walkingSound.volume = 1;
         }
 
-        if(IsWalking && IsGrounded && !walkingSound.isPlaying)
+        if (isWalking && isGrounded && !walkingSound.isPlaying)
         {
             walkingSound.Play();
         }
         else if (walkingSound.isPlaying)
         {
-                walkingSound.Stop();
+            walkingSound.Stop();
         }
 
-        if(Input.GetKeyDown(KeyCode.W) && !jumpSound.isPlaying)
+        if (Input.GetKeyDown(KeyCode.W) && !jumpSound.isPlaying)
         {
-                jumpSound.Play();
+            jumpSound.Play();
+        }
+    }
+
+    public void MovePlayer()
+    {
+        playerRigidBody2D.AddForce(playerMovement * playerMovementSpeed);
+
+        if (shouldJump)
+        {
+            Vector2 jumpForce = new Vector2(0, jumpSpeed);
+
+            playerRigidBody2D.AddForce(jumpForce);
+
+            shouldJump = false;
+        }
+    }
+
+    public void RotatePlayer()
+    {
+        if (playerMovement.x == -1)
+        {
+            playerSpriteRenderer.flipX = true;
+        }
+        else if (playerMovement.x == 1)
+        {
+            playerSpriteRenderer.flipX = false;
         }
     }
 
@@ -129,7 +135,7 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.gameObject.tag == "Ground")
         {
-            IsGrounded = true;
+            isGrounded = true;
 
             landingSound.time = landingSoundStartTime;
             landingSound.Play();
