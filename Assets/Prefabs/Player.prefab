@@ -842,7 +842,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.3145, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5345805, y: 0.5345805, z: 0.5345805}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4127207557407684366}
@@ -892,7 +892,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 8512376395112485462, guid: 6f49c2bb6af459242ab19473d6338811, type: 3}
+  m_Sprite: {fileID: 6005344882514891416, guid: 00777d8e352fae3498e7edba3824104f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -942,8 +942,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df39327e40b8114f91f19320dd0b675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TakeDamageSound: {fileID: 0}
-  LowHealthSound: {fileID: 0}
+  takeDamageSound: {fileID: 0}
+  lowHealthSound: {fileID: 0}
 --- !u!114 &6116328779957926450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -961,10 +961,10 @@ MonoBehaviour:
   playerMovementSpeed: 250
   jumpSpeed: 3500
   pushForce: 5
-  WalkingSound: {fileID: 0}
-  JumpSound: {fileID: 0}
-  CrouchSound: {fileID: 0}
-  LandingSound: {fileID: 0}
+  walkingSound: {fileID: 0}
+  jumpSound: {fileID: 0}
+  crouchSound: {fileID: 0}
+  landingSound: {fileID: 0}
 --- !u!61 &5746699938353105082
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -999,15 +999,15 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0152077675, y: 0.01488471}
+  m_Offset: {x: 0.049904585, y: 0.08427882}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.06, y: 4.29}
+    oldSize: {x: 4.32, y: 7.16}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.5733562, y: 4.2602305}
+  m_Size: {x: 2.6605287, y: 6.897203}
   m_EdgeRadius: 0
