@@ -5,13 +5,10 @@ public class CaughtScreenController : MonoBehaviour
 {
     Button nextDayButton;
 
-    public GameObject mainManager;
-    private MenuEvents menuEvents;
+    public MenuEvents menuEvents;
 
     private void OnEnable()
     {
-        menuEvents = mainManager.GetComponent<MenuEvents>();
-
         InitializeUiToolkit();
         ButtonActionsSubscribe();
 

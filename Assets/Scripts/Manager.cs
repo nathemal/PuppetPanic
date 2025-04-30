@@ -22,10 +22,17 @@ public class Manager : MonoBehaviour
     public GameObject CaughtScreen;
     public GameObject WinScreen;
 
+    public Timer timer;
+
     void Update()
     {
        ActivateCaughtScreen();
        ActivateWinScreen();
+
+        if (Input.GetKeyDown(KeyCode.Space)) // This is for debugging purposes
+        {
+            PuppetEscapes();
+        }
     }
 
     private void ActivateCaughtScreen()
@@ -41,6 +48,8 @@ public class Manager : MonoBehaviour
         if (wonGame) 
         {
             WinScreen.SetActive(true);
+
+            timer.stopTimer();
         }
     }
 
@@ -52,5 +61,10 @@ public class Manager : MonoBehaviour
     public void PuppetEscapes()
     {
         wonGame = true;
+    }
+
+    public void PickedUpObject()
+    {
+        objectCounter++;
     }
 }

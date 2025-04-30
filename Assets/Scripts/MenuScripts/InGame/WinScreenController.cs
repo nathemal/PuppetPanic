@@ -8,16 +8,13 @@ public class WinScreenController : MonoBehaviour
 
     Button[] allButtons = new Button[2];
 
-    public GameObject mainManager;
-    private MenuEvents menuEvents;
+    public MenuEvents menuEvents;
 
     private string mainMenu = "MainMenu";
     private string startGame = "SampleScene"; // TODO: Replace SampleScene with the name of the first game scene
 
     private void OnEnable()
     {
-        menuEvents = mainManager.GetComponent<MenuEvents>();
-
         InitializeUiToolkit();
         ButtonActionsSubscribe();
 
