@@ -1,8 +1,14 @@
 using UnityEngine;
+using Unity.Cinemachine;
+using UnityEngine.Rendering;
+using System.Collections;
 
 public class PlayerHealth : MonoBehaviour
 {
     private bool isAlive = true;
+
+    public float cameraShakeAmount;
+    public float cameraShakeTime;
 
     public AudioSource takeDamageSound;
     public AudioSource lowHealthSound;
@@ -22,6 +28,8 @@ public class PlayerHealth : MonoBehaviour
     public void ReduceHealth()
     {   
         MainManager.health--;
+
+        Camera.main.GetComponent<CameraShake>().ShakeCamera(cameraShakeAmount, cameraShakeTime, true, true);
         takeDamageSound.Play();
     }
 
