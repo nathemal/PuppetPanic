@@ -11,6 +11,11 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer playerSpriteRenderer;
     BoxCollider2D playerCollider2D;
 
+    public SpriteRenderer playerRenderer;
+    public Sprite idleSprite;
+    public Sprite walkingSprite;
+    public Sprite jumpSprite;
+    public Sprite crouchSprite;
     public Transform player;
     public Vector3 offset = new Vector3(1, 0, 0);
 
@@ -55,24 +60,36 @@ public class PlayerController : MonoBehaviour
     {
         playerMovement = moveAction.ReadValue<Vector2>();
 
-        Vector2 colliderSize = new Vector2(1.35f, 4.29f);
+        Vector2 colliderSize = new Vector2(2.6f, 7f);
         Vector2 colliderOffset = new Vector2(0, 0);
 
         if (crouchAction.IsPressed())
         {
-            playerCollider2D.size = new Vector2(playerCollider2D.size.x, 2);
-            playerCollider2D.offset = new Vector2(playerCollider2D.offset.x, -1.15f);
+            playerCollider2D.size = new Vector2(playerCollider2D.size.x, 3.5f);
+            playerCollider2D.offset = new Vector2(playerCollider2D.offset.x, 0);
+            playerSpriteRenderer.sprite = crouchSprite;
         }
         else
         {
             playerCollider2D.size = colliderSize;
             playerCollider2D.offset = colliderOffset;
+            playerSpriteRenderer.sprite = idleSprite;
         }
 
         if(jumpAction.IsPressed() && isGrounded)
         {
             shouldJump = true;
             isGrounded = false;
+        }
+
+        if(!isGrounded)
+        {
+            playerSpriteRenderer.sprite = jumpSprite;
+        }
+
+        if(moveAction.IsPressed() && isGrounded)
+        {
+            playerSpriteRenderer.sprite = walkingSprite;
         }
     }
 
@@ -139,6 +156,8 @@ public class PlayerController : MonoBehaviour
 
             landingSound.time = landingSoundStartTime;
             landingSound.Play();
+
+            playerSpriteRenderer.sprite = idleSprite;
         }
     }
 
