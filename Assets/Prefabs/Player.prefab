@@ -682,6 +682,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &5348741793575968570
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3894312333959968158}
+  m_Layer: 0
+  m_Name: PlayerSprites
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3894312333959968158
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5348741793575968570}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.3244295, y: 0.3317266, z: -0.032259993}
+  m_LocalScale: {x: 1.8706256, y: 1.8706256, z: 1.8706256}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8684920755160966915}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6739845124538199854
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,6 +877,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4127207557407684366}
+  - {fileID: 3894312333959968158}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7796179815623795051
@@ -956,6 +988,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 789963ca7f53cec4a9831ec1d0c5cf53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerRenderer: {fileID: 0}
+  idleSprite: {fileID: 0}
+  walkingSprite: {fileID: 0}
+  jumpSprite: {fileID: 0}
+  crouchSprite: {fileID: 0}
   player: {fileID: 0}
   offset: {x: 1, y: 0, z: 0}
   playerMovementSpeed: 250
