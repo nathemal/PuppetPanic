@@ -1,4 +1,3 @@
-using Unity.Cinemachine;
 using UnityEngine;
 
 public class DrawerObject : MonoBehaviour
@@ -19,7 +18,7 @@ public class DrawerObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inRange == true && Input.GetKeyDown(KeyCode.E))
+        if (inRange == true && Input.GetKeyDown(KeyCode.E) && PushPullObject.instance.isInteracting == false)
         {
             Open.SetActive(!Open.activeSelf);
         }

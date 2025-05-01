@@ -2,16 +2,23 @@ using UnityEngine;
 
 public class PushPullObject : MonoBehaviour
 {
+    public static PushPullObject instance;
+
     public float Speed = 5f;
 
     private RigidbodyType2D defaultBodyType;
     private Rigidbody2D rb;
-    private bool isInteracting = false;
+    public bool isInteracting = false;
     private Transform player;
     private bool inRange = false;
     private Vector2 lastPlayerPos;
     private RigidbodyConstraints2D originalConstraints;
     private bool isGrounded = true;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
