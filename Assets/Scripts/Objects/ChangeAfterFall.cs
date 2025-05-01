@@ -1,5 +1,3 @@
-using NUnit.Framework.Api;
-using UnityEditor;
 using UnityEngine;
 
 public class ChangeAfterFall : MonoBehaviour
