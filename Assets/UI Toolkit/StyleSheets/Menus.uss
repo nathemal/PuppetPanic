@@ -9,6 +9,7 @@
 .button-container {
     width: 500px;
     align-items: center;
+    justify-content: flex-end;
 }
 
 .title {
