@@ -6,7 +6,7 @@ public class Manager : MonoBehaviour
 
     public static int health = 10;
     public static int objectCounter = 0;
-    public static float remainingTime = 10; // TODO: Change this variable to the desire timer lenght
+    public static float remainingTime = 30; // TODO: Change this variable to the desire timer lenght
     
 
     //
