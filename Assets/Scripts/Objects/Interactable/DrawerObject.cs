@@ -6,7 +6,6 @@ public class DrawerObject : MonoBehaviour
 
     private bool inRange = false;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         if (Open != null)
@@ -15,7 +14,6 @@ public class DrawerObject : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (inRange == true && Input.GetKeyDown(KeyCode.E) && PushPullObject.instance.isInteracting == false)

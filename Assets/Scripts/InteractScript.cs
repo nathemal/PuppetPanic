@@ -12,13 +12,12 @@ public class InteractScript : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E) && canMove)
+        if(Input.GetKeyDown(KeyCode.E) && canMove) // TODO: This input needs to be changed to the input system to keep compatibility with controllers
         {
             col.enabled = true;
             pressE.SetActive(false);
         }
     }
-
 
     public void OnTriggerEnter2D(Collider2D collision)
     {   

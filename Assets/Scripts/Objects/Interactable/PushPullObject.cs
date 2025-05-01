@@ -8,37 +8,40 @@ public class PushPullObject : MonoBehaviour
 
     private RigidbodyType2D defaultBodyType;
     private Rigidbody2D rb;
-    public bool isInteracting = false;
-    private Transform player;
-    private bool inRange = false;
-    private Vector2 lastPlayerPos;
     private RigidbodyConstraints2D originalConstraints;
+    private Vector2 lastPlayerPos;
+    private Transform player;
+    
+    public bool isInteracting = false;
+    private bool inRange = false;
     private bool isGrounded = true;
+    
 
     private void Awake()
     {
         instance = this;
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        
         defaultBodyType = rb.bodyType;
-        originalConstraints = rb.constraints;
-        rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+        originalConstraints = rb.constraints; // Why is this done? It's not used anywhere that I can see
+
+        rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation; 
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (inRange == true && Input.GetKeyDown(KeyCode.E))
+        if (inRange == true && Input.GetKeyDown(KeyCode.E)) // TODO: This input needs to be changed to the input system to keep compatibility with controllers
         {
             isInteracting = !isInteracting;
 
-            if (isInteracting)
+            if (isInteracting) // TODO: Rigidbodies and Physics should be handled in FixedUpdate() to avoid tying the physics to fps
             {
                 lastPlayerPos = player.position;
                 rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;

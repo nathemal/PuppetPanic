@@ -8,7 +8,6 @@ public class ChangeAfterFall : MonoBehaviour
     private int noCollisionLayer;
     private int lastLayer;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         defaultLayer = LayerMask.NameToLayer("Default");
@@ -16,7 +15,6 @@ public class ChangeAfterFall : MonoBehaviour
         lastLayer = gameObject.layer;
     }
 
-    // Update is called once per frame
     void Update()
     {
         int currentLayer = gameObject.layer;
