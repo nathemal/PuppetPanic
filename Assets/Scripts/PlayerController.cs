@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
         {
             walkingSound.Play();
         }
-        else if (walkingSound.isPlaying)
+        else if (walkingSound.isPlaying && !isWalking)
         {
             walkingSound.Stop();
         }
