@@ -50,6 +50,7 @@ public class Manager : MonoBehaviour
             WinScreen.SetActive(true);
 
             timer.stopTimer();
+            timer.displayFinalTime();
         }
     }
 

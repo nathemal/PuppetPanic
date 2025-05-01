@@ -5,10 +5,12 @@ public class Timer : MonoBehaviour
 {
     public Manager mainManager; // TODO: Remember to rename "Manager" here once the branches has been merged
     public UIDocument uiDocument_WinScreen;
+    public UIDocument uiDocument_UI;
     
     public bool timerIsRunning = false; // TODO: Make this variable private when done implementing everything
 
-    private Label timeLabel_WinScreen;
+    private Label timerLabel_WinScreen;
+    private Label timerLabel_UI;
 
     private void Update()
     {
@@ -29,6 +31,8 @@ public class Timer : MonoBehaviour
                 stopTimer();
             }
         }
+
+        displayTimerUI();
     }
 
     public void startTimer()
@@ -39,24 +43,30 @@ public class Timer : MonoBehaviour
     public void stopTimer() 
     {
         timerIsRunning = false;
-
-        displayFinalTime();
     }
 
-    private void displayFinalTime()
+    public void displayFinalTime()
     {
         VisualElement root = uiDocument_WinScreen.rootVisualElement;
 
-        timeLabel_WinScreen = root.Q<Label>("Time");
+        timerLabel_WinScreen = root.Q<Label>("Time");
 
-        timeLabel_WinScreen.text = "You had " + calcTime() + " left";
+        timerLabel_WinScreen.text = "You had " + formatTime() + " left";
     }
 
-    private string calcTime()
+    private void displayTimerUI()
     {
-        int minutes = (int)Manager.remainingTime / 60;
-        int seconds = (int)Manager.remainingTime % 60;
+        VisualElement root = uiDocument_UI.rootVisualElement;
 
-        return string.Format(minutes + "min:" + seconds + "sec");
+        timerLabel_UI = root.Q<Label>("Timer");
+
+        timerLabel_UI.text = formatTime();
+    }
+
+    private string formatTime()
+    {
+        string time = string.Format((int)Manager.remainingTime + "s");
+
+        return time;
     }
 }
