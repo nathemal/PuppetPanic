@@ -3,12 +3,19 @@ using UnityEngine.UIElements;
 
 public class Timer : MonoBehaviour
 {
+    public static Timer instance;
+
     public Manager mainManager; // TODO: Remember to rename "Manager" here once the branches has been merged
     public UIDocument uiDocument_WinScreen;
     
     public bool timerIsRunning = false; // TODO: Make this variable private when done implementing everything
 
     private Label timeLabel_WinScreen;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Update()
     {

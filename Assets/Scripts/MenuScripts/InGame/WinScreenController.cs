@@ -17,6 +17,7 @@ public class WinScreenController : MonoBehaviour
     {
         InitializeUiToolkit();
         ButtonActionsSubscribe();
+        Timer.instance.stopTimer();
 
         mainMenuButton.Focus();
     }
