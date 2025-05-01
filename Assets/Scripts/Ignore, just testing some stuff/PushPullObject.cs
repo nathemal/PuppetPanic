@@ -35,6 +35,7 @@ public class PushPullObject : MonoBehaviour
             {
                 lastPlayerPos = player.position;
                 rb.constraints = originalConstraints;
+                rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
             }
             else
             {
