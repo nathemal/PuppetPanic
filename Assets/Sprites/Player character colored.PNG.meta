@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Player character colored_0: 6005344882514891416
+      Player character colored_1: 8502173004590398869
+      Player character colored_2: 5929001958241327359
+      Player character colored_3: -5719338833294570781
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
