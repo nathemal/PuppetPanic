@@ -61,12 +61,12 @@ public class PlayerController : MonoBehaviour
         playerMovement = moveAction.ReadValue<Vector2>();
 
         Vector2 colliderSize = new Vector2(2.6f, 7f);
-        Vector2 colliderOffset = new Vector2(0, 0);
+        Vector2 colliderOffset = new Vector2(0, 3.6f);
 
         if (crouchAction.IsPressed())
         {
             playerCollider2D.size = new Vector2(playerCollider2D.size.x, 3.5f);
-            playerCollider2D.offset = new Vector2(playerCollider2D.offset.x, 0);
+            playerCollider2D.offset = new Vector2(playerCollider2D.offset.x, 1.8f);
             playerSpriteRenderer.sprite = crouchSprite;
         }
         else
