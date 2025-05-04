@@ -38,7 +38,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Collider
   - Chair
   - NoCollision
   m_SortingLayers:

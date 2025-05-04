@@ -1,18 +1,23 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InteractScript : MonoBehaviour
 {
     public GameObject pressE;
     BoxCollider2D col;
     bool canMove = false;
+
+    InputAction interactAction;
+    
     private void Start()
     {
         col = GetComponent<BoxCollider2D>();
+        interactAction = InputSystem.actions.FindAction("Interact");
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E) && canMove) // TODO: This input needs to be changed to the input system to keep compatibility with controllers
+        if(interactAction.IsPressed() && canMove)
         {
             col.enabled = true;
             pressE.SetActive(false);
