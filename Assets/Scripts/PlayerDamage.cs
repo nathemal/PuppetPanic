@@ -2,30 +2,27 @@ using UnityEngine;
 
 public class PlayerDamage : MonoBehaviour
 {
-    float airTime = 0;
-    public float startTakingDamTime = 3f;
-    private void Update()
+    public Rigidbody2D rb;
+    float y;
+    public float maxYVelocity = -20;
+
+    private void Start()
     {
-        FallDamage();
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    public void FallDamage()
+    private void FixedUpdate()
     {
-        if(PlayerController.isGrounded == false)
-        {
-            airTime += Time.time / 100;
-            Debug.Log(airTime.ToString());
-        }
+        y = rb.linearVelocity.y;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Ground" && airTime > startTakingDamTime)
+        if(collision.gameObject.tag == "Ground" && y <= maxYVelocity)
         {
-            MainManager.health -= ((int)airTime ^ 2 / 5);
-            Debug.Log("HEALTH");
-            Debug.Log(MainManager.health.ToString());
-            airTime = 0;
+                MainManager.health -= 1;
+                Debug.Log("HEALTH");
+                Debug.Log(MainManager.health.ToString());
+            }
         }
-    }
 }
