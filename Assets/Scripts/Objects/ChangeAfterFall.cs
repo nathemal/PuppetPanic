@@ -3,6 +3,7 @@ using UnityEngine;
 public class ChangeAfterFall : MonoBehaviour
 {
     public GameObject afterFall;
+    public AudioSource landingSound;
 
     private int defaultLayer;
     private int noCollisionLayer;
@@ -21,6 +22,7 @@ public class ChangeAfterFall : MonoBehaviour
 
         if (lastLayer == noCollisionLayer && currentLayer == defaultLayer)
         {
+            landingSound.Play();
             Change();
         }
 
