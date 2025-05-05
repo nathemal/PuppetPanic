@@ -43,6 +43,15 @@ public class PushPullObject : MonoBehaviour
         if (inRange == true && interactAction.IsPressed())
         {
             isInteracting = !isInteracting;
+
+            if (isInteracting)
+            {
+                lastPlayerPos = player.position;
+            }
+            else
+            {
+                rb.linearVelocity = Vector2.zero;
+            }
         }
     }
 
@@ -63,12 +72,10 @@ public class PushPullObject : MonoBehaviour
 
         if (isInteracting)
         {
-            lastPlayerPos = player.position;
             rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
         }
         else
         {
-            rb.linearVelocity = Vector2.zero;
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         }
     }
