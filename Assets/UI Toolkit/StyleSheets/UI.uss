@@ -12,3 +12,29 @@
     font-size: 50px;
     -unity-text-align: middle-center;
 }
+
+.health-bar-container {
+    background-color: rgb(7, 7, 7);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-top-width: 0;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    width: 400px;
+    height: 50px;
+    align-content: auto;
+    left: 1%;
+    bottom: 1%;
+}
+
+.health-bar-fill {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(182, 28, 28);
+    transition-property: width;
+    transition-duration: 0.2s;
+}
