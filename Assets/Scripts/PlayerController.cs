@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     public AudioSource jumpSound;
     public AudioSource crouchSound;
     public AudioSource landingSound;
+    public AudioClip crouchClip;
     private const float landingSoundStartTime = 0.21f;
 
     private void Start()
@@ -97,12 +98,13 @@ public class PlayerController : MonoBehaviour
     {
         bool isWalking = playerMovement != Vector2.zero;
 
-        if (Input.GetKeyDown(KeyCode.S))
+        if (crouchAction.IsPressed() && !crouchSound.isPlaying)
         {
-            crouchSound.Play();
+            crouchSound.PlayOneShot(crouchClip);
             walkingSound.volume = 0.6f;
+            crouchSound.Stop();
         }
-        else if (Input.GetKeyUp(KeyCode.S))
+        else
         {
             walkingSound.volume = 1;
         }
@@ -116,7 +118,7 @@ public class PlayerController : MonoBehaviour
             walkingSound.Stop();
         }
 
-        if (Input.GetKeyDown(KeyCode.W) && !jumpSound.isPlaying)
+        if (jumpAction.IsPressed() && !jumpSound.isPlaying)
         {
             jumpSound.Play();
         }

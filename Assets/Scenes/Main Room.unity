@@ -407,6 +407,10 @@ PrefabInstance:
       value: 7000
       objectReference: {fileID: 0}
     - target: {fileID: 6116328779957926450, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
+      propertyPath: crouchClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2adad39d19500e34ab846f1b52c75b45, type: 3}
+    - target: {fileID: 6116328779957926450, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
       propertyPath: idleSprite
       value: 
       objectReference: {fileID: 6005344882514891416, guid: 00777d8e352fae3498e7edba3824104f, type: 3}
