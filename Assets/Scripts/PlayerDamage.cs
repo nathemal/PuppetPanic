@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class PlayerDamage : MonoBehaviour
 {
-    public Rigidbody2D rb;
+    Rigidbody2D rb;
     float y;
     public float maxYVelocity = -20;
+    public PlayerHealth playerHealth;
+    
 
     private void Start()
     {
@@ -18,11 +20,12 @@ public class PlayerDamage : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Ground" && y <= maxYVelocity)
+        if (collision.gameObject.tag == "Ground" && y <= maxYVelocity)
         {
-                MainManager.health -= 1;
-                Debug.Log("HEALTH");
-                Debug.Log(MainManager.health.ToString());
-            }
+            playerHealth.ReduceHealth();
+            Debug.Log("HEALTH");
+            Debug.Log(MainManager.health.ToString());
+
         }
+    }
 }

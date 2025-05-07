@@ -46,7 +46,7 @@ public class PlayerHealth : MonoBehaviour
         }
         else if(lowHealthSound.isPlaying)
         {
-                lowHealthSound.Stop();
+            return;
         }
     }
 }
