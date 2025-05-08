@@ -111,6 +111,12 @@ public class PushPullObject : MonoBehaviour
             if (isInteracting == true)
             {
                 isInteracting = false;
+
+                if (pushPullSound.isPlaying)
+                {
+                    pushPullSound.Stop();
+                }
+
                 rb.bodyType = defaultBodyType;
             }
 
