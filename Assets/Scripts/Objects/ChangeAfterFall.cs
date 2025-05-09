@@ -5,6 +5,8 @@ public class ChangeAfterFall : MonoBehaviour
     public GameObject afterFall;
     public AudioSource landingSound;
 
+    public float yCorrection = 0f; //change this to above 0 if the object spawns in the ground, should be kept public as the value needed can differ by object.
+
     private int defaultLayer;
     private int noCollisionLayer;
     private int lastLayer;
@@ -31,7 +33,8 @@ public class ChangeAfterFall : MonoBehaviour
 
     private void Change()
     {
-        Instantiate(afterFall, transform.position, transform.rotation);
+        Vector3 positionCorrection = transform.position + new Vector3(0, yCorrection, 0);
+        Instantiate(afterFall, positionCorrection, transform.rotation);
         Destroy(gameObject);
     }
 }

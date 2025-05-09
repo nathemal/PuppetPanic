@@ -766,6 +766,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6542589408611932582, guid: 3cd0e6457ffb4f14d9089d49c913b791, type: 3}
+      propertyPath: pushPullSound
+      value: 
+      objectReference: {fileID: 158454673}
     - target: {fileID: 8308838245927558319, guid: 3cd0e6457ffb4f14d9089d49c913b791, type: 3}
       propertyPath: m_Name
       value: DecorativeObject
@@ -3637,6 +3641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   afterFall: {fileID: 8231884808539894117, guid: 0dc1308649e1bcb428e13067f464f119, type: 3}
   landingSound: {fileID: 1954570800}
+  yCorrection: 3.9
 --- !u!82 &1451252168 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 5322047521431552700, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
@@ -4689,6 +4694,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6542589408611932582, guid: 3cd0e6457ffb4f14d9089d49c913b791, type: 3}
+      propertyPath: pushPullSound
+      value: 
+      objectReference: {fileID: 158454673}
     - target: {fileID: 8308838245927558319, guid: 3cd0e6457ffb4f14d9089d49c913b791, type: 3}
       propertyPath: m_Name
       value: Magic Book
@@ -4730,3 +4739,4 @@ SceneRoots:
   - {fileID: 281554864}
   - {fileID: 1212827578}
   - {fileID: 855355744}
+  - {fileID: 901462239}
