@@ -7,6 +7,8 @@ public class PushPullObject : MonoBehaviour
 
     public float Speed = 5f;
 
+    public AudioSource pushPullSound;
+
     private RigidbodyType2D defaultBodyType;
     private Rigidbody2D rb;
     private Vector2 lastPlayerPos;
@@ -65,6 +67,18 @@ public class PushPullObject : MonoBehaviour
             if (playerMovement.sqrMagnitude > 0.0001f)
             {
                 rb.MovePosition(rb.position + playerMovement);
+
+                if (!pushPullSound.isPlaying)
+                {
+                    pushPullSound.Play();
+                }
+            }
+            else
+            {
+                if (pushPullSound.isPlaying)
+                {
+                    pushPullSound.Stop();
+                }
             }
 
             lastPlayerPos = currentPlayerPos;
@@ -97,6 +111,12 @@ public class PushPullObject : MonoBehaviour
             if (isInteracting == true)
             {
                 isInteracting = false;
+
+                if (pushPullSound.isPlaying)
+                {
+                    pushPullSound.Stop();
+                }
+
                 rb.bodyType = defaultBodyType;
             }
 
@@ -127,6 +147,11 @@ public class PushPullObject : MonoBehaviour
 
                 rb.linearVelocity = Vector2.zero;
                 rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+
+                if (pushPullSound.isPlaying)
+                {
+                    pushPullSound.Stop();
+                }
             }
         }
     }
