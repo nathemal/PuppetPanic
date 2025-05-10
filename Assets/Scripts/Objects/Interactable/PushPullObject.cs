@@ -15,6 +15,7 @@ public class PushPullObject : MonoBehaviour
     private Transform player;
     
     public bool isInteracting = false;
+    public bool fallingObject = false;
     private bool inRange = false;
     private bool isGrounded = true;
 
@@ -126,7 +127,7 @@ public class PushPullObject : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Ground") && isGrounded == false)
+        if (fallingObject == true && collision.collider.CompareTag("Ground") && isGrounded == false)
         {
             isGrounded = true;
             gameObject.layer = LayerMask.NameToLayer("Default");
@@ -135,7 +136,7 @@ public class PushPullObject : MonoBehaviour
 
     void OnCollisionExit2D (Collision2D collision)
     {
-        if (collision.collider.CompareTag("Ground") && isGrounded == true)
+        if (fallingObject == true && collision.collider.CompareTag("Ground") && isGrounded == true)
         {
             isGrounded = false;
 
