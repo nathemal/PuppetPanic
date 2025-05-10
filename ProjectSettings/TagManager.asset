@@ -38,9 +38,9 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - Collider
+  - Chair
+  - NoCollision
   m_SortingLayers:
   - name: Default
     uniqueID: 0
