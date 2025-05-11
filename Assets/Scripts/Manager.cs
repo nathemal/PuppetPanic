@@ -7,7 +7,7 @@ public class Manager : MonoBehaviour
     public const float maxHealth = 10;
     public static float currentHealth = 10;
     public static int objectCounter = 0;
-    public static float remainingTime = 100; // TODO: Change this variable to the desire timer lenght
+    public static float remainingTime = 60; // TODO: Change this variable to the desire timer lenght
 
 
     //

@@ -4754,7 +4754,7 @@ MonoBehaviour:
   mainManager: {fileID: 2039173839}
   uiDocument_WinScreen: {fileID: 876923519}
   uiDocument_UI: {fileID: 775076542}
-  timerIsRunning: 0
+  timerIsRunning: 1
 --- !u!114 &2039173839
 MonoBehaviour:
   m_ObjectHideFlags: 0
