@@ -72,7 +72,7 @@ public class StartMenuController : MonoBehaviour
 
     private void OnStartButtonClicked()
     {
-        menuEvents.LoadScene(startGame);
+        menuEvents.LoadScene("Room 1");
     }
 
     private void OnControlsButtonClicked()
