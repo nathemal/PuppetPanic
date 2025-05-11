@@ -2453,7 +2453,7 @@ GameObject:
   - component: {fileID: 1063231597}
   - component: {fileID: 1063231596}
   - component: {fileID: 1063231600}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: Desk Top
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2476,7 +2476,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 134217728
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -2611,7 +2611,7 @@ PlatformEffector2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1063231595}
   m_Enabled: 1
-  m_UseColliderMask: 1
+  m_UseColliderMask: 0
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -3031,12 +3031,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4794487063200780085, guid: 7d0d7d51661914a4a85395fb02b52c45, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 134217728
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794487063200780085, guid: 7d0d7d51661914a4a85395fb02b52c45, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 7.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794487063200780085, guid: 7d0d7d51661914a4a85395fb02b52c45, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 2.7406287
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794487063200780085, guid: 7d0d7d51661914a4a85395fb02b52c45, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 7.74
+      value: 7.41
       objectReference: {fileID: 0}
     - target: {fileID: 4794487063200780085, guid: 7d0d7d51661914a4a85395fb02b52c45, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 2.83
+      value: 2.7406287
       objectReference: {fileID: 0}
     - target: {fileID: 5041490072699992562, guid: 7d0d7d51661914a4a85395fb02b52c45, type: 3}
       propertyPath: m_Size.x
@@ -3091,12 +3103,24 @@ PrefabInstance:
       value: -0.053858817
       objectReference: {fileID: 0}
     - target: {fileID: 8910405515315858113, guid: 7d0d7d51661914a4a85395fb02b52c45, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 134217728
+      objectReference: {fileID: 0}
+    - target: {fileID: 8910405515315858113, guid: 7d0d7d51661914a4a85395fb02b52c45, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 6.7799997
+      objectReference: {fileID: 0}
+    - target: {fileID: 8910405515315858113, guid: 7d0d7d51661914a4a85395fb02b52c45, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 2.2405143
+      objectReference: {fileID: 0}
+    - target: {fileID: 8910405515315858113, guid: 7d0d7d51661914a4a85395fb02b52c45, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 6.83
+      value: 6.7799997
       objectReference: {fileID: 0}
     - target: {fileID: 8910405515315858113, guid: 7d0d7d51661914a4a85395fb02b52c45, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 2.24
+      value: 2.2405143
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3343,7 +3367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7759137155413941212, guid: 1256beb174bd1cf40b93017b3c14c18b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 7759137155413941212, guid: 1256beb174bd1cf40b93017b3c14c18b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3504,12 +3528,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4794487063200780085, guid: 7d0d7d51661914a4a85395fb02b52c45, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 134217728
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794487063200780085, guid: 7d0d7d51661914a4a85395fb02b52c45, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 7.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794487063200780085, guid: 7d0d7d51661914a4a85395fb02b52c45, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 2.7406287
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794487063200780085, guid: 7d0d7d51661914a4a85395fb02b52c45, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 7.74
+      value: 7.41
       objectReference: {fileID: 0}
     - target: {fileID: 4794487063200780085, guid: 7d0d7d51661914a4a85395fb02b52c45, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 2.83
+      value: 2.7406287
       objectReference: {fileID: 0}
     - target: {fileID: 5041490072699992562, guid: 7d0d7d51661914a4a85395fb02b52c45, type: 3}
       propertyPath: m_Size.x
@@ -3564,12 +3600,24 @@ PrefabInstance:
       value: -0.053858817
       objectReference: {fileID: 0}
     - target: {fileID: 8910405515315858113, guid: 7d0d7d51661914a4a85395fb02b52c45, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 134217728
+      objectReference: {fileID: 0}
+    - target: {fileID: 8910405515315858113, guid: 7d0d7d51661914a4a85395fb02b52c45, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 6.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 8910405515315858113, guid: 7d0d7d51661914a4a85395fb02b52c45, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 2.2405143
+      objectReference: {fileID: 0}
+    - target: {fileID: 8910405515315858113, guid: 7d0d7d51661914a4a85395fb02b52c45, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 6.83
+      value: 6.77
       objectReference: {fileID: 0}
     - target: {fileID: 8910405515315858113, guid: 7d0d7d51661914a4a85395fb02b52c45, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 2.24
+      value: 2.2405143
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3675,7 +3723,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4102,7 +4150,7 @@ Transform:
   m_GameObject: {fileID: 1668860677}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20, y: -20.57, z: 0}
+  m_LocalPosition: {x: 35, y: -20.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
