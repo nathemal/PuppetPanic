@@ -20,11 +20,11 @@ public class Timer : MonoBehaviour
             {
                 Manager.remainingTime -= Time.deltaTime;
                 
-                Debug.Log("Time remaining: " + Manager.remainingTime);
+                //Debug.Log("Time remaining: " + Manager.remainingTime);
             }
             else
             {
-                Debug.Log("Time has run out!");
+                //Debug.Log("Time has run out!");
                 Manager.remainingTime = 0;
                 
                 mainManager.PuppetIsCaught();

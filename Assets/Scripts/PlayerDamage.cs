@@ -22,7 +22,9 @@ public class PlayerDamage : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground" && y <= maxYVelocity)
         {
-            playerHealth.ReduceHealth();
+            PlayerHealth.Instance.ReduceHealth();
+            Manager.currentHealth--;
+            Manager.Instance.healthBarUI.SetHealth(Manager.currentHealth);
             Debug.Log("HEALTH");
             Debug.Log(MainManager.health.ToString());
 

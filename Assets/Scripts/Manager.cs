@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Manager : MonoBehaviour
 {
+    public static Manager Instance;
+
     // This script should be merged into the MainManager.cs script when they have both been merged into the same branch
 
     public const float maxHealth = 10;
@@ -27,6 +29,11 @@ public class Manager : MonoBehaviour
     public HealthBarUI healthBarUI; 
 
     public Timer timer;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     void Update()
     {

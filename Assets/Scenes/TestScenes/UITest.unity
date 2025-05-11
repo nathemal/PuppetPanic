@@ -419,6 +419,7 @@ MonoBehaviour:
   reduceHealth: 0
   CaughtScreen: {fileID: 1280140216}
   WinScreen: {fileID: 1482790595}
+  healthBarUI: {fileID: 1831592086}
   timer: {fileID: 961516875}
 --- !u!4 &961516873
 Transform:
@@ -820,7 +821,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 479189451515463429281042acf2446a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 10
 --- !u!1 &2006792930
 GameObject:
   m_ObjectHideFlags: 0
