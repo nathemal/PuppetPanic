@@ -16,7 +16,7 @@ public class PushPullObject : MonoBehaviour
     
     public bool isInteracting = false;
     public bool fallingObject = false;
-    private bool inRange = false;
+    public bool inRange = false;
     private bool isGrounded = true;
 
     InputAction interactAction;
