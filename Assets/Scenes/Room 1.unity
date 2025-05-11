@@ -1755,6 +1755,10 @@ PrefabInstance:
       value: 8.822024
       objectReference: {fileID: 0}
     - target: {fileID: 2301383617994002349, guid: 3cd0e6457ffb4f14d9089d49c913b791, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301383617994002349, guid: 3cd0e6457ffb4f14d9089d49c913b791, type: 3}
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
@@ -1880,7 +1884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8308838245927558319, guid: 3cd0e6457ffb4f14d9089d49c913b791, type: 3}
       propertyPath: m_TagString
-      value: PushableObject
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5777147032378586704, guid: 3cd0e6457ffb4f14d9089d49c913b791, type: 3}

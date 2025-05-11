@@ -150,14 +150,21 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Ground" || collision.gameObject.tag == "PushableObject")
+        foreach (ContactPoint2D contact in collision.contacts)
         {
-            isGrounded = true;
+            Collider2D hitCollider = contact.collider;
 
-            landingSound.time = landingSoundStartTime;
-            landingSound.Play();
+            if (hitCollider.CompareTag("Ground") && contact.normal.y > 0.5f)
+            {
+                isGrounded = true;
 
-            playerSpriteRenderer.sprite = idleSprite;
+                landingSound.time = landingSoundStartTime;
+                landingSound.Play();
+
+                playerSpriteRenderer.sprite = idleSprite;
+
+                break;
+            }
         }
     }
 
