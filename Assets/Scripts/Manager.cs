@@ -35,6 +35,13 @@ public class Manager : MonoBehaviour
         Instance = this;
     }
 
+    private void Start()
+    {
+        WinScreen.SetActive(false);
+        CaughtScreen.SetActive(false);
+        remainingTime = 60;
+    }
+
     void Update()
     {
        ActivateCaughtScreen();
@@ -66,6 +73,7 @@ public class Manager : MonoBehaviour
         if (wonGame) 
         {
             WinScreen.SetActive(true);
+            Debug.Log("Manager");
 
             timer.stopTimer();
             timer.displayFinalTime();

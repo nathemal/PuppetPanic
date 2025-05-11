@@ -11,14 +11,12 @@ public class WinScreenController : MonoBehaviour
     public MenuEvents menuEvents;
 
     private string mainMenu = "MainMenu";
-    private string startGame = "SampleScene"; // TODO: Replace SampleScene with the name of the first game scene
+    private string startGame = "Room 1"; // TODO: Replace SampleScene with the name of the first game scene
 
     private void OnEnable()
     {
         InitializeUiToolkit();
         ButtonActionsSubscribe();
-
-        mainMenuButton.Focus();
     }
 
     private void OnDisable()

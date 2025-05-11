@@ -704,7 +704,7 @@ PrefabInstance:
       objectReference: {fileID: 1451252168}
     - target: {fileID: 6116328779957926450, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
       propertyPath: jumpSpeed
-      value: 8500
+      value: 9000
       objectReference: {fileID: 0}
     - target: {fileID: 6116328779957926450, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
       propertyPath: pushForce
@@ -752,7 +752,7 @@ PrefabInstance:
       objectReference: {fileID: 8502173004590398869, guid: 00777d8e352fae3498e7edba3824104f, type: 3}
     - target: {fileID: 6116328779957926450, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
       propertyPath: playerMovementSpeed
-      value: 450
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 8099647083979846304, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
       propertyPath: LowHealthSound
@@ -772,11 +772,11 @@ PrefabInstance:
       objectReference: {fileID: 1190107576}
     - target: {fileID: 8684920755160966915, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 8684920755160966915, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.8
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 8684920755160966915, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
       propertyPath: m_LocalScale.z
@@ -867,11 +867,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3359549873044366926, guid: 3cd0e6457ffb4f14d9089d49c913b791, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.36
+      value: -1.6
       objectReference: {fileID: 0}
     - target: {fileID: 3359549873044366926, guid: 3cd0e6457ffb4f14d9089d49c913b791, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -24.59
+      value: -24.7
       objectReference: {fileID: 0}
     - target: {fileID: 3359549873044366926, guid: 3cd0e6457ffb4f14d9089d49c913b791, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2066,7 +2066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06e0c0e0f04dd2f468413146f2b3777f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuEvents: {fileID: 0}
+  menuEvents: {fileID: 2039173837}
 --- !u!114 &876923519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2505,7 +2505,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1063231595}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2588,8 +2588,8 @@ Transform:
   m_GameObject: {fileID: 1063231595}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.1878, z: 0}
-  m_LocalScale: {x: 20, y: 1.3756, z: 1}
+  m_LocalPosition: {x: 0.07, y: 6.1518, z: 0}
+  m_LocalScale: {x: 20, y: 0.7538426, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1668860679}
@@ -3956,7 +3956,6 @@ GameObject:
   - component: {fileID: 1646624369}
   - component: {fileID: 1646624368}
   - component: {fileID: 1646624367}
-  - component: {fileID: 1646624366}
   - component: {fileID: 1646624370}
   m_Layer: 0
   m_Name: CinemachineCamera
@@ -3965,35 +3964,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1646624366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1646624365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f38bda98361e1de48a4ca2bd86ea3c17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Composition:
-    ScreenPosition: {x: 0, y: 0.2}
-    DeadZone:
-      Enabled: 0
-      Size: {x: 0.2, y: 0.2}
-    HardLimits:
-      Enabled: 0
-      Size: {x: 0.8, y: 0.8}
-      Offset: {x: 0, y: 0}
-  CenterOnActivate: 1
-  TargetOffset: {x: 0, y: 0, z: 0}
-  Damping: {x: 0.5, y: 0.5}
-  Lookahead:
-    Enabled: 0
-    Time: 0
-    Smoothing: 0
-    IgnoreY: 0
 --- !u!114 &1646624367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4825,6 +4795,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2301383617994002349, guid: 3cd0e6457ffb4f14d9089d49c913b791, type: 3}
+      propertyPath: m_GravityScale
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3359549873044366926, guid: 3cd0e6457ffb4f14d9089d49c913b791, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
