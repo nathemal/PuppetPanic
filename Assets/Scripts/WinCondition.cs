@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class WinCondition : MonoBehaviour
 {
     public int objWinAmount = 1;
+    public GameObject WinScreen;
 
     private void Update()
     {
@@ -14,7 +15,7 @@ public class WinCondition : MonoBehaviour
     {
         if(MainManager.objectCounter == objWinAmount)
         {
-            SceneManager.LoadScene("WinLoseScreensTest");
+            WinScreen.SetActive(true);
         }
     }
 }
