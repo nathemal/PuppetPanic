@@ -32,7 +32,7 @@ public class PlayerHealth : MonoBehaviour
         MainManager.health--;
 
         Camera.main.GetComponent<CameraShake>().ShakeCamera(cameraShakeAmount, cameraShakeTime, true, true);
-
+        
         takeDamageSound.Play();
 
         takeDamageVolume.weight = 1;
