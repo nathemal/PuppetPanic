@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
             playerSpriteRenderer.sprite = jumpSprite;
         }
 
-        if(moveAction.IsPressed() && isGrounded)
+        if(moveAction.IsPressed() && isGrounded && !crouchAction.IsInProgress())
         {
             playerSpriteRenderer.sprite = walkingSprite;
         }
@@ -160,6 +160,14 @@ public class PlayerController : MonoBehaviour
             landingSound.Play();
 
             playerSpriteRenderer.sprite = idleSprite;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "PushableObject")
+        {
+            isGrounded = false;
         }
     }
 
