@@ -2192,7 +2192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcf61cc96ac2b6349acf90aa965d7628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objWinAmount: 1
   WinScreen: {fileID: 876923517}
 --- !u!1 &923657975
 GameObject:

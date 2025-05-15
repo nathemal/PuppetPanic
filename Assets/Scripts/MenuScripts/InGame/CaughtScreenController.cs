@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class CaughtScreenController : MonoBehaviour
 {
@@ -41,7 +42,7 @@ public class CaughtScreenController : MonoBehaviour
 
     private void OnNextDayButtonClicked()
     {
-        return; // TODO: Start the next day here, not sure how we're going to handle that just yet so I'm putting it off for now
+        SceneManager.LoadScene("Room 1");
     }
 
     private void OnAllButtonsClicked()
