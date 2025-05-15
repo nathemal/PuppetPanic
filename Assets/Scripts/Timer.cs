@@ -3,6 +3,8 @@ using UnityEngine.UIElements;
 
 public class Timer : MonoBehaviour
 {
+    public static Timer instance;
+
     public Manager mainManager; // TODO: Remember to rename "Manager" here once the branches has been merged
     public UIDocument uiDocument_WinScreen;
     public UIDocument uiDocument_UI;
@@ -11,6 +13,11 @@ public class Timer : MonoBehaviour
 
     private Label timerLabel_WinScreen;
     private Label timerLabel_UI;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Update()
     {

@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class WinCondition : MonoBehaviour
 {
-    public int objWinAmount = 1;
+    public static int objWinAmount = 1;
     public GameObject WinScreen;
 
     private void Start()
@@ -22,6 +22,7 @@ public class WinCondition : MonoBehaviour
         if(MainManager.objectCounter == objWinAmount)
         {
             WinScreen.SetActive(true);
+            Timer.instance.stopTimer();
             MainManager.objectCounter--;
         }
     }
