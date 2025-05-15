@@ -372,6 +372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CaughtScreen: {fileID: 1280140216}
   WinScreen: {fileID: 1482790595}
+  timer: {fileID: 0}
 --- !u!4 &961516873
 Transform:
   m_ObjectHideFlags: 0
@@ -464,7 +465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edbdb32b5d992a44698d2337df911a59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainManager: {fileID: 961516871}
+  menuEvents: {fileID: 0}
 --- !u!1 &1482790595
 GameObject:
   m_ObjectHideFlags: 0
