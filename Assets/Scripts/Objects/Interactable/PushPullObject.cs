@@ -43,10 +43,10 @@ public class PushPullObject : MonoBehaviour
 
     void Update()
     {
-        if (inRange == true && interactAction.IsPressed())
+        if (inRange == true && Input.GetKeyDown(KeyCode.E))
         {
             isInteracting = !isInteracting;
-
+            
             if (isInteracting)
             {
                 lastPlayerPos = player.position;
@@ -60,7 +60,7 @@ public class PushPullObject : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isInteracting == true)
+        if (isInteracting == true && inRange == true)
         {
             Vector2 currentPlayerPos = player.position;
             Vector2 playerMovement = currentPlayerPos - lastPlayerPos;
@@ -99,7 +99,11 @@ public class PushPullObject : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            inRange = true;
+            if (isInteracting == false)
+            {
+                inRange = true;
+            }
+
             player = other.transform;
         }
     }
@@ -109,6 +113,7 @@ public class PushPullObject : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             inRange = false;
+
             if (isInteracting == true)
             {
                 isInteracting = false;
