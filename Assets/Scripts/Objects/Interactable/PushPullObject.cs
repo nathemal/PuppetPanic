@@ -49,6 +49,8 @@ public class PushPullObject : MonoBehaviour
             if (isInteracting)
             {
                 lastPlayerPos = player.position;
+
+                
             }
             else
             {
@@ -64,6 +66,8 @@ public class PushPullObject : MonoBehaviour
             Vector2 currentPlayerPos = player.position;
             Vector2 playerMovement = currentPlayerPos - lastPlayerPos;
 
+            rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+
             if (playerMovement.sqrMagnitude > 0.0001f)
             {
                 rb.MovePosition(rb.position + playerMovement);
@@ -72,25 +76,20 @@ public class PushPullObject : MonoBehaviour
                 {
                     pushPullSound.Play();
                 }
+
             }
             else
             {
+                rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+
                 if (pushPullSound.isPlaying)
                 {
                     pushPullSound.Stop();
                 }
+
             }
 
             lastPlayerPos = currentPlayerPos;
-        }
-
-        if (isInteracting)
-        {
-            rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
-        }
-        else
-        {
-            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         }
     }
 
