@@ -2,18 +2,18 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private bool IsAlive = true;
+    private bool isAlive = true;
 
-    public AudioSource TakeDamageSound;
-    public AudioSource LowHealthSound;
+    public AudioSource takeDamageSound;
+    public AudioSource lowHealthSound;
 
-    bool HealthIsLow;
+    bool healthIsLow;
 
     private void Update()
     {
         if(MainManager.health == 0)
         {
-            IsAlive = false;
+            isAlive = false;
         }
 
         LowHealth();
@@ -22,7 +22,7 @@ public class PlayerHealth : MonoBehaviour
     public void ReduceHealth()
     {   
         MainManager.health--;
-        TakeDamageSound.Play();
+        takeDamageSound.Play();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -37,22 +37,16 @@ public class PlayerHealth : MonoBehaviour
     {
         if (MainManager.health <= 5)
         {
-            HealthIsLow = true;
+            healthIsLow = true;
         }
 
-        if (HealthIsLow)
+        if (healthIsLow && !lowHealthSound.isPlaying)
         {
-            if (!LowHealthSound.isPlaying)
-            {
-                LowHealthSound.Play();
-            }
+                lowHealthSound.Play();
         }
-        else
+        else if(lowHealthSound.isPlaying)
         {
-            if (LowHealthSound.isPlaying)
-            {
-                LowHealthSound.Stop();
-            }
+                lowHealthSound.Stop();
         }
     }
 }
