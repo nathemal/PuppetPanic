@@ -5,9 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class SceneTransitionScript : MonoBehaviour
 {
+    public static SceneTransitionScript Instance;
+
     public bool inRange = false;
 
+    public bool moveToRoom2 = false;
+    public bool moveToRoom3 = false;
+    public bool canWin = false;
+
     InputAction interactAction;
+
+    public GameObject winScreen;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,13 +31,31 @@ public class SceneTransitionScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.tag == "Door" && inRange == true && interactAction.IsPressed())
+        if (MainManager.objectCounter == 1)
+        {
+            moveToRoom2 = true;
+        }
+        if (MainManager.objectCounter == 2)
+        {
+            moveToRoom3 = true;
+        }
+
+        if (MainManager.objectCounter == 4)
+        {
+            canWin = true;
+        }
+
+        if (gameObject.tag == "Door" && inRange == true && interactAction.IsPressed() && moveToRoom2 == true)
         {
             SceneManager.LoadScene("Room 2");
         }
-        else if (gameObject.tag == "Cannon" && inRange == true && interactAction.IsPressed())
+        else if (gameObject.tag == "Cannon" && inRange == true && interactAction.IsPressed() && moveToRoom3 == true)
         {
             SceneManager.LoadScene("Room 3");
+        }
+        else if (gameObject.tag == "Slide" && inRange == true && interactAction.IsPressed() && canWin == true)
+        {
+            winScreen.SetActive(true);
         }
     }
 

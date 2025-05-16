@@ -58,9 +58,14 @@ public class Manager : MonoBehaviour
             healthBarUI.SetHealth(currentHealth);
             reduceHealth = false;
         }
+
+        if (currentHealth == 0)
+        {
+            ActivateCaughtScreen();
+        }
     }
 
-    private void ActivateCaughtScreen()
+    public void ActivateCaughtScreen()
     {
         if (isCaught)
         {
@@ -68,7 +73,7 @@ public class Manager : MonoBehaviour
         }
     }
 
-    private void ActivateWinScreen()
+    public void ActivateWinScreen()
     {
         if (wonGame) 
         {

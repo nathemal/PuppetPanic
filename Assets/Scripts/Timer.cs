@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -17,6 +18,20 @@ public class Timer : MonoBehaviour
     private void Awake()
     {
         instance = this;
+    }
+
+    private void Start()
+    {
+        string activeSceneName = SceneManager.GetActiveScene().name;
+
+        if (activeSceneName == "Room 2" || activeSceneName == "Room 3")
+        {
+            timerIsRunning = true;
+        }
+        else
+        {
+            timerIsRunning = false;
+        }
     }
 
     private void Update()

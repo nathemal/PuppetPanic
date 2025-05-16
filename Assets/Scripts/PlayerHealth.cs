@@ -23,6 +23,11 @@ public class PlayerHealth : MonoBehaviour
             isAlive = false;
         }
 
+        if (isAlive == false)
+        {
+            Manager.Instance.ActivateCaughtScreen();
+        }
+
         LowHealth();
     }
 
