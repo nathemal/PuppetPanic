@@ -1850,9 +1850,10 @@ GameObject:
   - component: {fileID: 564093828}
   - component: {fileID: 564093827}
   - component: {fileID: 564093826}
+  - component: {fileID: 564093830}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Void
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1887,11 +1888,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.00032544136, y: -0.15240541}
+  m_Offset: {x: -0.00032544136, y: 0.3227026}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1901,7 +1902,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.9993491, y: 0.6951892}
+  m_Size: {x: 0.9993491, y: 1.6454052}
   m_EdgeRadius: 0
 --- !u!50 &564093827
 Rigidbody2D:
@@ -2000,6 +2001,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &564093830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564093825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4bad8ee481cd8f47b191ab4946692af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inRange: 0
+  moveToRoom2: 0
+  moveToRoom3: 0
+  canWin: 0
+  winScreen: {fileID: 876923517}
+  caughtScreen: {fileID: 1878531832}
+  backgroundMusic: {fileID: 790691400}
 --- !u!1 &575420175
 GameObject:
   m_ObjectHideFlags: 0
@@ -2099,9 +2119,10 @@ GameObject:
   - component: {fileID: 605595597}
   - component: {fileID: 605595596}
   - component: {fileID: 605595595}
+  - component: {fileID: 605595599}
   m_Layer: 0
   m_Name: Floor (1)
-  m_TagString: Untagged
+  m_TagString: Void
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2136,11 +2157,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.00032544136, y: -0.15240541}
+  m_Offset: {x: -0.00032544136, y: 0.34909612}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2150,7 +2171,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.9993491, y: 0.6951892}
+  m_Size: {x: 0.9993491, y: 1.6981922}
   m_EdgeRadius: 0
 --- !u!50 &605595596
 Rigidbody2D:
@@ -2249,6 +2270,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &605595599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605595594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4bad8ee481cd8f47b191ab4946692af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inRange: 0
+  moveToRoom2: 0
+  moveToRoom3: 0
+  canWin: 0
+  winScreen: {fileID: 876923517}
+  caughtScreen: {fileID: 1878531832}
+  backgroundMusic: {fileID: 790691400}
 --- !u!1 &646583832
 GameObject:
   m_ObjectHideFlags: 0
@@ -3283,6 +3323,8 @@ MonoBehaviour:
   moveToRoom3: 0
   canWin: 0
   winScreen: {fileID: 876923517}
+  caughtScreen: {fileID: 0}
+  backgroundMusic: {fileID: 790691400}
 --- !u!1 &997115503
 GameObject:
   m_ObjectHideFlags: 0

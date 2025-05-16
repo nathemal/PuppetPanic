@@ -16,6 +16,8 @@ public class SceneTransitionScript : MonoBehaviour
     InputAction interactAction;
 
     public GameObject winScreen;
+    public GameObject caughtScreen;
+    public AudioSource backgroundMusic;
 
     private void Awake()
     {
@@ -26,6 +28,7 @@ public class SceneTransitionScript : MonoBehaviour
     void Start()
     {
         interactAction = InputSystem.actions.FindAction("Interact");
+
     }
 
     // Update is called once per frame
@@ -56,6 +59,12 @@ public class SceneTransitionScript : MonoBehaviour
         else if (gameObject.tag == "Slide" && inRange == true && interactAction.IsPressed() && canWin == true)
         {
             winScreen.SetActive(true);
+            backgroundMusic.Stop();
+        }
+        else if (gameObject.tag == "Void" && inRange == true)
+        {
+            caughtScreen.SetActive(true);
+            backgroundMusic.Stop();
         }
     }
 

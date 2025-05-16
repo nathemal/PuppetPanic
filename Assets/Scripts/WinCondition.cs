@@ -9,9 +9,12 @@ public class WinCondition : MonoBehaviour
 
     private void Start()
     {
-        WinScreen.SetActive(false);
-
         string activeSceneName = SceneManager.GetActiveScene().name;
+
+        if (activeSceneName == "Room 1")
+        {
+            MainManager.objectCounter = 0;
+        }
 
         if (activeSceneName == "Room 3")
         {
@@ -21,6 +24,11 @@ public class WinCondition : MonoBehaviour
         if (activeSceneName == "Room 3" && MainManager.objectCounter == 4)
         {
             SceneTransitionScript.Instance.canWin = true;
+        }
+
+        if (activeSceneName == "Win")
+        {
+            WinScreen.SetActive(true);
         }
     }
 
