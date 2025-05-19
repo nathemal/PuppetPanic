@@ -44,9 +44,5 @@ public class PlayerHealth : MonoBehaviour
         {
                 lowHealthSound.Play();
         }
-        else if(lowHealthSound.isPlaying)
-        {
-            return;
-        }
     }
 }
