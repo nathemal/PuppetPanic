@@ -28,8 +28,8 @@
 }
 
 .button {
-    width: 400px;
-    height: 100px;
+    width: 350px;
+    height: 175px;
     margin-bottom: 100px;
     margin-top: 0;
     font-size: 60px;

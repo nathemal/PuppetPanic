@@ -3,9 +3,9 @@
     <ui:VisualElement name="Container" class="base-container" style="flex-grow: 1;">
         <ui:Label text="Puppet Panic" name="Title" class="title" />
         <ui:VisualElement name="ButtonContainer" class="button-container" style="flex-grow: 1; align-self: center; justify-content: center; align-items: center; align-content: flex-start;">
-            <ui:Button text="Start" name="StartButton" class="button" />
-            <ui:Button text="Controls" name="ControlsButton" class="button" />
-            <ui:Button text="Credits" name="CreditsButton" class="button" style="margin-bottom: 0;" />
+            <ui:Button name="StartButton" class="button" style="background-image: url(&quot;project://database/Assets/Art/UI/UI%20Start%20Screen/Start_Screen_Sprite_Sheet/UI_StartTicket_Ver_1.PNG?fileID=2813452582988232806&amp;guid=a1bc67f7cd8a67747ac815ee23508ef5&amp;type=3#UI_StartTicket_Ver_1_0&quot;); background-color: rgba(188, 188, 188, 0); transition-property: background-image;" />
+            <ui:Button name="ControlsButton" class="button" style="background-image: url(&quot;project://database/Assets/Art/UI/UI%20Start%20Screen/Start_Screen_Sprite_Sheet/UI_ControlsButton_Ver_1.PNG?fileID=347802758346653160&amp;guid=c63cea8758b50224b8a2ec485ca03385&amp;type=3#UI_ControlsButton_Ver_1_0&quot;);" />
+            <ui:Button name="CreditsButton" class="button" style="margin-bottom: 0; background-image: url(&quot;project://database/Assets/Art/UI/UI%20Start%20Screen/Start_Screen_Sprite_Sheet/UI_CreditsButton_Ver_1.PNG?fileID=-420788671442207046&amp;guid=70af2472af9720041be15b82561a0bb8&amp;type=3#UI_CreditsButton_Ver_1_0&quot;);" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
