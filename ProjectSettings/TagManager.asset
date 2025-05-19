@@ -8,6 +8,9 @@ TagManager:
   - PushableObject
   - Ground
   - Enemy
+  - Door
+  - Cannon
+  - Slide
   layers:
   - Default
   - TransparentFX
