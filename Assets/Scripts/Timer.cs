@@ -3,7 +3,7 @@ using UnityEngine.UIElements;
 
 public class Timer : MonoBehaviour
 {
-    public MainManager mainManager;
+    public MainManager mainManager; // TODO: Remember to rename "Manager" here once the branches has been merged
     public UIDocument uiDocument_WinScreen;
     
     public bool timerIsRunning = false; // TODO: Make this variable private when done implementing everything
