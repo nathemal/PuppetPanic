@@ -3,7 +3,7 @@ using UnityEngine.UIElements;
 
 public class Timer : MonoBehaviour
 {
-    public MainManager mainManager; // TODO: Remember to rename "Manager" here once the branches has been merged
+    public Manager mainManager; // TODO: Remember to rename "Manager" here once the branches has been merged
     public UIDocument uiDocument_WinScreen;
     
     public bool timerIsRunning = false; // TODO: Make this variable private when done implementing everything
@@ -14,16 +14,16 @@ public class Timer : MonoBehaviour
     {
         if (timerIsRunning)
         {
-            if (MainManager.remainingTime >= 0)
+            if (Manager.remainingTime >= 0)
             {
-                MainManager.remainingTime -= Time.deltaTime;
+                Manager.remainingTime -= Time.deltaTime;
                 
-                Debug.Log("Time remaining: " + MainManager.remainingTime);
+                Debug.Log("Time remaining: " + Manager.remainingTime);
             }
             else
             {
                 Debug.Log("Time has run out!");
-                MainManager.remainingTime = 0;
+                Manager.remainingTime = 0;
                 
                 mainManager.PuppetIsCaught();
                 stopTimer();
@@ -54,8 +54,8 @@ public class Timer : MonoBehaviour
 
     private string calcTime()
     {
-        int minutes = (int)MainManager.remainingTime / 60;
-        int seconds = (int)MainManager.remainingTime % 60;
+        int minutes = (int)Manager.remainingTime / 60;
+        int seconds = (int)Manager.remainingTime % 60;
 
         return string.Format(minutes + "min:" + seconds + "sec");
     }

@@ -3,10 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class WinCondition : MonoBehaviour
 {
-    // This script could maybe be merged into the MainManger script
-
-    public MainManager mainManager;
-    
     public int objWinAmount = 1;
 
     private void Update()
@@ -18,7 +14,7 @@ public class WinCondition : MonoBehaviour
     {
         if(MainManager.objectCounter == objWinAmount)
         {
-            mainManager.PuppetEscapes();
+            SceneManager.LoadScene("WinLoseScreensTest");
         }
     }
 }
