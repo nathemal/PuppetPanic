@@ -17,7 +17,7 @@ public class SceneTransitionScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.tag == "Door" && inRange == true && interactAction.IsPressed())
+        if (gameObject.tag == "Opening" && inRange == true && WinCondition.canEnterRoom2 == true)
         {
             SceneManager.LoadScene("Room 2");
         }

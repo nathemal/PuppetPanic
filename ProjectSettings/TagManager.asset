@@ -11,6 +11,7 @@ TagManager:
   - Door
   - Cannon
   - Slide
+  - Opening
   layers:
   - Default
   - TransparentFX
