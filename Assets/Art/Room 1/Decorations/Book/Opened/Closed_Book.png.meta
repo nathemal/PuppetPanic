@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: e48370f9317c5bb48a9a67750e2c3409
+guid: 50cbd589f1c06c545969ad9f9365cebc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8330708176016000762
-    second: Clothes hanger_0
+      213: 5505118342257023898
+    second: Closed_Book_0
+  - first:
+      213: -6229029543885481722
+    second: Closed_Book_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Clothes hanger_0
+      name: Closed_Book_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 36
-        width: 922
-        height: 1152
+        x: 6
+        y: 10
+        width: 178
+        height: 516
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: af640e6b2fe9c9370800000000000000
-      internalID: 8330708176016000762
+      spriteID: a9b97b407fb166c40800000000000000
+      internalID: 5505118342257023898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Closed_Book_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 522
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 609da45f1aa0e89a0800000000000000
+      internalID: -6229029543885481722
       vertices: []
       indices: 
       edges: []
@@ -148,7 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Clothes hanger_0: 8330708176016000762
+      Closed_Book_0: 5505118342257023898
+      Closed_Book_1: -6229029543885481722
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

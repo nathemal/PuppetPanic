@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e48370f9317c5bb48a9a67750e2c3409
+guid: a26282da24c4ef7468a840ccc0a43219
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8330708176016000762
-    second: Clothes hanger_0
+      213: -5281422124547630143
+    second: Chest_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Clothes hanger_0
+      name: Chest_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 36
-        width: 922
-        height: 1152
+        x: 140
+        y: 82
+        width: 626
+        height: 1811
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: af640e6b2fe9c9370800000000000000
-      internalID: 8330708176016000762
+      spriteID: 1cb13755f8e94b6b0800000000000000
+      internalID: -5281422124547630143
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Clothes hanger_0: 8330708176016000762
+      Chest_0: -5281422124547630143
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
