@@ -3,16 +3,22 @@ using UnityEngine.UIElements;
 
 public class CaughtScreenController : MonoBehaviour
 {
-    Button nextDayButton;
+    Button playAgainButton;
+    Button mainMenuButton;
+
+    Button[] allButtons = new Button[2];
 
     public MenuEvents menuEvents;
+
+    private string mainMenu = "MainMenu";
+    private string startGame = "SampleScene"; // TODO: Replace SampleScene with the name of the first game scene
 
     private void OnEnable()
     {
         InitializeUiToolkit();
         ButtonActionsSubscribe();
 
-        nextDayButton.Focus();
+        mainMenuButton.Focus();
     }
 
     private void OnDisable()
@@ -24,24 +30,43 @@ public class CaughtScreenController : MonoBehaviour
     {
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
 
-        nextDayButton = root.Q<Button>("NextDayButton");
+        playAgainButton = root.Q<Button>("PlayAgainButton");
+        mainMenuButton = root.Q<Button>("MainMenuButton");
+
+        allButtons[0] = playAgainButton;
+        allButtons[1] = mainMenuButton;
     }
 
     private void ButtonActionsSubscribe()
     {
-        nextDayButton.clicked += OnNextDayButtonClicked;
-        nextDayButton.clicked += OnAllButtonsClicked;
+        playAgainButton.clicked += PlayAgainButtonClicked;
+        mainMenuButton.clicked += MainMenuButtonClicked;
+
+        foreach (Button button in allButtons)
+        {
+            button.clicked += OnAllButtonsClicked;
+        }
     }
 
     private void ButtonActionsUnsubscribe()
     {
-        nextDayButton.clicked -= OnNextDayButtonClicked;
-        nextDayButton.clicked -= OnAllButtonsClicked;
+        playAgainButton.clicked -= PlayAgainButtonClicked;
+        mainMenuButton.clicked -= MainMenuButtonClicked;
+
+        foreach (Button button in allButtons)
+        {
+            button.clicked -= OnAllButtonsClicked;
+        }
     }
 
-    private void OnNextDayButtonClicked()
+    private void PlayAgainButtonClicked()
     {
-        return; // TODO: Start the next day here, not sure how we're going to handle that just yet so I'm putting it off for now
+        menuEvents.LoadScene(startGame);
+    }
+
+    private void MainMenuButtonClicked()
+    {
+        menuEvents.LoadScene(mainMenu);
     }
 
     private void OnAllButtonsClicked()
