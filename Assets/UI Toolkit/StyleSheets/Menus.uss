@@ -39,6 +39,7 @@
     border-bottom-left-radius: 20px;
     -unity-font-style: normal;
     -unity-text-align: middle-center;
+    border-left-width: 0;
 }
 
 .button:hover {

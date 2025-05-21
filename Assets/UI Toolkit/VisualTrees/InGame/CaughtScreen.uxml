@@ -4,7 +4,8 @@
         <ui:Label text="You Were Caught" name="Title" class="title" />
         <ui:Label text="and will be taken to be part of the puppet show!" name="Text" class="text" />
         <ui:VisualElement name="ButtonContainer" class="button-container" style="flex-grow: 1;">
-            <ui:Button text="Next Day" name="NextDayButton" class="button" />
+            <ui:Button name="PlayAgainButton" class="button" style="background-image: url(&quot;project://database/Assets/Art/UI/Buttons%20Sprite%20Sheet/UI_PlayAgainTicket_Ver_1.PNG?fileID=6384988041750811567&amp;guid=3b5cd478675961f4d95457e451c71567&amp;type=3#UI_PlayAgainTicket_Ver_1_0&quot;); background-color: rgba(188, 188, 188, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
+            <ui:Button name="MainMenuButton" enabled="true" class="button" style="background-image: url(&quot;project://database/Assets/Art/UI/Buttons%20Sprite%20Sheet/UI_MainMenuButton_Ver_1.PNG?fileID=-3205491210805675242&amp;guid=ee23b1c392eb5ad499ef41c7cf3b1a1e&amp;type=3#UI_MainMenuButton_Ver_1_0&quot;); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
