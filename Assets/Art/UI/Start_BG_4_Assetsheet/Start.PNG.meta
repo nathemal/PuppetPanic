@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 13c8670646a1e2a4d8580a4ad27f1c1d
+guid: 7cce9f635b71b794ab31eace8e81c368
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4299835859192998471
-    second: Ripped_0
-  - first:
-      213: -7444398496780289676
-    second: Ripped_1
+      213: 2660195087753647290
+    second: Start_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ripped_0
+      name: Start_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 279
+        width: 375
         height: 203
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -131,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9b5905c411ae354c0800000000000000
-      internalID: -4299835859192998471
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ripped_1
-      rect:
-        serializedVersion: 2
-        x: 279
-        y: 19
-        width: 107
-        height: 179
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 47975f0620f20b890800000000000000
-      internalID: -7444398496780289676
+      spriteID: ab49bc68659eae420800000000000000
+      internalID: 2660195087753647290
       vertices: []
       indices: 
       edges: []

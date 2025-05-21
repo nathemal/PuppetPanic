@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 197a8a5a4c9f97c44bdfe6b91b07d9f0
+guid: c580dc5615e71754ea5ae49dafc23dd4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4421300922047078791
-    second: Wand_0
+      213: -9111698448867662217
+    second: Shelf_Table_0
+  - first:
+      213: 6969882879092282571
+    second: Shelf_Table_1
+  - first:
+      213: 1936596016343695124
+    second: Shelf_Table_2
+  - first:
+      213: -4891641489864799585
+    second: Shelf_Table_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wand_0
+      name: Shelf_Table_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 483
-        height: 155
+        y: 409
+        width: 6
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +137,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 97ed6488c3264a2c0800000000000000
-      internalID: -4421300922047078791
+      spriteID: 776e3ce598ebc8180800000000000000
+      internalID: -9111698448867662217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shelf_Table_1
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 0
+        width: 2892
+        height: 596
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc45f5eec8ff9b060800000000000000
+      internalID: 6969882879092282571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shelf_Table_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 372
+        width: 6
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41f3a9bf0db20ea10800000000000000
+      internalID: 1936596016343695124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shelf_Table_3
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 347
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9acb046bf56d1cb0800000000000000
+      internalID: -4891641489864799585
       vertices: []
       indices: 
       edges: []
