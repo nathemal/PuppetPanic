@@ -18,11 +18,13 @@ public class WinCondition : MonoBehaviour
         {
             canEnterRoom2 = true;
         }
-        else if (MainManager.objectCounter >= 3)
+        
+        if (MainManager.objectCounter == 3)
         {
             canEnterRoom3 = true;
         }
-        else if (MainManager.objectCounter >= 5)
+        
+        if (MainManager.objectCounter >= 5)
         {
             canLeaveRoom3 = true;
         }
