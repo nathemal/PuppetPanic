@@ -66,3 +66,14 @@
     align-self: center;
     background-color: rgb(81, 19, 115);
 }
+
+.buttonShading {
+    width: 350px;
+    height: 175px;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.31);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
