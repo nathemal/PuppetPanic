@@ -419,6 +419,7 @@ MonoBehaviour:
   reduceHealth: 0
   CaughtScreen: {fileID: 1280140216}
   WinScreen: {fileID: 1482790595}
+  healthBarUI: {fileID: 0}
   timer: {fileID: 961516875}
 --- !u!4 &961516873
 Transform:
@@ -525,7 +526,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1280140216}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edbdb32b5d992a44698d2337df911a59, type: 3}
+  m_Script: {fileID: 11500000, guid: 113396e72cfeada47b103a38685b7029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   menuEvents: {fileID: 961516874}
@@ -591,7 +592,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1482790595}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06e0c0e0f04dd2f468413146f2b3777f, type: 3}
+  m_Script: {fileID: 11500000, guid: 113396e72cfeada47b103a38685b7029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   menuEvents: {fileID: 961516874}
@@ -820,7 +821,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 479189451515463429281042acf2446a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 10
 --- !u!1 &2006792930
 GameObject:
   m_ObjectHideFlags: 0
