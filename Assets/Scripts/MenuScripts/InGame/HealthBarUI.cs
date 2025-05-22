@@ -15,14 +15,14 @@ public class HealthBarUI : MonoBehaviour
 
     public void SetHealth(float newHealth) // This function needs to be called every time health is updated
     {
-        Manager.currentHealth = Mathf.Clamp(newHealth, 0, Manager.maxHealth); // This makes sure that the health remains within 0 and MaxHealth
+        MainManager.currentHealth = Mathf.Clamp(newHealth, 0, MainManager.maxHealth); // This makes sure that the health remains within 0 and MaxHealth
         
         UpdateHealthBar();
     }
 
     private void UpdateHealthBar()
     {
-        float percentage = (Manager.currentHealth / Manager.maxHealth) * 100; // TODO: Replace Manager with MainManager when merged.
+        float percentage = (MainManager.currentHealth / MainManager.maxHealth) * 100; // TODO: Replace Manager with MainManager when merged.
         healthFill.style.width = Length.Percent(percentage);
     }
 }
