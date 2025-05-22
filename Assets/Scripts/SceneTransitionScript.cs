@@ -36,6 +36,10 @@ public class SceneTransitionScript : MonoBehaviour
         {
             SceneManager.LoadScene("Room 3");
         }
+        else if (gameObject.tag == "Slide" && inRange == true && WinCondition.canLeaveRoom3 == true && interactAction.IsPressed())
+        {
+            SceneManager.LoadScene("Room 2");
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
