@@ -4,6 +4,7 @@
     align-items: center;
     align-self: center;
     background-color: rgba(81, 19, 115, 0);
+    overflow: hidden;
 }
 
 .button-container {
