@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 31955fbf1bbccbb4fbde802223b4251b
+guid: 23208f3aec83fd842b0fa567321dd13b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6555575649291838755
-    second: Cards_0
+      213: 3647604452595534355
+    second: UI_StartTicketRipped_Ver_1_0
+  - first:
+      213: -3968833799215354507
+    second: UI_StartTicketRipped_Ver_1_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -113,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cards_0
+      name: UI_StartTicketRipped_Ver_1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 226
-        height: 187
+        x: 64
+        y: 351
+        width: 492
+        height: 316
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dda52cd0eaae505a0800000000000000
-      internalID: -6555575649291838755
+      spriteID: 31a071e7ce4ee9230800000000000000
+      internalID: 3647604452595534355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_StartTicketRipped_Ver_1_1
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 337
+        width: 202
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57d6439ffaedbe8c0800000000000000
+      internalID: -3968833799215354507
       vertices: []
       indices: 
       edges: []
@@ -147,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      UI_StartTicketRipped_Ver_1_0: 3647604452595534355
+      UI_StartTicketRipped_Ver_1_1: -3968833799215354507
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
