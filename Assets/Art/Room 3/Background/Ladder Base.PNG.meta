@@ -1,40 +1,25 @@
 fileFormatVersion: 2
-guid: fa267d53555532849a77ba58ec36d470
+guid: f137e0fedb695634a8e3b08ccd5f4671
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1262544686593892823
-    second: Pole_0
+      213: 1833247098351559992
+    second: Ladder_0
   - first:
-      213: -249953712398697038
-    second: Pole_1
+      213: -7515280532982068617
+    second: Ladder_1
   - first:
-      213: -7635474313036098127
-    second: Pole_2
+      213: -2388662932940850130
+    second: Ladder_2
   - first:
-      213: 6788610266306735590
-    second: Pole_3
+      213: 6669089977202008665
+    second: Ladder_3
   - first:
-      213: -6220351579711938856
-    second: Pole_4
+      213: -6937686969608777256
+    second: Ladder_4
   - first:
-      213: -701903064792765621
-    second: Pole_5
-  - first:
-      213: 3770188820275127773
-    second: Pole_6
-  - first:
-      213: 1924840486186054877
-    second: Pole_7
-  - first:
-      213: 2896942034320948684
-    second: Pole_8
-  - first:
-      213: -6102171522430498508
-    second: Pole_9
-  - first:
-      213: 2668975060183848900
-    second: Pole_10
+      213: -4139979231900194161
+    second: Ladder_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -143,166 +128,100 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pole_0
+      name: Ladder_0
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 1467
+        width: 34
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 835a2c2e580017910800000000000000
+      internalID: 1833247098351559992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ladder_1
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 1453
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77a02344c2c54b790800000000000000
+      internalID: -7515280532982068617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ladder_2
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 570
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2cfae9d7b3c9ded0800000000000000
+      internalID: -2388662932940850130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ladder_3
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 892
+        height: 1447
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9526e3afffd5d8c50800000000000000
+      internalID: 6669089977202008665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ladder_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 3
-        width: 503
-        height: 1411
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7d16c7504b5758110800000000000000
-      internalID: 1262544686593892823
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pole_1
-      rect:
-        serializedVersion: 2
-        x: 255
-        y: 1405
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2bd7f224c6cf78cf0800000000000000
-      internalID: -249953712398697038
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pole_2
-      rect:
-        serializedVersion: 2
-        x: 238
-        y: 38
-        width: 16
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1b51dd71198590690800000000000000
-      internalID: -7635474313036098127
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pole_3
-      rect:
-        serializedVersion: 2
-        x: 360
-        y: 39
-        width: 6
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6ed68c1d11df53e50800000000000000
-      internalID: 6788610266306735590
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pole_4
-      rect:
-        serializedVersion: 2
-        x: 368
-        y: 35
-        width: 12
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8deda31f13fdca9a0800000000000000
-      internalID: -6220351579711938856
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pole_5
-      rect:
-        serializedVersion: 2
-        x: 318
-        y: 24
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b4be444a1e65246f0800000000000000
-      internalID: -701903064792765621
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pole_6
-      rect:
-        serializedVersion: 2
-        x: 383
-        y: 25
-        width: 9
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dd5e5a8b1c6625430800000000000000
-      internalID: 3770188820275127773
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pole_7
-      rect:
-        serializedVersion: 2
-        x: 273
-        y: 6
-        width: 7
+        y: 561
+        width: 5
         height: 7
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -312,42 +231,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dd4f864593866ba10800000000000000
-      internalID: 1924840486186054877
+      spriteID: 8d1dc95657268bf90800000000000000
+      internalID: -6937686969608777256
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pole_8
+      name: Ladder_5
       rect:
         serializedVersion: 2
-        x: 286
-        y: 3
-        width: 8
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ccdf89a7e61043820800000000000000
-      internalID: 2896942034320948684
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pole_9
-      rect:
-        serializedVersion: 2
-        x: 380
-        y: 12
+        x: 1123
+        y: 172
         width: 10
-        height: 11
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -356,42 +253,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 439860fb45bb05ba0800000000000000
-      internalID: -6102171522430498508
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pole_10
-      rect:
-        serializedVersion: 2
-        x: 387
-        y: 0
-        width: 19
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4c792a82daa1a0520800000000000000
-      internalID: 2668975060183848900
+      spriteID: f8a2819b2d6db86c0800000000000000
+      internalID: -4139979231900194161
       vertices: []
       indices: 
       edges: []
       weights: []
     outline:
-    - - {x: -251.5, y: 707}
-      - {x: -249.5, y: 707}
-      - {x: 131.5, y: 527}
-      - {x: 251.5, y: 438}
-      - {x: 251.5, y: 121}
-      - {x: 248.5, y: -707}
-      - {x: -251.5, y: -707}
+    - - {x: -538.5, y: -624.5}
+      - {x: 372.5, y: -599.5}
+      - {x: 362.5, y: -465.5}
+      - {x: -514.5, y: -469.5}
     customData: 
     physicsShape: []
     bones: []
@@ -405,17 +277,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Pole_0: 1262544686593892823
-      Pole_1: -249953712398697038
-      Pole_10: 2668975060183848900
-      Pole_2: -7635474313036098127
-      Pole_3: 6788610266306735590
-      Pole_4: -6220351579711938856
-      Pole_5: -701903064792765621
-      Pole_6: 3770188820275127773
-      Pole_7: 1924840486186054877
-      Pole_8: 2896942034320948684
-      Pole_9: -6102171522430498508
+      Ladder_0: 1833247098351559992
+      Ladder_1: -7515280532982068617
+      Ladder_2: -2388662932940850130
+      Ladder_3: 6669089977202008665
+      Ladder_4: -6937686969608777256
+      Ladder_5: -4139979231900194161
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
