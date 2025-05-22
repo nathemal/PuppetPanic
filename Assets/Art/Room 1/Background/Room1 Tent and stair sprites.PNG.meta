@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Room1 Tent and stair sprites_0: 3232030742136899878
+      Room1 Tent and stair sprites_1: 4306045680208277741
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
