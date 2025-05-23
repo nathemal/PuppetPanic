@@ -30,7 +30,7 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.tag == "Trap")
         {
             ReduceHealth();
-            Debug.Log(MainManager.health.ToString());
+            //Debug.Log(MainManager.health.ToString());
         }
     }
 

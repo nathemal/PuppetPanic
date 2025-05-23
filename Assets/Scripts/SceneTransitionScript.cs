@@ -38,7 +38,8 @@ public class SceneTransitionScript : MonoBehaviour
         }
         else if (gameObject.tag == "Slide" && inRange == true && WinCondition.canLeaveRoom3 == true && interactAction.IsPressed())
         {
-            SceneManager.LoadScene("Room 2");
+            //SceneManager.LoadScene("Room 2"); //Deactivated for showcase
+            Manager.PuppetEscapes();
         }
     }
 
