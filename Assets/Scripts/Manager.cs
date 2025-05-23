@@ -49,6 +49,8 @@ public class Manager : MonoBehaviour
         if (isCaught)
         {
             CaughtScreen.SetActive(true);
+
+            Time.timeScale = 0;
         }
     }
 
@@ -60,6 +62,8 @@ public class Manager : MonoBehaviour
 
             timer.stopTimer();
             timer.displayFinalTime();
+
+            Time.timeScale = 0;
         }
     }
 
