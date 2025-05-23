@@ -50,6 +50,7 @@ public class Manager : MonoBehaviour
     {
         if (isCaught)
         {
+            BackgroundMusicHandler.Instance.GetComponent<AudioSource>().Stop();
             CaughtScreen.SetActive(true);
             userInterface.SetActive(false); //for showcasing purposes
         }
@@ -59,10 +60,9 @@ public class Manager : MonoBehaviour
     {
         if (wonGame) 
         {
+            BackgroundMusicHandler.Instance.GetComponent<AudioSource>().Stop();
             WinScreen.SetActive(true);
-
             userInterface.SetActive(false); //for showcasing purposes
-
             timer.stopTimer();
             timer.displayFinalTime();
         }
