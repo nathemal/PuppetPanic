@@ -38,3 +38,18 @@
     transition-property: width;
     transition-duration: 0.2s;
 }
+
+.hourglass {
+    width: 320px;
+    height: 220px;
+    position: absolute;
+    right: -75px;
+}
+
+.healthbar {
+    width: 640px;
+    height: 440px;
+    position: absolute;
+    bottom: 1px;
+    left: -22px;
+}

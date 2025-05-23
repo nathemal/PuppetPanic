@@ -24,7 +24,7 @@ public class PlayerDamage : MonoBehaviour
         {
             playerHealth.ReduceHealth();
             Debug.Log("HEALTH");
-            Debug.Log(MainManager.health.ToString());
+            //Debug.Log(MainManager.health.ToString());
 
         }
     }
