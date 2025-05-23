@@ -1,11 +1,14 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/StyleSheets/Menus.uss?fileID=7433441132597879392&amp;guid=8f6c888a201dfee4ab578606f6caed98&amp;type=3#Menus" />
-    <ui:VisualElement name="Container" class="base-container" style="flex-grow: 1; background-color: rgb(19, 115, 24);">
-        <ui:Label text="You Won!" name="Title" class="title" />
-        <ui:Label text="Time:" name="Time" class="text" style="margin-right: 0; margin-left: 0; margin-bottom: 0; margin-top: 100px;" />
+    <ui:VisualElement name="Container" class="base-container" style="flex-grow: 1; background-color: rgb(19, 115, 24); background-image: url(&quot;project://database/Assets/Art/UI/winlosescreens/Win%20scene%20end.JPG?fileID=2800000&amp;guid=8d17f2e73098eb94db864f03cbd9339c&amp;type=3#Win scene end&quot;);">
+        <ui:Label text="You Won!" name="Title" class="title" style="visibility: hidden;" />
+        <ui:Label text="Rounds: " name="Rounds" class="text" style="visibility: hidden;" />
+        <ui:Label text="Time:" name="Time" class="text" style="visibility: hidden;" />
         <ui:VisualElement name="ButtonContainer" class="button-container" style="flex-grow: 1;">
-            <ui:Button text="Play Again" name="PlayAgainButton" class="button" />
-            <ui:Button text="Main Menu" name="MainMenuButton" class="button" />
+            <ui:VisualElement name="ButtonShading" class="buttonShading" style="right: -620px; bottom: 299px;" />
+            <ui:Button name="PlayAgainButton" class="button" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; background-image: url(&quot;project://database/Assets/Art/UI/Buttons%20Sprite%20Sheet/UI_PlayAgainTicket_Ver_1.PNG?fileID=6384988041750811567&amp;guid=3b5cd478675961f4d95457e451c71567&amp;type=3#UI_PlayAgainTicket_Ver_1_0&quot;); background-color: rgba(188, 188, 188, 0); position: absolute; right: -590px; bottom: 320px;" />
+            <ui:VisualElement name="ButtonShading" class="buttonShading" style="right: -620px; bottom: 52px;" />
+            <ui:Button name="MainMenuButton" class="button" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; background-image: url(&quot;project://database/Assets/Art/UI/Buttons%20Sprite%20Sheet/UI_MainMenuButton_Ver_1.PNG?fileID=-3205491210805675242&amp;guid=ee23b1c392eb5ad499ef41c7cf3b1a1e&amp;type=3#UI_MainMenuButton_Ver_1_0&quot;); right: -660px; bottom: 72px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

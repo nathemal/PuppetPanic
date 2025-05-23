@@ -11,7 +11,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
-        if(MainManager.health == 0)
+        if(MainManager.currentHealth == 0)
         {
             isAlive = false;
         }
@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void ReduceHealth()
     {   
-        MainManager.health--;
+        MainManager.currentHealth--;
         takeDamageSound.Play();
     }
 
@@ -36,7 +36,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void LowHealth()
     {
-        if (MainManager.health <= 5)
+        if (MainManager.currentHealth <= 5)
         {
             healthIsLow = true;
         }

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class WinScreenController : MonoBehaviour
+public class EndingScreenController : MonoBehaviour
 {
     Button playAgainButton;
     Button mainMenuButton;
@@ -45,7 +45,7 @@ public class WinScreenController : MonoBehaviour
         foreach (Button button in allButtons)
         {
             button.clicked += OnAllButtonsClicked;
-        }    
+        }
     }
 
     private void ButtonActionsUnsubscribe()

@@ -56,11 +56,11 @@ public class Timer : MonoBehaviour
 
     private void displayTimerUI()
     {
-        VisualElement root = uiDocument_UI.rootVisualElement;
+        //VisualElement root = uiDocument_UI.rootVisualElement;
 
-        timerLabel_UI = root.Q<Label>("Timer");
+        //timerLabel_UI = root.Q<Label>("Timer");
 
-        timerLabel_UI.text = formatTime();
+        //timerLabel_UI.text = formatTime();
     }
 
     private string formatTime()
