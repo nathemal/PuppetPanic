@@ -882,6 +882,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3079080962020071487, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
+      propertyPath: m_GravityScale
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6116328779957926450, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
       propertyPath: player
       value: 
@@ -896,7 +900,7 @@ PrefabInstance:
       objectReference: {fileID: 1451252168}
     - target: {fileID: 6116328779957926450, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
       propertyPath: jumpSpeed
-      value: 6000
+      value: 9000
       objectReference: {fileID: 0}
     - target: {fileID: 6116328779957926450, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
       propertyPath: pushForce
@@ -942,6 +946,10 @@ PrefabInstance:
       propertyPath: walkingSprite
       value: 
       objectReference: {fileID: 8502173004590398869, guid: 00777d8e352fae3498e7edba3824104f, type: 3}
+    - target: {fileID: 6116328779957926450, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
+      propertyPath: playerMovementSpeed
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 8099647083979846304, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
       propertyPath: LowHealthSound
       value: 
