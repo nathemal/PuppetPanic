@@ -14,7 +14,7 @@ public class WinCondition : MonoBehaviour
     {
         CheckForObjects();
 
-        if (MainManager.objectCounter >= 1)
+        if (MainManager.objectCounter == 1)
         {
             canEnterRoom2 = true;
         }
@@ -24,7 +24,7 @@ public class WinCondition : MonoBehaviour
             canEnterRoom3 = true;
         }
         
-        if (MainManager.objectCounter >= 5)
+        if (MainManager.objectCounter == 5)
         {
             canLeaveRoom3 = true;
         }

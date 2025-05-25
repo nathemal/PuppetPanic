@@ -13,14 +13,14 @@ public class SceneTransitionScript : MonoBehaviour
     {
         interactAction = InputSystem.actions.FindAction("Interact");
 
-        string sceneName = SceneManager.GetActiveScene().name; //Remove once objectCounter variable is carried over between scenes.
+        string sceneName = SceneManager.GetActiveScene().name; //TODO: Remove once objectCounter variable is carried over between scenes.
 
-        if (sceneName == "Room 2") //Remove once objectCounter variable is carried over between scenes.
+        if (sceneName == "Room 2") //TODO: Remove once objectCounter variable is carried over between scenes.
         {
             MainManager.objectCounter = 1;
         }
 
-        if (sceneName == "Room 3") //Remove once objectCounter variable is carried over between scenes.
+        if (sceneName == "Room 3") //TODO: Remove once objectCounter variable is carried over between scenes.
         {
             MainManager.objectCounter = 3;
         }
