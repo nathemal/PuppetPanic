@@ -28,18 +28,33 @@ public class SceneTransitionScript : MonoBehaviour
 
     void Update()
     {
-        if (gameObject.tag == "Opening" && inRange == true && WinCondition.canEnterRoom2 == true)
+        if (!inRange) return;
+
+        switch (gameObject.tag)
         {
-            SceneManager.LoadScene("Room 2");
-        }
-        else if (gameObject.tag == "Cannon" && inRange == true && WinCondition.canEnterRoom3 == true && interactAction.IsPressed())
-        {
-            SceneManager.LoadScene("Room 3");
-        }
-        else if (gameObject.tag == "Slide" && inRange == true && WinCondition.canLeaveRoom3 == true && interactAction.IsPressed())
-        {
-            //SceneManager.LoadScene("Room 2"); //Deactivated for showcase
-            Manager.PuppetEscapes();
+            case "Opening":
+
+                if (WinCondition.canEnterRoom2)
+                {
+                    SceneManager.LoadScene("Room 2");
+                }
+                break;
+
+            case "Cannon":
+                if (WinCondition.canEnterRoom3 && interactAction.IsPressed())
+                {
+                    SceneManager.LoadScene("Room 3");
+                }
+                break;
+
+            case "Slide":
+
+                if (WinCondition.canLeaveRoom3 && interactAction.IsPressed())
+                {
+                    //SceneManager.LoadScene("Room 2"); //Deactivated for showcase
+                    Manager.PuppetEscapes();
+                }
+                break;
         }
     }
 
