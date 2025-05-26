@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public Sprite walkingSprite;
     public Sprite jumpSprite;
     public Sprite crouchSprite;
+    public Sprite pickUpSprite;
     public Transform player;
     public Vector3 offset = new Vector3(1, 0, 0);
 
@@ -165,6 +166,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Object" && Input.GetKeyDown(KeyCode.E))
         {
+            playerSpriteRenderer.sprite = pickUpSprite;
             Destroy(collision.gameObject);
             MainManager.objectCounter++;
         }
