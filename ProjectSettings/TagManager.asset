@@ -8,6 +8,11 @@ TagManager:
   - PushableObject
   - Ground
   - Enemy
+  - Door
+  - Cannon
+  - Slide
+  - Opening
+  - Trap
   layers:
   - Default
   - TransparentFX
@@ -38,9 +43,9 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - Collider
+  - Chair
+  - NoCollision
   m_SortingLayers:
   - name: Default
     uniqueID: 0
