@@ -5,7 +5,7 @@ public class Manager : MonoBehaviour
     // This script should be merged into the MainManager.cs script when they have both been merged into the same branch
 
 
-    public static float remainingTime = 10; // TODO: Change this variable to the desire timer lenght
+    public static float remainingTime = 120; // TODO: Change this variable to the desire timer lenght
 
 
     //
@@ -16,7 +16,7 @@ public class Manager : MonoBehaviour
 
     public bool reduceHealth = false; // THIS IS PURELY FOR DEBUGGING - DO NOT USE FOR ANYTHING ELSE
 
-    private bool isCaught = false;
+    public static bool isCaught = false;
     public static bool wonGame = false;
 
     public GameObject userInterface;

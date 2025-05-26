@@ -6137,7 +6137,6 @@ GameObject:
   - component: {fileID: 1646624369}
   - component: {fileID: 1646624368}
   - component: {fileID: 1646624367}
-  - component: {fileID: 1646624366}
   - component: {fileID: 1646624370}
   m_Layer: 0
   m_Name: CinemachineCamera
@@ -6146,35 +6145,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1646624366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1646624365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f38bda98361e1de48a4ca2bd86ea3c17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Composition:
-    ScreenPosition: {x: 0, y: 0.2}
-    DeadZone:
-      Enabled: 0
-      Size: {x: 0.2, y: 0.2}
-    HardLimits:
-      Enabled: 0
-      Size: {x: 0.8, y: 0.8}
-      Offset: {x: 0, y: 0}
-  CenterOnActivate: 1
-  TargetOffset: {x: 0, y: 2, z: 0}
-  Damping: {x: 0.5, y: 0.5}
-  Lookahead:
-    Enabled: 0
-    Time: 0
-    Smoothing: 0
-    IgnoreY: 0
 --- !u!114 &1646624367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7643,7 +7613,7 @@ MonoBehaviour:
   mainManager: {fileID: 2039173839}
   uiDocument_WinScreen: {fileID: 876923519}
   uiDocument_UI: {fileID: 114846499}
-  timerIsRunning: 0
+  timerIsRunning: 1
 --- !u!114 &2039173839
 MonoBehaviour:
   m_ObjectHideFlags: 0

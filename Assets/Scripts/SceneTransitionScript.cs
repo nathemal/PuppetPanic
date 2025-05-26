@@ -15,6 +15,36 @@ public class SceneTransitionScript : MonoBehaviour
 
         string sceneName = SceneManager.GetActiveScene().name; //TODO: Remove once objectCounter variable is carried over between scenes.
 
+        if (sceneName == "Room 1")
+        {
+            Manager.remainingTime = 120;
+
+            MainManager.objectCounter = 0;
+
+            Manager.wonGame = false;
+            Manager.isCaught = false;
+
+            if (WinCondition.canEnterRoom2)
+            {
+                WinCondition.canEnterRoom2 = false;
+            }
+
+            if (WinCondition.canEnterRoom3)
+            {
+                WinCondition.canEnterRoom3 = false;
+            }
+
+            if (WinCondition.canLeaveRoom3)
+            {
+                WinCondition.canLeaveRoom3 = false;
+            }
+
+            if (WinCondition.canWin)
+            {
+                WinCondition.canWin = false;
+            }
+        }
+
         if (sceneName == "Room 2") //TODO: Remove once objectCounter variable is carried over between scenes.
         {
             MainManager.objectCounter = 1;

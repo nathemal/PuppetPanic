@@ -18,7 +18,7 @@ public class EndingScreenController : MonoBehaviour
         InitializeUiToolkit();
         ButtonActionsSubscribe();
 
-        mainMenuButton.Focus();
+        //mainMenuButton.Focus();
     }
 
     private void OnDisable()
