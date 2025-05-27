@@ -58,7 +58,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void LowHealth()
     {
-        if (MainManager.currentHealth <= 5)
+        if (MainManager.currentHealth <= 2)
         {
             healthIsLow = true;
             float weight = 1;
