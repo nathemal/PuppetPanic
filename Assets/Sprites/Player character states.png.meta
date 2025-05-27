@@ -122,12 +122,12 @@ TextureImporter:
       name: Player character states_0
       rect:
         serializedVersion: 2
-        x: 46
-        y: 107
-        width: 548
-        height: 667
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 47
+        y: 108
+        width: 546
+        height: 665
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -144,12 +144,12 @@ TextureImporter:
       name: Player character states_1
       rect:
         serializedVersion: 2
-        x: 747
-        y: 94
-        width: 385
-        height: 420
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 748
+        y: 95
+        width: 383
+        height: 418
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -166,12 +166,12 @@ TextureImporter:
       name: Player character states_2
       rect:
         serializedVersion: 2
-        x: 1248
-        y: 79
-        width: 634
-        height: 203
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1249
+        y: 80
+        width: 632
+        height: 201
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -188,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 123bac5bc42960347bd853b71e605535
     internalID: 0
     vertices: []
     indices: 
@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Player character states_0: -6108603737038925946
+      Player character states_1: -5744800866159452553
+      Player character states_2: 2563673081465673555
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

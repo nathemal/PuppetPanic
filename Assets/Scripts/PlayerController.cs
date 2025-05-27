@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public Sprite jumpSprite;
     public Sprite crouchSprite;
     public Sprite pickUpSprite;
+    public Sprite pushSprite;
     public Transform player;
     public Vector3 offset = new Vector3(1, 0, 0);
 
@@ -74,7 +75,6 @@ public class PlayerController : MonoBehaviour
         {
             playerCollider2D.size = colliderSize;
             playerCollider2D.offset = colliderOffset;
-            playerSpriteRenderer.sprite = idleSprite;
         }
 
         if(jumpAction.IsPressed() && isGrounded)
@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
             playerSpriteRenderer.sprite = jumpSprite;
         }
 
-        if(moveAction.IsPressed() && isGrounded)
+        if(moveAction.IsPressed() && isGrounded && !Input.GetKey(KeyCode.E))
         {
             playerSpriteRenderer.sprite = walkingSprite;
         }
@@ -169,6 +169,11 @@ public class PlayerController : MonoBehaviour
             playerSpriteRenderer.sprite = pickUpSprite;
             Destroy(collision.gameObject);
             MainManager.objectCounter++;
+        }
+
+        if (collision.gameObject.tag == "PushableObject" && Input.GetKey(KeyCode.E))
+        {
+            playerSpriteRenderer.sprite = pushSprite;
         }
     }
 }
