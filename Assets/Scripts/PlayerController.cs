@@ -1,3 +1,5 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,6 +18,9 @@ public class PlayerController : MonoBehaviour
     public Sprite walkingSprite;
     public Sprite jumpSprite;
     public Sprite crouchSprite;
+    public Sprite pickUpSprite;
+    public Sprite pushSprite;
+    public Sprite splashSprite;
     public Transform player;
     public Vector3 offset = new Vector3(1, 0, 0);
 
@@ -35,11 +40,15 @@ public class PlayerController : MonoBehaviour
 
     public GameObject interactPromt;
 
+    private PlayerHealth playerHealthScript;
+    public GameObject GameOverScreen;
+
     private void Start()
     {
         playerRigidBody2D = GetComponent<Rigidbody2D>();
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
         playerCollider2D = GetComponent<BoxCollider2D>();
+        playerHealthScript = GetComponent<PlayerHealth>();
 
         moveAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
@@ -50,6 +59,7 @@ public class PlayerController : MonoBehaviour
     {
         InputHandler();
         PlayAudio();
+        DeadPlayer();
     }
 
     private void FixedUpdate()
@@ -75,7 +85,6 @@ public class PlayerController : MonoBehaviour
         {
             playerCollider2D.size = colliderSize;
             playerCollider2D.offset = colliderOffset;
-            playerSpriteRenderer.sprite = idleSprite;
         }
 
         if(jumpAction.IsPressed() && isGrounded)
@@ -89,7 +98,7 @@ public class PlayerController : MonoBehaviour
             playerSpriteRenderer.sprite = jumpSprite;
         }
 
-        if(moveAction.IsPressed() && isGrounded)
+        if(moveAction.IsPressed() && isGrounded && !Input.GetKey(KeyCode.E) && !crouchAction.IsInProgress())
         {
             playerSpriteRenderer.sprite = walkingSprite;
         }
@@ -150,6 +159,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void DeadPlayer()
+    {
+        if (PlayerHealth.isAlive == false)
+        {
+            playerSpriteRenderer.sprite = splashSprite;
+            StartCoroutine(WaitForFunction());
+        }
+    }
+
+    IEnumerator WaitForFunction()
+    {
+        yield return new WaitForSeconds(3);
+        GameOverScreen.SetActive(true);
+    }
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Ground" || collision.gameObject.tag == "PushableObject")
@@ -175,13 +199,26 @@ public class PlayerController : MonoBehaviour
             interactPromt.SetActive(false);
         }
     }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Ground")
+        {
+            isGrounded = false;
+        }
+    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Object" && Input.GetKeyDown(KeyCode.E))
+        if (collision.gameObject.tag == "Object" && Input.GetKey(KeyCode.E))
         {
+            playerSpriteRenderer.sprite = pickUpSprite;
             Destroy(collision.gameObject);
             MainManager.objectCounter++;
+        }
+
+        if (collision.gameObject.tag == "PushableObject" && Input.GetKey(KeyCode.E))
+        {
+            playerSpriteRenderer.sprite = pushSprite;
         }
     }
 

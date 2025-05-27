@@ -1830,6 +1830,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5929001958241327359, guid: 00777d8e352fae3498e7edba3824104f, type: 3}
     - target: {fileID: 6116328779957926450, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
+      propertyPath: pushSprite
+      value: 
+      objectReference: {fileID: -6108603737038925946, guid: 4bdbf3b39cb474840ad0cd0f238ee294, type: 3}
+    - target: {fileID: 6116328779957926450, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
       propertyPath: CrouchSound
       value: 
       objectReference: {fileID: 2129069643}
@@ -1854,6 +1858,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1700377286}
     - target: {fileID: 6116328779957926450, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
+      propertyPath: pickUpSprite
+      value: 
+      objectReference: {fileID: -5744800866159452553, guid: 4bdbf3b39cb474840ad0cd0f238ee294, type: 3}
+    - target: {fileID: 6116328779957926450, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
+      propertyPath: splashSprite
+      value: 
+      objectReference: {fileID: 2563673081465673555, guid: 4bdbf3b39cb474840ad0cd0f238ee294, type: 3}
+    - target: {fileID: 6116328779957926450, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
       propertyPath: walkingSound
       value: 
       objectReference: {fileID: 1039181845}
@@ -1861,6 +1873,10 @@ PrefabInstance:
       propertyPath: walkingSprite
       value: 
       objectReference: {fileID: 8502173004590398869, guid: 00777d8e352fae3498e7edba3824104f, type: 3}
+    - target: {fileID: 6116328779957926450, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
+      propertyPath: playerRenderer
+      value: 
+      objectReference: {fileID: 1295044450}
     - target: {fileID: 6116328779957926450, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
       propertyPath: playerMovementSpeed
       value: 400
@@ -5386,6 +5402,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!212 &1295044450 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7796179815623795051, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
+  m_PrefabInstance: {fileID: 301334606}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1318553519
 GameObject:
   m_ObjectHideFlags: 0
