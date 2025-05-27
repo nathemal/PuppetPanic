@@ -13,7 +13,7 @@ public class StartMenuController : MonoBehaviour
     public GameObject creditsScreen;
 
     private MenuEvents menuEvents;
-    private string startGame = "SampleScene"; // TODO: Replace SampleScene with the name of the first game scene
+    private string startGame = "Room 1"; // TODO: Replace SampleScene with the name of the first game scene
 
     private void OnEnable()
     {

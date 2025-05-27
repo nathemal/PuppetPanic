@@ -11,7 +11,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
-        if(MainManager.health == 0)
+        if(MainManager.currentHealth == 0)
         {
             isAlive = false;
         }
@@ -21,21 +21,22 @@ public class PlayerHealth : MonoBehaviour
 
     public void ReduceHealth()
     {   
-        MainManager.health--;
+        MainManager.currentHealth--;
         takeDamageSound.Play();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Trap")
         {
             ReduceHealth();
+            //Debug.Log(MainManager.health.ToString());
         }
     }
 
     public void LowHealth()
     {
-        if (MainManager.health <= 5)
+        if (MainManager.currentHealth <= 5)
         {
             healthIsLow = true;
         }
@@ -43,10 +44,6 @@ public class PlayerHealth : MonoBehaviour
         if (healthIsLow && !lowHealthSound.isPlaying)
         {
                 lowHealthSound.Play();
-        }
-        else if(lowHealthSound.isPlaying)
-        {
-                lowHealthSound.Stop();
         }
     }
 }

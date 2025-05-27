@@ -1,10 +1,13 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/StyleSheets/Menus.uss?fileID=7433441132597879392&amp;guid=8f6c888a201dfee4ab578606f6caed98&amp;type=3#Menus" />
-    <ui:VisualElement name="Container" class="base-container" style="flex-grow: 1; background-color: rgb(115, 24, 19);">
-        <ui:Label text="You Were Caught" name="Title" class="title" />
-        <ui:Label text="and will be taken to be part of the puppet show!" name="Text" class="text" />
+    <ui:VisualElement name="Container" class="base-container" style="flex-grow: 1; background-color: rgb(115, 24, 19); background-image: url(&quot;project://database/Assets/Art/UI/winlosescreens/Lose%20scene%20end.JPG?fileID=2800000&amp;guid=edae999c09d5faa4a851054bf39ca5c1&amp;type=3#Lose scene end&quot;);">
+        <ui:Label text="You Were Caught" name="Title" class="title" style="visibility: hidden;" />
+        <ui:Label text="and will be taken to be part of the puppet show!" name="Text" class="text" style="visibility: hidden;" />
         <ui:VisualElement name="ButtonContainer" class="button-container" style="flex-grow: 1;">
-            <ui:Button text="Next Day" name="NextDayButton" class="button" />
+            <ui:VisualElement name="ButtonShading" class="buttonShading" style="left: -519px; bottom: 27px;" />
+            <ui:Button name="PlayAgainButton" class="button" style="background-image: url(&quot;project://database/Assets/Art/UI/Buttons%20Sprite%20Sheet/UI_PlayAgainTicket_Ver_1.PNG?fileID=6384988041750811567&amp;guid=3b5cd478675961f4d95457e451c71567&amp;type=3#UI_PlayAgainTicket_Ver_1_0&quot;); background-color: rgba(188, 188, 188, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; position: absolute; left: -555px; bottom: 50px;" />
+            <ui:VisualElement name="ButtonShading" class="buttonShading" style="bottom: 26px; left: -95px;" />
+            <ui:Button name="MainMenuButton" enabled="true" class="button" style="background-image: url(&quot;project://database/Assets/Art/UI/Buttons%20Sprite%20Sheet/UI_MainMenuButton_Ver_1.PNG?fileID=-3205491210805675242&amp;guid=ee23b1c392eb5ad499ef41c7cf3b1a1e&amp;type=3#UI_MainMenuButton_Ver_1_0&quot;); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; position: absolute; bottom: 50px; left: -130px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     public float playerMovementSpeed = 1;
     public float jumpSpeed = 5;
     public float pushForce = 2.0f;
-    private bool isGrounded;
+    public static bool isGrounded;
     private bool shouldJump;
 
     public AudioSource walkingSound;

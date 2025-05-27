@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class MainManager : MonoBehaviour
 {
-    public static int health = 10;
-    public static int objectCounter;
+    public const float maxHealth = 5;
+    public static float currentHealth = 5;
+    public static int objectCounter = 0;
 }
