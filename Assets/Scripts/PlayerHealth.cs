@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private bool isAlive = true;
+    static public bool isAlive = true;
 
     public AudioSource takeDamageSound;
     public AudioSource lowHealthSound;
@@ -11,7 +11,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
-        if(MainManager.currentHealth == 0)
+        if(MainManager.currentHealth <= 0)
         {
             isAlive = false;
         }
@@ -30,7 +30,7 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.tag == "Trap")
         {
             ReduceHealth();
-            //Debug.Log(MainManager.health.ToString());
+            Debug.Log(MainManager.currentHealth.ToString());
         }
     }
 
@@ -46,4 +46,5 @@ public class PlayerHealth : MonoBehaviour
                 lowHealthSound.Play();
         }
     }
+
 }

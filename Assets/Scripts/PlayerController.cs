@@ -1,3 +1,5 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public Sprite crouchSprite;
     public Sprite pickUpSprite;
     public Sprite pushSprite;
+    public Sprite splashSprite;
     public Transform player;
     public Vector3 offset = new Vector3(1, 0, 0);
 
@@ -35,11 +38,15 @@ public class PlayerController : MonoBehaviour
     public AudioSource landingSound;
     private const float landingSoundStartTime = 0.21f;
 
+    private PlayerHealth playerHealthScript;
+    public GameObject GameOverScreen;
+
     private void Start()
     {
         playerRigidBody2D = GetComponent<Rigidbody2D>();
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
         playerCollider2D = GetComponent<BoxCollider2D>();
+        playerHealthScript = GetComponent<PlayerHealth>();
 
         moveAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
@@ -50,6 +57,7 @@ public class PlayerController : MonoBehaviour
     {
         InputHandler();
         PlayAudio();
+        DeadPlayer();
     }
 
     private void FixedUpdate()
@@ -149,6 +157,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void DeadPlayer()
+    {
+        if (PlayerHealth.isAlive == false)
+        {
+            playerSpriteRenderer.sprite = splashSprite;
+            StartCoroutine(WaitForFunction());
+        }
+    }
+
+    IEnumerator WaitForFunction()
+    {
+        yield return new WaitForSeconds(3);
+        GameOverScreen.SetActive(true);
+    }
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Ground" || collision.gameObject.tag == "PushableObject")
