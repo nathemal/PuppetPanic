@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
             playerSpriteRenderer.sprite = jumpSprite;
         }
 
-        if(moveAction.IsPressed() && isGrounded && !Input.GetKey(KeyCode.E))
+        if(moveAction.IsPressed() && isGrounded && !Input.GetKey(KeyCode.E) && !crouchAction.IsInProgress())
         {
             playerSpriteRenderer.sprite = walkingSprite;
         }
@@ -161,10 +161,17 @@ public class PlayerController : MonoBehaviour
             playerSpriteRenderer.sprite = idleSprite;
         }
     }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Ground")
+        {
+            isGrounded = false;
+        }
+    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Object" && Input.GetKeyDown(KeyCode.E))
+        if (collision.gameObject.tag == "Object" && Input.GetKey(KeyCode.E))
         {
             playerSpriteRenderer.sprite = pickUpSprite;
             Destroy(collision.gameObject);
