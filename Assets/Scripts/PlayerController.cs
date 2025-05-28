@@ -198,10 +198,8 @@ public class PlayerController : MonoBehaviour
         {
             interactPromt.SetActive(false);
         }
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag == "Ground")
+
+        if (collision.gameObject.tag == "Ground")
         {
             isGrounded = false;
         }
