@@ -24,6 +24,9 @@ public class PlayerController : MonoBehaviour
     public Transform player;
     public Vector3 offset = new Vector3(1, 0, 0);
 
+    public Animator animator;
+    float timer;
+
     Vector2 playerMovement;
 
     public float playerMovementSpeed = 1;
@@ -75,6 +78,7 @@ public class PlayerController : MonoBehaviour
 
         if (crouchAction.IsPressed())
         {
+            animator.enabled = false;
             playerCollider2D.size = new Vector2(playerCollider2D.size.x, 3.5f);
             playerCollider2D.offset = new Vector2(playerCollider2D.offset.x, 1.8f);
             playerSpriteRenderer.sprite = crouchSprite;
@@ -87,18 +91,33 @@ public class PlayerController : MonoBehaviour
 
         if(jumpAction.IsPressed() && isGrounded)
         {
+            animator.enabled = false;
+            playerSpriteRenderer.sprite = jumpSprite;
             shouldJump = true;
             isGrounded = false;
         }
 
         if(!isGrounded)
         {
-            playerSpriteRenderer.sprite = jumpSprite;
+            timer += Time.deltaTime;
+
+            if(timer >= 0.3)
+            {
+                timer = 0;
+                animator.enabled = false;
+                playerSpriteRenderer.sprite = jumpSprite;
+            }
         }
 
         if(moveAction.IsPressed() && isGrounded && !Input.GetKey(KeyCode.E) && !crouchAction.IsInProgress())
         {
-            playerSpriteRenderer.sprite = walkingSprite;
+            animator.enabled = true;
+            animator.SetBool("Walking", true);
+        }
+
+        if(moveAction.WasReleasedThisFrame())
+        {
+            animator.SetBool("Walking", false);
         }
     }
 
@@ -196,6 +215,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Object" && Input.GetKey(KeyCode.E))
         {
+            animator.enabled = false;
             playerSpriteRenderer.sprite = pickUpSprite;
             Destroy(collision.gameObject);
             MainManager.objectCounter++;
@@ -203,6 +223,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.tag == "PushableObject" && Input.GetKey(KeyCode.E))
         {
+            animator.enabled = false;
             playerSpriteRenderer.sprite = pushSprite;
         }
     }
