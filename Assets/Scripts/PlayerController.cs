@@ -38,6 +38,8 @@ public class PlayerController : MonoBehaviour
     public AudioSource landingSound;
     private const float landingSoundStartTime = 0.21f;
 
+    public GameObject interactPromt;
+
     private PlayerHealth playerHealthScript;
     public GameObject GameOverScreen;
 
@@ -183,10 +185,21 @@ public class PlayerController : MonoBehaviour
 
             playerSpriteRenderer.sprite = idleSprite;
         }
+
+        if(collision.gameObject.tag == "PushableObject")
+        {
+            interactPromt.SetActive(true);
+        }
     }
+
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Ground")
+        if(collision.gameObject.tag == "PushableObject")
+        {
+            interactPromt.SetActive(false);
+        }
+
+        if (collision.gameObject.tag == "Ground")
         {
             isGrounded = false;
         }
@@ -204,6 +217,22 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "PushableObject" && Input.GetKey(KeyCode.E))
         {
             playerSpriteRenderer.sprite = pushSprite;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Object" || collision.gameObject.tag == "PushableObject")
+        {
+            interactPromt.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Object" || collision.gameObject.tag == "PushableObject")
+        {
+            interactPromt.SetActive(false);
         }
     }
 }
