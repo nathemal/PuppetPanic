@@ -17,9 +17,14 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
+  - Obstacle
+  - Object
+  - Ground
+  - Wall
+  - Background
   - 
   - 
   - 
@@ -40,11 +45,6 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - Collider
-  - Chair
   - NoCollision
   m_SortingLayers:
   - name: Default
