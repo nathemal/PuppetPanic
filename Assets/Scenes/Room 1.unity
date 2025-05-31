@@ -700,7 +700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1671432828828022052, guid: 3cd0e6457ffb4f14d9089d49c913b791, type: 3}
       propertyPath: m_Size.y
-      value: 1.9087276
+      value: 1.5996227
       objectReference: {fileID: 0}
     - target: {fileID: 1671432828828022052, guid: 3cd0e6457ffb4f14d9089d49c913b791, type: 3}
       propertyPath: m_Enabled
@@ -712,7 +712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1671432828828022052, guid: 3cd0e6457ffb4f14d9089d49c913b791, type: 3}
       propertyPath: m_Offset.y
-      value: -0.23255444
+      value: -0.3871069
       objectReference: {fileID: 0}
     - target: {fileID: 1671432828828022052, guid: 3cd0e6457ffb4f14d9089d49c913b791, type: 3}
       propertyPath: m_UsedByEffector
@@ -832,11 +832,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8308838245927558319, guid: 3cd0e6457ffb4f14d9089d49c913b791, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8308838245927558319, guid: 3cd0e6457ffb4f14d9089d49c913b791, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4375,7 +4375,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 100
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
