@@ -33,11 +33,19 @@ public class PlayerController : MonoBehaviour
     public AudioSource landingSound;
     private const float landingSoundStartTime = 0.21f;
 
+    private int layerDefault;
+    private int layerJump;
+    private float lastY;
+
     private void Start()
     {
         playerRigidBody2D = GetComponent<Rigidbody2D>();
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
         playerCollider2D = GetComponent<BoxCollider2D>();
+
+        layerDefault = LayerMask.NameToLayer("Player");
+        layerJump = LayerMask.NameToLayer("NoCollision");
+        lastY = transform.position.y;
 
         moveAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
@@ -54,6 +62,7 @@ public class PlayerController : MonoBehaviour
     {
         MovePlayer();
         RotatePlayer();
+        JumpLayerChange();
     }
 
     public void InputHandler()
@@ -146,6 +155,25 @@ public class PlayerController : MonoBehaviour
         {
             playerSpriteRenderer.flipX = false;
         }
+    }
+
+    public void JumpLayerChange()
+    {
+        float currentY = transform.position.y;
+
+        if (!isGrounded)
+        {
+            if (currentY > lastY)
+            {
+                gameObject.layer = layerJump;
+            }
+            else
+            {
+                gameObject.layer = layerDefault;
+            }
+        }
+
+        lastY = currentY;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
