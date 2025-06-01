@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 146554846}
   - component: {fileID: 146554847}
   - component: {fileID: 146554848}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Bleacher Front 1
   m_TagString: Ground
   m_Icon: {fileID: 0}
