@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 24810026}
   - component: {fileID: 24810025}
   - component: {fileID: 24810024}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Step 6
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -387,7 +387,7 @@ GameObject:
   - component: {fileID: 78162548}
   - component: {fileID: 78162550}
   - component: {fileID: 78162551}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Main Structue Main Beam (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -560,7 +560,7 @@ GameObject:
   m_Component:
   - component: {fileID: 114352180}
   - component: {fileID: 114352181}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Pole 2_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -842,7 +842,7 @@ GameObject:
   - component: {fileID: 183592750}
   - component: {fileID: 183592749}
   - component: {fileID: 183592748}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Step 1
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -996,7 +996,7 @@ GameObject:
   - component: {fileID: 204563396}
   - component: {fileID: 204563395}
   - component: {fileID: 204563394}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Upper Beam 1
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1318,7 +1318,7 @@ GameObject:
   - component: {fileID: 227496606}
   - component: {fileID: 227496607}
   - component: {fileID: 227496608}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Curtain Platform Base
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1451,7 +1451,7 @@ GameObject:
   m_Component:
   - component: {fileID: 231522518}
   - component: {fileID: 231522519}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Main Structure Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1693,7 +1693,7 @@ GameObject:
   - component: {fileID: 327695843}
   - component: {fileID: 327695842}
   - component: {fileID: 327695841}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Step 5
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1847,7 +1847,7 @@ GameObject:
   - component: {fileID: 370830185}
   - component: {fileID: 370830184}
   - component: {fileID: 370830183}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Upper Platform
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1999,7 +1999,7 @@ GameObject:
   m_Component:
   - component: {fileID: 421953703}
   - component: {fileID: 421953704}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Curtain_Pole_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2088,7 +2088,7 @@ GameObject:
   - component: {fileID: 450112268}
   - component: {fileID: 450112267}
   - component: {fileID: 450112266}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Step 3
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2374,7 +2374,7 @@ GameObject:
   m_Component:
   - component: {fileID: 534656440}
   - component: {fileID: 534656441}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Curtain_Pole_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2463,7 +2463,7 @@ GameObject:
   - component: {fileID: 564093828}
   - component: {fileID: 564093827}
   - component: {fileID: 564093830}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2636,7 +2636,7 @@ GameObject:
   - component: {fileID: 573251298}
   - component: {fileID: 573251297}
   - component: {fileID: 573251299}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Slide
   m_TagString: Slide
   m_Icon: {fileID: 0}
@@ -2782,7 +2782,7 @@ GameObject:
   m_Component:
   - component: {fileID: 575420177}
   - component: {fileID: 575420176}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2870,7 +2870,7 @@ GameObject:
   - component: {fileID: 590329406}
   - component: {fileID: 590329407}
   - component: {fileID: 590329408}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Pole 1_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3004,7 +3004,7 @@ GameObject:
   - component: {fileID: 615310965}
   - component: {fileID: 615310966}
   - component: {fileID: 615310967}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Pole 1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3137,7 +3137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 623504979}
   - component: {fileID: 623504980}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Curtain_Pole_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3229,7 +3229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 627220385}
   - component: {fileID: 627220386}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Curtain Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3318,7 +3318,7 @@ GameObject:
   - component: {fileID: 646583835}
   - component: {fileID: 646583834}
   - component: {fileID: 646583833}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall Right
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -3478,7 +3478,7 @@ GameObject:
   m_Component:
   - component: {fileID: 768947745}
   - component: {fileID: 768947746}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Flowers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3887,7 +3887,7 @@ GameObject:
   - component: {fileID: 923657978}
   - component: {fileID: 923657977}
   - component: {fileID: 923657980}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall Left
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -4195,7 +4195,7 @@ GameObject:
   - component: {fileID: 1126515698}
   - component: {fileID: 1126515697}
   - component: {fileID: 1126515696}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Upper Base
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -4352,7 +4352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1268229091}
   - component: {fileID: 1268229092}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4439,7 +4439,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1318553520}
   - component: {fileID: 1318553521}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Pole 2_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4533,7 +4533,7 @@ GameObject:
   - component: {fileID: 1451841851}
   - component: {fileID: 1451841850}
   - component: {fileID: 1451841849}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Step 2
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -4837,7 +4837,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1538760765}
   - component: {fileID: 1538760766}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Curtain_Pole_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4926,7 +4926,7 @@ GameObject:
   - component: {fileID: 1627929877}
   - component: {fileID: 1627929876}
   - component: {fileID: 1627929875}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Step 4
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -5228,7 +5228,7 @@ GameObject:
   - component: {fileID: 1686077808}
   - component: {fileID: 1686077807}
   - component: {fileID: 1686077806}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lower Base
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -5391,6 +5391,10 @@ PrefabInstance:
     - target: {fileID: 3197450751276947611, guid: 1256beb174bd1cf40b93017b3c14c18b, type: 3}
       propertyPath: m_Name
       value: Flower
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197450751276947611, guid: 1256beb174bd1cf40b93017b3c14c18b, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5075910994157303218, guid: 1256beb174bd1cf40b93017b3c14c18b, type: 3}
       propertyPath: m_Sprite
@@ -5555,7 +5559,7 @@ GameObject:
   - component: {fileID: 1809627018}
   - component: {fileID: 1809627020}
   - component: {fileID: 1809627019}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Main Structue Main Beam
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -5690,7 +5694,7 @@ GameObject:
   - component: {fileID: 1859255157}
   - component: {fileID: 1859255156}
   - component: {fileID: 1859255155}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ceiling
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -6457,7 +6461,7 @@ GameObject:
   - component: {fileID: 2060327563}
   - component: {fileID: 2060327564}
   - component: {fileID: 2060327565}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Beam Platform
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -6633,7 +6637,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3197450751276947611, guid: 1256beb174bd1cf40b93017b3c14c18b, type: 3}
       propertyPath: m_Name
-      value: Object
+      value: Feather
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197450751276947611, guid: 1256beb174bd1cf40b93017b3c14c18b, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5075910994157303218, guid: 1256beb174bd1cf40b93017b3c14c18b, type: 3}
       propertyPath: m_Sprite
@@ -6711,7 +6719,7 @@ GameObject:
   - component: {fileID: 2102555275}
   - component: {fileID: 2102555277}
   - component: {fileID: 2102555276}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Main Sctructure Large Device
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -6846,7 +6854,7 @@ GameObject:
   - component: {fileID: 2128669756}
   - component: {fileID: 2128669755}
   - component: {fileID: 2128669754}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Main Structure Upper Beam
   m_TagString: Ground
   m_Icon: {fileID: 0}
