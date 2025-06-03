@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 offset = new Vector3(1, 0, 0);
 
     public Animator animator;
+    private float moveInput;
     float timer;
 
     Vector2 playerMovement;
@@ -119,15 +120,19 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if(moveAction.IsPressed() && isGrounded && !Input.GetKey(KeyCode.E) && !crouchAction.IsInProgress())
+        moveInput = Input.GetAxisRaw("Horizontal");
+
+        if (moveAction.IsPressed() && isGrounded && !Input.GetKey(KeyCode.E) && !crouchAction.IsInProgress())
         {
             animator.enabled = true;
             animator.SetBool("Walking", true);
+            animator.SetFloat("Speed", Mathf.Abs(moveInput));
         }
 
         if(moveAction.WasReleasedThisFrame())
         {
             animator.SetBool("Walking", false);
+            animator.SetFloat("Speed", Mathf.Abs(moveInput));
         }
     }
 
