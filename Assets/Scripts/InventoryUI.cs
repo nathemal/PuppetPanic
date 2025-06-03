@@ -3,42 +3,64 @@ using UnityEngine;
 
 public class InventoryUI : MonoBehaviour
 {
-    public static GameObject featherUI;
-    public static GameObject flowerUI;
-    public static GameObject furUI;
-    public static GameObject gemUI;
-    public static GameObject ringUI;
+    public GameObject featherUI;
+    public GameObject flowerUI;
+    public GameObject furUI;
+    public GameObject gemUI;
+    public GameObject ringUI;
 
+    private void Update()
+    {
+        if(MainManager.ringCollected == true)
+        {
+            ringUI.SetActive(true);
+        }
+
+        if (MainManager.featherCollected == true)
+        {
+            featherUI.SetActive(true);
+        }
+
+        if(MainManager.flowerCollected == true)
+        {
+            flowerUI.SetActive(true);
+        }
+
+        if (MainManager.furCollected == true)
+        {
+            furUI.SetActive(true);
+        }
+
+        if (MainManager.gemCollected == true)
+        {
+            gemUI.SetActive(true);
+        }
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.gameObject.name.Equals("Ring") && Input.GetKey(KeyCode.E))
         {
-            Debug.Log("ISCOLLECTED");
-            ringUI.SetActive(true);
+            MainManager.ringCollected = true;
         }
 
         if (collision.gameObject.name.Equals("Object") && Input.GetKey(KeyCode.E))
         {
-            Debug.Log("ISCOLLECTED");
-            featherUI.SetActive(true);
+            MainManager.featherCollected = true;
         }
 
         if (collision.gameObject.name.Equals("Flower") && Input.GetKey(KeyCode.E))
         {
-            Debug.Log("ISCOLLECTED");
-            flowerUI.SetActive(true);
+            MainManager.flowerCollected = true;
         }
 
         if (collision.gameObject.name.Equals("Fur") && Input.GetKey(KeyCode.E))
         {
-            Debug.Log("ISCOLLECTED");
-            furUI.SetActive(true);
+            MainManager.furCollected = true;
         }
 
         if (collision.gameObject.name.Equals("Gem") && Input.GetKey(KeyCode.E))
         {
-            Debug.Log("ISCOLLECTED");
-            gemUI.SetActive(true);
+            MainManager.gemCollected = true;
         }
     }
 }

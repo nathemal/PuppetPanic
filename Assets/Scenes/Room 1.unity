@@ -3394,11 +3394,6 @@ MonoBehaviour:
   furUI: {fileID: 1697060286}
   gemUI: {fileID: 362773663}
   ringUI: {fileID: 2072880756}
-  feather: {fileID: 0}
-  flower: {fileID: 0}
-  fur: {fileID: 0}
-  gem: {fileID: 0}
-  ring: {fileID: 1958044159}
 --- !u!1 &1028925818
 GameObject:
   m_ObjectHideFlags: 0
