@@ -44,6 +44,11 @@ public class Manager : MonoBehaviour
             healthBarUI.SetHealth(MainManager.currentHealth);
             reduceHealth = false;
         }
+
+        if (PlayerHealth.isAlive == false)
+        {
+            PuppetIsCaught();
+        }
     }
 
     private void ActivateCaughtScreen()
