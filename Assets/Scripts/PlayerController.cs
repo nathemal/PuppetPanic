@@ -1,3 +1,5 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,8 +18,14 @@ public class PlayerController : MonoBehaviour
     public Sprite walkingSprite;
     public Sprite jumpSprite;
     public Sprite crouchSprite;
+    public Sprite pickUpSprite;
+    public Sprite pushSprite;
+    public Sprite splashSprite;
     public Transform player;
     public Vector3 offset = new Vector3(1, 0, 0);
+
+    public Animator animator;
+    float timer;
 
     Vector2 playerMovement;
 
@@ -36,12 +44,17 @@ public class PlayerController : MonoBehaviour
     private int layerDefault;
     private int layerJump;
     private float lastY;
+    public GameObject interactPromt;
+
+    private PlayerHealth playerHealthScript;
+    public GameObject GameOverScreen;
 
     private void Start()
     {
         playerRigidBody2D = GetComponent<Rigidbody2D>();
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
         playerCollider2D = GetComponent<BoxCollider2D>();
+        playerHealthScript = GetComponent<PlayerHealth>();
 
         layerDefault = LayerMask.NameToLayer("Player");
         layerJump = LayerMask.NameToLayer("NoCollision");
@@ -56,6 +69,7 @@ public class PlayerController : MonoBehaviour
     {
         InputHandler();
         PlayAudio();
+        DeadPlayer();
     }
 
     private void FixedUpdate()
@@ -74,6 +88,7 @@ public class PlayerController : MonoBehaviour
 
         if (crouchAction.IsPressed())
         {
+            animator.enabled = false;
             playerCollider2D.size = new Vector2(playerCollider2D.size.x, 3.5f);
             playerCollider2D.offset = new Vector2(playerCollider2D.offset.x, 1.8f);
             playerSpriteRenderer.sprite = crouchSprite;
@@ -82,23 +97,37 @@ public class PlayerController : MonoBehaviour
         {
             playerCollider2D.size = colliderSize;
             playerCollider2D.offset = colliderOffset;
-            playerSpriteRenderer.sprite = idleSprite;
         }
 
         if(jumpAction.IsPressed() && isGrounded)
         {
+            animator.enabled = false;
+            playerSpriteRenderer.sprite = jumpSprite;
             shouldJump = true;
             isGrounded = false;
         }
 
         if(!isGrounded)
         {
-            playerSpriteRenderer.sprite = jumpSprite;
+            timer += Time.deltaTime;
+
+            if(timer >= 0.3)
+            {
+                timer = 0;
+                animator.enabled = false;
+                playerSpriteRenderer.sprite = jumpSprite;
+            }
         }
 
-        if(moveAction.IsPressed() && isGrounded)
+        if(moveAction.IsPressed() && isGrounded && !Input.GetKey(KeyCode.E) && !crouchAction.IsInProgress())
         {
-            playerSpriteRenderer.sprite = walkingSprite;
+            animator.enabled = true;
+            animator.SetBool("Walking", true);
+        }
+
+        if(moveAction.WasReleasedThisFrame())
+        {
+            animator.SetBool("Walking", false);
         }
     }
 
@@ -176,6 +205,21 @@ public class PlayerController : MonoBehaviour
         lastY = currentY;
     }
 
+    public void DeadPlayer()
+    {
+        if (PlayerHealth.isAlive == false)
+        {
+            playerSpriteRenderer.sprite = splashSprite;
+            StartCoroutine(WaitForFunction());
+        }
+    }
+
+    IEnumerator WaitForFunction()
+    {
+        yield return new WaitForSeconds(3);
+        GameOverScreen.SetActive(true);
+    }
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Ground" || collision.gameObject.tag == "PushableObject")
@@ -187,14 +231,56 @@ public class PlayerController : MonoBehaviour
 
             playerSpriteRenderer.sprite = idleSprite;
         }
+
+        if(collision.gameObject.tag == "PushableObject")
+        {
+            interactPromt.SetActive(true);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "PushableObject")
+        {
+            interactPromt.SetActive(false);
+        }
+
+        if (collision.gameObject.tag == "Ground")
+        {
+            isGrounded = false;
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Object" && Input.GetKeyDown(KeyCode.E))
+        if (collision.gameObject.tag == "Object" && Input.GetKey(KeyCode.E))
         {
+            animator.enabled = false;
+            playerSpriteRenderer.sprite = pickUpSprite;
             Destroy(collision.gameObject);
             MainManager.objectCounter++;
+        }
+
+        if (collision.gameObject.tag == "PushableObject" && Input.GetKey(KeyCode.E))
+        {
+            animator.enabled = false;
+            playerSpriteRenderer.sprite = pushSprite;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Object" || collision.gameObject.tag == "PushableObject")
+        {
+            interactPromt.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Object" || collision.gameObject.tag == "PushableObject")
+        {
+            interactPromt.SetActive(false);
         }
     }
 }

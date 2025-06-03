@@ -23,6 +23,6 @@ public class HealthBarUI : MonoBehaviour
     private void UpdateHealthBar()
     {
         float percentage = (MainManager.currentHealth / MainManager.maxHealth) * 100; // TODO: Replace Manager with MainManager when merged.
-        healthFill.style.width = Length.Percent(percentage);
+        //healthFill.style.width = Length.Percent(percentage);
     }
 }
