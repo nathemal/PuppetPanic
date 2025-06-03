@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public HealthBarUI healthBarUI;
+
     private bool isAlive = true;
 
     public AudioSource takeDamageSound;
@@ -22,6 +24,9 @@ public class PlayerHealth : MonoBehaviour
     public void ReduceHealth()
     {   
         MainManager.currentHealth--;
+
+        healthBarUI.UpdateHealthBar();
+
         takeDamageSound.Play();
     }
 
@@ -35,7 +40,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void LowHealth()
     {
-        if (MainManager.currentHealth <= 5)
+        if (MainManager.currentHealth <= 2)
         {
             healthIsLow = true;
         }

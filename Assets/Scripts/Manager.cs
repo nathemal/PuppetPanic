@@ -39,7 +39,7 @@ public class Manager : MonoBehaviour
         if (reduceHealth) // THIS IS PURELY FOR DEBUGGING - DO NOT USE FOR ANYTHING ELSE
         {
             MainManager.currentHealth--;
-            healthBarUI.SetHealth(MainManager.currentHealth);
+            healthBarUI.UpdateHealthBar();
             reduceHealth = false;
         }
     }
