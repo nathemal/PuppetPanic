@@ -80,10 +80,8 @@ public class PlayerController : MonoBehaviour
 
         if (crouchAction.IsPressed())
         {
-            animator.enabled = false;
             playerCollider2D.size = new Vector2(playerCollider2D.size.x, 3.5f);
             playerCollider2D.offset = new Vector2(playerCollider2D.offset.x, 1.8f);
-            playerSpriteRenderer.sprite = crouchSprite;
         }
         else
         {
@@ -91,13 +89,19 @@ public class PlayerController : MonoBehaviour
             playerCollider2D.offset = colliderOffset;
         }
 
-        if(crouchAction.IsPressed() && moveAction.IsPressed())
+        if (crouchAction.IsPressed() && !moveAction.IsPressed())
+        {
+            animator.enabled = false;
+            playerSpriteRenderer.sprite = crouchSprite;
+        }
+        else if (crouchAction.IsPressed() && moveAction.IsPressed())
         {
             animator.enabled = true;
             animator.SetBool("Crouching", true);
+            animator.SetBool("Walking", false);
         }
 
-        if(!crouchAction.IsPressed()) 
+        if(crouchAction.WasReleasedThisFrame()) 
         {
             animator.SetBool("Crouching", false);
         }
@@ -124,8 +128,9 @@ public class PlayerController : MonoBehaviour
 
         if(moveAction.IsPressed() && isGrounded && !Input.GetKey(KeyCode.E) && !crouchAction.IsPressed())
         {
-            animator.enabled = true;
             animator.SetBool("Walking", true);
+            animator.SetBool("Crouching", false);
+            animator.enabled = true;
         }
 
         if(!moveAction.IsPressed())
