@@ -91,6 +91,17 @@ public class PlayerController : MonoBehaviour
             playerCollider2D.offset = colliderOffset;
         }
 
+        if(crouchAction.IsPressed() && moveAction.IsPressed())
+        {
+            animator.enabled = true;
+            animator.SetBool("Crouching", true);
+        }
+
+        if(!crouchAction.IsPressed()) 
+        {
+            animator.SetBool("Crouching", false);
+        }
+
         if(jumpAction.IsPressed() && isGrounded)
         {
             animator.enabled = false;
@@ -111,13 +122,13 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if(moveAction.IsPressed() && isGrounded && !Input.GetKey(KeyCode.E) && !crouchAction.IsInProgress())
+        if(moveAction.IsPressed() && isGrounded && !Input.GetKey(KeyCode.E) && !crouchAction.IsPressed())
         {
             animator.enabled = true;
             animator.SetBool("Walking", true);
         }
 
-        if(moveAction.WasReleasedThisFrame())
+        if(!moveAction.IsPressed())
         {
             animator.SetBool("Walking", false);
         }
