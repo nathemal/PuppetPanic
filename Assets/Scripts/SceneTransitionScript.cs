@@ -11,6 +11,7 @@ public class SceneTransitionScript : MonoBehaviour
 
     void Start()
     {
+
         interactAction = InputSystem.actions.FindAction("Interact");
 
         string sceneName = SceneManager.GetActiveScene().name; //TODO: Remove once objectCounter variable is carried over between scenes.
@@ -51,8 +52,15 @@ public class SceneTransitionScript : MonoBehaviour
 
                 if (WinCondition.canLeaveRoom3 && interactAction.IsPressed())
                 {
-                    //SceneManager.LoadScene("Room 2"); //Deactivated for showcase
-                    Manager.PuppetEscapes();
+                    SceneManager.LoadScene("Room 2");
+                }
+                break;
+
+            case "Exit":
+
+                if (WinCondition.canWin)
+                {
+                    SceneManager.LoadScene("Room 4");
                 }
                 break;
         }

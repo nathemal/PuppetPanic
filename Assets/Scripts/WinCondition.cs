@@ -9,7 +9,12 @@ public class WinCondition : MonoBehaviour
     public static bool canLeaveRoom3 = false;
     public static bool canWin = false;
     public Manager manager;
+    public GameObject TentExit;
 
+    private void Start()
+    {
+        TentExit.SetActive(false);
+    }
     private void Update()
     {
         CheckForObjects();
@@ -27,6 +32,11 @@ public class WinCondition : MonoBehaviour
         if (MainManager.objectCounter == 5)
         {
             canLeaveRoom3 = true;
+        }
+
+        if (canWin)
+        {
+            TentExit.SetActive(true);
         }
     }
 

@@ -227,11 +227,15 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
     }
-    
+
+    private int groundContactCount = 0;
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Ground" || collision.gameObject.tag == "PushableObject")
         {
+            groundContactCount++;
             isGrounded = true;
 
             landingSound.time = landingSoundStartTime;
@@ -255,7 +259,13 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.tag == "Ground")
         {
-            isGrounded = false;
+            groundContactCount--;
+            groundContactCount = Mathf.Max(groundContactCount, 0);
+
+            if (groundContactCount == 0)
+            {
+                isGrounded = false;
+            }
         }
     }
 
