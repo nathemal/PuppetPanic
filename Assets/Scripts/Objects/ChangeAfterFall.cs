@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class ChangeAfterFall : MonoBehaviour
 {
+    public static ChangeAfterFall Instance;
+
     public GameObject afterFall;
     public AudioSource landingSound;
 
@@ -11,9 +13,13 @@ public class ChangeAfterFall : MonoBehaviour
     private int noCollisionLayer;
     private int lastLayer;
 
+    private void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
-        defaultLayer = LayerMask.NameToLayer("Default");
+        defaultLayer = LayerMask.NameToLayer("Obstacle");
         noCollisionLayer = LayerMask.NameToLayer("NoCollision");
         lastLayer = gameObject.layer;
     }
@@ -31,7 +37,17 @@ public class ChangeAfterFall : MonoBehaviour
         lastLayer = currentLayer;
     }
 
-    private void Change()
+    public void FailsafeFall()
+    {
+        if (landingSound != null)
+        {
+            landingSound.Play();
+        }
+
+        Change();
+    }
+
+    public void Change()
     {
         Vector3 positionCorrection = transform.position + new Vector3(0, yCorrection, 0);
         Instantiate(afterFall, positionCorrection, transform.rotation);

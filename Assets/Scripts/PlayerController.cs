@@ -46,9 +46,13 @@ public class PlayerController : MonoBehaviour
     private int layerJump;
     private float lastY;
     public GameObject interactPromt;
+    public GameObject shelfCollider;
 
     private PlayerHealth playerHealthScript;
-    public GameObject GameOverScreen;
+    //public GameObject GameOverScreen;
+
+    private float jumpCooldown = 1f;
+    private float lastJumpTime = -Mathf.Infinity;
 
     private void Start()
     {
@@ -100,7 +104,7 @@ public class PlayerController : MonoBehaviour
             playerCollider2D.offset = colliderOffset;
         }
 
-        if(jumpAction.IsPressed() && isGrounded)
+        if (jumpAction.IsPressed() && isGrounded && Time.time >= lastJumpTime + jumpCooldown)
         {
             animator.enabled = false;
             playerSpriteRenderer.sprite = jumpSprite;
@@ -173,7 +177,7 @@ public class PlayerController : MonoBehaviour
         {
             Vector2 jumpForce = new Vector2(0, jumpSpeed);
 
-            playerRigidBody2D.AddForce(jumpForce);
+            playerRigidBody2D.linearVelocity = new Vector2(playerRigidBody2D.linearVelocity.x, jumpSpeed);
 
             shouldJump = false;
         }
@@ -222,12 +226,11 @@ public class PlayerController : MonoBehaviour
     IEnumerator WaitForFunction()
     {
         yield return new WaitForSeconds(3);
-        GameOverScreen.SetActive(true);
     }
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Ground" || collision.gameObject.tag == "PushableObject")
+        if(collision.gameObject.tag == "Ground")
         {
             isGrounded = true;
 
@@ -281,6 +284,27 @@ public class PlayerController : MonoBehaviour
         animator.enabled = true;
     }
 
+    public IEnumerator FallingSequence()
+    {
+        moveAction.Disable();
+        jumpAction.Disable();
+        crouchAction.Disable();
+        animator.enabled = false;
+        playerSpriteRenderer.sprite = idleSprite;
+
+        yield return new WaitForSeconds(1.25f);
+
+        shelfCollider.SetActive(false);
+
+        yield return new WaitForSeconds(3f);
+
+        shelfCollider.SetActive(true);
+
+        moveAction.Enable();
+        jumpAction.Enable();
+        crouchAction.Enable();
+        animator.enabled = true;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Object" || collision.gameObject.tag == "PushableObject")

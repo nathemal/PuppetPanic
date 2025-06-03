@@ -19,7 +19,12 @@ public class PushPullObject : MonoBehaviour
     private bool isGrounded = true;
 
     InputAction interactAction;
-    
+
+    private int defaultLayer;
+    private int noCollisionLayer;
+    private int lastLayer;
+
+
 
     private void Awake()
     {
@@ -37,25 +42,32 @@ public class PushPullObject : MonoBehaviour
         
         defaultBodyType = rb.bodyType;
 
-        rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation; 
+        rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+
+        defaultLayer = LayerMask.NameToLayer("Obstacle");
+        noCollisionLayer = LayerMask.NameToLayer("NoCollision");
+        lastLayer = gameObject.layer;
     }
 
     void Update()
     {
-        if (inRange == true && interactAction.IsPressed())
+        if (inRange == true && Input.GetKeyDown(KeyCode.E))
         {
             isInteracting = !isInteracting;
 
             if (isInteracting)
             {
                 lastPlayerPos = player.position;
-
-                
             }
             else
             {
                 rb.linearVelocity = Vector2.zero;
             }
+        }
+
+        if (Failsave.triggered)
+        {
+            Failsafe();
         }
     }
 
@@ -85,7 +97,10 @@ public class PushPullObject : MonoBehaviour
         Vector2 currentPlayerPos = player.position;
         Vector2 playerMovement = currentPlayerPos - lastPlayerPos;
 
-        rb.MovePosition(rb.position + playerMovement);
+        if (IsPushingTowardObject(playerMovement))
+        {
+            rb.MovePosition(rb.position + playerMovement);
+        }
 
         if (playerMovement.sqrMagnitude > 0.0001f)
         {
@@ -99,6 +114,48 @@ public class PushPullObject : MonoBehaviour
         }
 
         lastPlayerPos = currentPlayerPos;
+    }
+
+    private bool IsPushingTowardObject(Vector2 playerMovement)
+    {
+        float directionToObject = Mathf.Sign(transform.position.x - player.position.x);
+        float playerInputDirection = Mathf.Sign(playerMovement.x);
+        return directionToObject == playerInputDirection && playerMovement.x != 0f;
+    }
+
+    public void Failsafe()
+    {
+        if (!isGrounded) return;
+
+        isGrounded = false;
+        gameObject.layer = LayerMask.NameToLayer("NoCollision");
+
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        rb.bodyType = RigidbodyType2D.Dynamic;
+
+        isInteracting = false;
+
+        if (pushPullSound != null && pushPullSound.isPlaying)
+        {
+            pushPullSound.Stop();
+        }
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            PlayerController pc = player.GetComponent<PlayerController>();
+
+            if (pc != null)
+            {
+                pc.StartCoroutine(pc.FallingSequence());
+            }
+        }
+
+        ChangeAfterFall caf = GetComponent<ChangeAfterFall>();
+        if (caf != null)
+        {
+            caf.FailsafeFall();
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -136,7 +193,7 @@ public class PushPullObject : MonoBehaviour
         if (collision.collider.CompareTag("Ground") && isGrounded == false)
         {
             isGrounded = true;
-            gameObject.layer = LayerMask.NameToLayer("Default");
+            gameObject.layer = LayerMask.NameToLayer("Obstacle");
         }
     }
 
@@ -158,6 +215,16 @@ public class PushPullObject : MonoBehaviour
                 if (pushPullSound.isPlaying)
                 {
                     pushPullSound.Stop();
+                }
+
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                if (player != null)
+                {
+                    PlayerController pc = player.GetComponent<PlayerController>();
+                    if (pc != null)
+                    {
+                        pc.StartCoroutine(pc.FallingSequence());
+                    }
                 }
             }
         }

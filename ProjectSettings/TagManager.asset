@@ -13,6 +13,7 @@ TagManager:
   - Slide
   - Opening
   - Trap
+  - Failsave
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - Wall
   - Background
   - Item
-  - 
+  - Shelf
   - 
   - 
   - 
