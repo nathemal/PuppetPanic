@@ -9,6 +9,8 @@ public class InventoryUI : MonoBehaviour
     public GameObject gemUI;
     public GameObject ringUI;
 
+    public GameObject inventory;
+
     private void Update()
     {
         if(MainManager.ringCollected == true)
@@ -38,7 +40,12 @@ public class InventoryUI : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.name.Equals("Ring") && Input.GetKey(KeyCode.E))
+        if (collision.gameObject.tag == "MagicBook" && Input.GetKey(KeyCode.E))
+        {
+            inventory.SetActive(true);
+        }
+
+        if (collision.gameObject.name.Equals("Ring") && Input.GetKey(KeyCode.E))
         {
             MainManager.ringCollected = true;
         }
@@ -63,4 +70,5 @@ public class InventoryUI : MonoBehaviour
             MainManager.gemCollected = true;
         }
     }
+
 }
