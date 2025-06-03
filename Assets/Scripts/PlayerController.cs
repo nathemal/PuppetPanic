@@ -266,7 +266,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Object" || collision.gameObject.tag == "PushableObject")
+        if(collision.gameObject.tag == "Object" || collision.gameObject.tag == "PushableObject" || collision.gameObject.tag == "MagicBook")
         {
             interactPromt.SetActive(true);
         }
@@ -274,7 +274,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Object" || collision.gameObject.tag == "PushableObject")
+        if (collision.gameObject.tag == "Object" || collision.gameObject.tag == "PushableObject" || collision.gameObject.tag == "MagicBook")
         {
             interactPromt.SetActive(false);
         }
