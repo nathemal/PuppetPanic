@@ -61,36 +61,44 @@ public class PushPullObject : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isInteracting == true)
+        if (!isInteracting)
         {
-            Vector2 currentPlayerPos = player.position;
-            Vector2 playerMovement = currentPlayerPos - lastPlayerPos;
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
 
-            rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
-
-            if (playerMovement.sqrMagnitude > 0.0001f)
+            if (isGrounded)
             {
-                rb.MovePosition(rb.position + playerMovement);
-
-                if (!pushPullSound.isPlaying)
-                {
-                    pushPullSound.Play();
-                }
-
+                rb.constraints |= RigidbodyConstraints2D.FreezePositionY; 
             }
-            else
-            {
-                rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
-
-                if (pushPullSound.isPlaying)
-                {
-                    pushPullSound.Stop();
-                }
-
-            }
-
-            lastPlayerPos = currentPlayerPos;
+                
+            return;
         }
+
+        if (isGrounded)
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+        }
+        else
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
+
+        Vector2 currentPlayerPos = player.position;
+        Vector2 playerMovement = currentPlayerPos - lastPlayerPos;
+
+        rb.MovePosition(rb.position + playerMovement);
+
+        if (playerMovement.sqrMagnitude > 0.0001f)
+        {
+            if (!pushPullSound.isPlaying)
+                pushPullSound.Play();
+        }
+        else
+        {
+            if (pushPullSound.isPlaying)
+                pushPullSound.Stop();
+        }
+
+        lastPlayerPos = currentPlayerPos;
     }
 
     void OnTriggerEnter2D(Collider2D other)

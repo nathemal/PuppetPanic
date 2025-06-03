@@ -125,13 +125,13 @@ public class PlayerController : MonoBehaviour
         if (moveAction.IsPressed() && isGrounded && !Input.GetKey(KeyCode.E) && !crouchAction.IsInProgress())
         {
             animator.enabled = true;
-            animator.SetBool("Walking", true);
+            //animator.SetBool("Walking", true);
             animator.SetFloat("Speed", Mathf.Abs(moveInput));
         }
 
         if(moveAction.WasReleasedThisFrame())
         {
-            animator.SetBool("Walking", false);
+            //animator.SetBool("Walking", false);
             animator.SetFloat("Speed", Mathf.Abs(moveInput));
         }
     }
@@ -262,6 +262,7 @@ public class PlayerController : MonoBehaviour
         {
             animator.enabled = false;
             playerSpriteRenderer.sprite = pickUpSprite;
+            StartCoroutine(PickUpSpriteTimer(0.5f));
             Destroy(collision.gameObject);
             MainManager.objectCounter++;
         }
@@ -271,6 +272,13 @@ public class PlayerController : MonoBehaviour
             animator.enabled = false;
             playerSpriteRenderer.sprite = pushSprite;
         }
+    }
+
+    private IEnumerator PickUpSpriteTimer(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        playerSpriteRenderer.sprite = idleSprite;
+        animator.enabled = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
