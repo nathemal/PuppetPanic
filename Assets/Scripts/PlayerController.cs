@@ -80,15 +80,30 @@ public class PlayerController : MonoBehaviour
 
         if (crouchAction.IsPressed())
         {
-            animator.enabled = false;
             playerCollider2D.size = new Vector2(playerCollider2D.size.x, 3.5f);
             playerCollider2D.offset = new Vector2(playerCollider2D.offset.x, 1.8f);
-            playerSpriteRenderer.sprite = crouchSprite;
         }
         else
         {
             playerCollider2D.size = colliderSize;
             playerCollider2D.offset = colliderOffset;
+        }
+
+        if (crouchAction.IsPressed() && !moveAction.IsPressed())
+        {
+            animator.enabled = false;
+            playerSpriteRenderer.sprite = crouchSprite;
+        }
+        else if (crouchAction.IsPressed() && moveAction.IsPressed())
+        {
+            animator.enabled = true;
+            animator.SetBool("Crouching", true);
+            animator.SetBool("Walking", false);
+        }
+
+        if(!crouchAction.IsPressed()) 
+        {
+            animator.SetBool("Crouching", false);
         }
 
         if(jumpAction.IsPressed() && isGrounded)
@@ -111,13 +126,14 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if(moveAction.IsPressed() && isGrounded && !Input.GetKey(KeyCode.E) && !crouchAction.IsInProgress())
+        if(moveAction.IsPressed() && isGrounded && !Input.GetKey(KeyCode.E) && !crouchAction.IsPressed())
         {
-            animator.enabled = true;
+            animator.SetBool("Crouching", false);
             animator.SetBool("Walking", true);
+            animator.enabled = true;
         }
 
-        if(moveAction.WasReleasedThisFrame())
+        if(!moveAction.IsPressed())
         {
             animator.SetBool("Walking", false);
         }
@@ -230,6 +246,7 @@ public class PlayerController : MonoBehaviour
         {
             animator.enabled = false;
             playerSpriteRenderer.sprite = pickUpSprite;
+            StartCoroutine(WAIT());
             Destroy(collision.gameObject);
             MainManager.objectCounter++;
         }
@@ -241,9 +258,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    IEnumerator WAIT()
+    {
+        yield return new WaitForSeconds(1);
+        playerSpriteRenderer.sprite = idleSprite;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Object" || collision.gameObject.tag == "PushableObject")
+        if(collision.gameObject.tag == "Object" || collision.gameObject.tag == "PushableObject" || collision.gameObject.tag == "MagicBook")
         {
             interactPromt.SetActive(true);
         }
@@ -251,7 +274,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Object" || collision.gameObject.tag == "PushableObject")
+        if (collision.gameObject.tag == "Object" || collision.gameObject.tag == "PushableObject" || collision.gameObject.tag == "MagicBook")
         {
             interactPromt.SetActive(false);
         }
