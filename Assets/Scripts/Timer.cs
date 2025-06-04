@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour
     public UIDocument uiDocument_WinScreen;
     public UIDocument uiDocument_UI;
     
-    public bool timerIsRunning = false; // TODO: Make this variable private when done implementing everything
+    public static bool timerIsRunning = false; // TODO: Make this variable private when done implementing everything
 
     private Label timerLabel_WinScreen;
 
@@ -20,14 +20,14 @@ public class Timer : MonoBehaviour
             {
                 MainManager.remainingTime -= Time.deltaTime;
                 
-                // Debug.Log("Time remaining: " + Manager.remainingTime);
+                Debug.Log("Time remaining: " + MainManager.remainingTime);
             }
             else
             {
                 Debug.Log("Time has run out!");
                 MainManager.remainingTime = 0;
                 
-                manager.PuppetIsCaught();
+                Manager.PuppetIsCaught();
                 stopTimer();
             }
         }

@@ -11,13 +11,10 @@ public class WinCondition : MonoBehaviour
     public static bool canLeaveRoom3 = false;
     public static bool canWin = false;
     public Manager manager;
-    public GameObject TentExit;
-    public GameObject Room2Gem;
-    public GameObject Room2Fur;
 
     private void Start()
     {
-        TentExit.SetActive(false);
+
     }
     private void Update()
     {

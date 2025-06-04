@@ -1,12 +1,9 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour
 {
     // This script should be merged into the MainManager.cs script when they have both been merged into the same branch
-
-
-    public static float remainingTime = 10; // TODO: Change this variable to the desire timer lenght
-
 
     //
     //
@@ -16,7 +13,7 @@ public class Manager : MonoBehaviour
 
     public bool reduceHealth = false; // THIS IS PURELY FOR DEBUGGING - DO NOT USE FOR ANYTHING ELSE
 
-    private bool isCaught = false;
+    public static bool isCaught = false;
     public static bool wonGame = false;
 
     public GameObject userInterface;
@@ -28,9 +25,24 @@ public class Manager : MonoBehaviour
 
     public Timer timer;
 
+    private void Start()
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+
+        if (sceneName == "Room 1")
+        {
+            isCaught = false;
+            wonGame = false;
+            Timer.timerIsRunning = false;
+            MainManager.objectCounter = 0;
+            MainManager.currentHealth = MainManager.maxHealth;
+            PlayerHealth.isAlive = true;
+        }
+    }
+
     void Update()
     {
-       ActivateCaughtScreen();
+        ActivateCaughtScreen();
        ActivateWinScreen();
 
         if (Input.GetKeyDown(KeyCode.Space)) // This is for debugging purposes
@@ -67,7 +79,7 @@ public class Manager : MonoBehaviour
     {
         if (wonGame) 
         {
-            //BackgroundMusicHandler.Instance.GetComponent<AudioSource>().Stop();
+            BackgroundMusicHandler.Instance.GetComponent<AudioSource>().Stop();
             WinScreen.SetActive(true);
             userInterface.SetActive(false); //for showcasing purposes
             timer.stopTimer();
@@ -77,7 +89,7 @@ public class Manager : MonoBehaviour
         }
     }
 
-    public void PuppetIsCaught()
+    public static void PuppetIsCaught()
     {
         isCaught = true;
     }

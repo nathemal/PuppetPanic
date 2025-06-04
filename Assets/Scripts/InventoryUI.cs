@@ -18,6 +18,7 @@ public class InventoryUI : MonoBehaviour
         if (MainManager.inventoryActive == true)
         {
             inventory.SetActive(true);
+            Timer.timerIsRunning = true;
         }
 
         if (MainManager.ringCollected == true)

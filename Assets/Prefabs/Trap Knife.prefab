@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1079179435204183898}
   - component: {fileID: 5202052661492970445}
-  - component: {fileID: 1607741996098673008}
   - component: {fileID: 2383189259045106478}
+  - component: {fileID: 7624342136084373675}
   m_Layer: 0
   m_Name: Trap Knife
   m_TagString: Trap
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: faab9753151d814419ac2d564a3939cf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5eb6952b272cb8647a035ccf6cae9760, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -89,8 +89,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!68 &1607741996098673008
-EdgeCollider2D:
+--- !u!114 &2383189259045106478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8131140595033490108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08bb83bf621f36d42b6aca282a8799af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockBackForce: 5
+--- !u!61 &7624342136084373675
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -119,38 +132,19 @@ EdgeCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.86, y: 3.01}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.86, y: 3.01}
   m_EdgeRadius: 0
-  m_Points:
-  - {x: 0.23112613, y: 0.9143224}
-  - {x: -0.0144376755, y: 1.4763514}
-  - {x: -0.2321043, y: 0.99363756}
-  - {x: -0.4087696, y: 0.69936967}
-  - {x: -0.407259, y: -0.83911276}
-  - {x: -0.1135273, y: -1.4711637}
-  - {x: 0.11149311, y: -1.4268909}
-  - {x: 0.34313583, y: -0.8286996}
-  - {x: 0.41281605, y: -0.18308234}
-  - {x: 0.40936565, y: 0.69420123}
-  - {x: 0.20493668, y: 0.9776218}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
---- !u!114 &2383189259045106478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8131140595033490108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08bb83bf621f36d42b6aca282a8799af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knockBackForce: 5

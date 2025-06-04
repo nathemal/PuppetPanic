@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
 
     public HealthBarUI healthBarUI;
 
-    private bool isAlive = true;
+    public static bool isAlive = true;
 
     public AudioSource takeDamageSound;
     public AudioSource lowHealthSound;
@@ -24,6 +24,7 @@ public class PlayerHealth : MonoBehaviour
         if(MainManager.currentHealth <= 0)
         {
             isAlive = false;
+            Manager.PuppetIsCaught();
         }
 
         LowHealth();
@@ -33,7 +34,7 @@ public class PlayerHealth : MonoBehaviour
     {   
         MainManager.currentHealth--;
         
-        Camera.main.GetComponent<CameraShake>().ShakeCamera(cameraShakeAmount, cameraShakeTime, true, true);
+        //Camera.main.GetComponent<CameraShake>().ShakeCamera(cameraShakeAmount, cameraShakeTime, true, true);
         
 
         healthBarUI.UpdateHealthBar();
@@ -42,7 +43,7 @@ public class PlayerHealth : MonoBehaviour
 
         takeDamageVolume.weight = 1;
         
-        StartCoroutine(Waiter());
+        //StartCoroutine(Waiter());
     }
 
     IEnumerator Waiter()
