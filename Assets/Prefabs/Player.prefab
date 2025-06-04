@@ -956,7 +956,7 @@ GameObject:
   - component: {fileID: 8099647083979846304}
   - component: {fileID: 6116328779957926450}
   - component: {fileID: 5746699938353105082}
-  - component: {fileID: 7543183306590741349}
+  - component: {fileID: 3443223236754435991}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1094,7 +1094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 789963ca7f53cec4a9831ec1d0c5cf53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerRenderer: {fileID: 0}
+  playerRenderer: {fileID: 7796179815623795051}
   idleSprite: {fileID: 0}
   walkingSprite: {fileID: 0}
   jumpSprite: {fileID: 0}
@@ -1104,7 +1104,7 @@ MonoBehaviour:
   splashSprite: {fileID: 0}
   player: {fileID: 0}
   offset: {x: 1, y: 0, z: 0}
-  animator: {fileID: 7543183306590741349}
+  animator: {fileID: 3443223236754435991}
   playerMovementSpeed: 250
   jumpSpeed: 3500
   pushForce: 5
@@ -1112,6 +1112,7 @@ MonoBehaviour:
   jumpSound: {fileID: 0}
   crouchSound: {fileID: 0}
   landingSound: {fileID: 0}
+  interactPromt: {fileID: 0}
   GameOverScreen: {fileID: 0}
 --- !u!61 &5746699938353105082
 BoxCollider2D:
@@ -1159,7 +1160,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.6605287, y: 6.897203}
   m_EdgeRadius: 0
---- !u!95 &7543183306590741349
+--- !u!95 &3443223236754435991
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -1169,7 +1170,7 @@ Animator:
   m_GameObject: {fileID: 9061835073485470056}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7c60043e84cdc1247b3ed912a5e07a6a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4507a9ec6a75fd94c88abb5bff8103ea, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

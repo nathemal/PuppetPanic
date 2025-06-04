@@ -93,10 +93,8 @@ public class PlayerController : MonoBehaviour
 
         if (crouchAction.IsPressed())
         {
-            animator.enabled = false;
             playerCollider2D.size = new Vector2(playerCollider2D.size.x, 3.5f);
             playerCollider2D.offset = new Vector2(playerCollider2D.offset.x, 1.8f);
-            playerSpriteRenderer.sprite = crouchSprite;
         }
         else
         {
@@ -105,6 +103,24 @@ public class PlayerController : MonoBehaviour
         }
 
         if (jumpAction.IsPressed() && isGrounded && Time.time >= lastJumpTime + jumpCooldown)
+        if (crouchAction.IsPressed() && !moveAction.IsPressed())
+        {
+            animator.enabled = false;
+            playerSpriteRenderer.sprite = crouchSprite;
+        }
+        else if (crouchAction.IsPressed() && moveAction.IsPressed())
+        {
+            animator.enabled = true;
+            animator.SetBool("Crouching", true);
+            animator.SetBool("Walking", false);
+        }
+
+        if(!crouchAction.IsPressed()) 
+        {
+            animator.SetBool("Crouching", false);
+        }
+
+        if(jumpAction.IsPressed() && isGrounded)
         {
             animator.enabled = false;
             playerSpriteRenderer.sprite = jumpSprite;
@@ -124,16 +140,14 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        moveInput = Input.GetAxisRaw("Horizontal");
-
-        if (moveAction.IsPressed() && isGrounded && !Input.GetKey(KeyCode.E) && !crouchAction.IsInProgress())
+        if(moveAction.IsPressed() && isGrounded && !Input.GetKey(KeyCode.E) && !crouchAction.IsPressed())
         {
+            animator.SetBool("Crouching", false);
+            animator.SetBool("Walking", true);
             animator.enabled = true;
-            //animator.SetBool("Walking", true);
-            animator.SetFloat("Speed", Mathf.Abs(moveInput));
         }
 
-        if(moveAction.WasReleasedThisFrame())
+        if(!moveAction.IsPressed())
         {
             //animator.SetBool("Walking", false);
             animator.SetFloat("Speed", Mathf.Abs(moveInput));
