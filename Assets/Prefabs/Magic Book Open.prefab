@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5632029975013138708}
   - component: {fileID: 1138749008870887800}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 2900056230321689994}
   - component: {fileID: 2514403857116481180}
   - component: {fileID: 6395353144366820020}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Magic Book Open
   m_TagString: MagicBook
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.03178382, y: 0.6992316}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -217,5 +217,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 8.15, y: 5.45}
+  m_Size: {x: 8.912796, y: 6.848463}
   m_EdgeRadius: 0

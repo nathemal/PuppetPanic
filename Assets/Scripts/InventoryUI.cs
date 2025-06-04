@@ -13,7 +13,12 @@ public class InventoryUI : MonoBehaviour
 
     private void Update()
     {
-        if(MainManager.ringCollected == true)
+        if (MainManager.inventoryActive == true)
+        {
+            inventory.SetActive(true);
+        }
+
+        if (MainManager.ringCollected == true)
         {
             ringUI.SetActive(true);
         }
@@ -38,11 +43,12 @@ public class InventoryUI : MonoBehaviour
             gemUI.SetActive(true);
         }
     }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "MagicBook" && Input.GetKey(KeyCode.E))
         {
-            inventory.SetActive(true);
+            MainManager.inventoryActive = true;
         }
 
         if (collision.gameObject.name.Equals("Ring") && Input.GetKey(KeyCode.E))
@@ -50,7 +56,7 @@ public class InventoryUI : MonoBehaviour
             MainManager.ringCollected = true;
         }
 
-        if (collision.gameObject.name.Equals("Object") && Input.GetKey(KeyCode.E))
+        if (collision.gameObject.name.Equals("Feather") && Input.GetKey(KeyCode.E))
         {
             MainManager.featherCollected = true;
         }

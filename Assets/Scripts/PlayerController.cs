@@ -248,6 +248,8 @@ public class PlayerController : MonoBehaviour
         {
             interactPromt.SetActive(true);
         }
+
+        
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -285,6 +287,11 @@ public class PlayerController : MonoBehaviour
             animator.enabled = false;
             playerSpriteRenderer.sprite = pushSprite;
         }
+
+        if (collision.gameObject.tag == "MagicBook" && MainManager.inventoryActive == true)
+        {
+            interactPromt.SetActive(false);
+        }
     }
 
     private IEnumerator PickUpSpriteTimer(float delay)
@@ -317,7 +324,7 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Object" || collision.gameObject.tag == "PushableObject")
+        if(collision.gameObject.tag == "Object" || collision.gameObject.tag == "PushableObject" || collision.gameObject.tag == "MagicBook" && MainManager.inventoryActive == false)
         {
             interactPromt.SetActive(true);
         }
@@ -325,7 +332,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Object" || collision.gameObject.tag == "PushableObject")
+        if (collision.gameObject.tag == "Object" || collision.gameObject.tag == "PushableObject" || collision.gameObject.tag == "MagicBook")
         {
             interactPromt.SetActive(false);
         }

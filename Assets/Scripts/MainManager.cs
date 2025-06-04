@@ -6,6 +6,7 @@ public class MainManager : MonoBehaviour
     public static float currentHealth = 5;
     public static int objectCounter = 0;
 
+    public static bool inventoryActive;
     public static bool featherCollected;
     public static bool gemCollected;
     public static bool furCollected;
