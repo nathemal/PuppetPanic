@@ -13,6 +13,7 @@ public class SceneTransitionScript : MonoBehaviour
 
     public Image fadeImage;
     public float fadeDuration = 1f;
+    public AudioSource Sliding;
     public AudioSource CannonShot;
     public AudioSource EnterTent;
     public GameObject UI;
@@ -60,7 +61,7 @@ public class SceneTransitionScript : MonoBehaviour
 
                 if (WinCondition.canLeaveRoom3 && interactAction.IsPressed())
                 {
-                    SceneManager.LoadScene("Room 2");
+                    StartCoroutine(FadeAndRoom3To2());
                 }
                 break;
 
@@ -112,6 +113,27 @@ public class SceneTransitionScript : MonoBehaviour
         CannonShot.Play();
         yield return new WaitForSeconds(CannonShot.clip.length);
         SceneManager.LoadScene("Room 3");
+        UI.SetActive(true);
+        BackgroundMusicHandler.Instance.GetComponent<AudioSource>().Play();
+    }
+
+    IEnumerator FadeAndRoom3To2()
+    {
+        UI.SetActive(false);
+        float t = 0f;
+        Color color = fadeImage.color;
+
+        while (t < fadeDuration)
+        {
+            t += Time.deltaTime;
+            color.a = Mathf.Clamp01(t / fadeDuration);
+            fadeImage.color = color;
+            yield return null;
+        }
+        BackgroundMusicHandler.Instance.GetComponent<AudioSource>().Pause();
+        Sliding.Play();
+        yield return new WaitForSeconds(Sliding.clip.length);
+        SceneManager.LoadScene("Room 2");
         UI.SetActive(true);
         BackgroundMusicHandler.Instance.GetComponent<AudioSource>().Play();
     }
