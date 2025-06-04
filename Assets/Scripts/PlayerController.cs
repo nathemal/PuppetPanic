@@ -295,6 +295,11 @@ public class PlayerController : MonoBehaviour
             MainManager.objectCounter++;
         }
 
+        if (collision.gameObject.tag == "Pentagram" && Input.GetKey(KeyCode.E))
+        {
+            Manager.PuppetEscapes();
+        }
+
         if (collision.gameObject.tag == "PushableObject" && Input.GetKey(KeyCode.E))
         {
             animator.enabled = false;
@@ -337,7 +342,7 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Object" || collision.gameObject.tag == "PushableObject" || collision.gameObject.tag == "MagicBook" && MainManager.inventoryActive == false)
+        if(collision.gameObject.tag == "Object" || collision.gameObject.tag == "PushableObject" || collision.gameObject.tag == "MagicBook" && MainManager.inventoryActive == false || collision.gameObject.tag == "Pentagram" || collision.gameObject.tag == "Cannon" || collision.gameObject.tag == "Slide")
         {
             interactPromt.SetActive(true);
         }
@@ -345,7 +350,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Object" || collision.gameObject.tag == "PushableObject" || collision.gameObject.tag == "MagicBook")
+        if (collision.gameObject.tag == "Object" || collision.gameObject.tag == "PushableObject" || collision.gameObject.tag == "MagicBook" || collision.gameObject.tag == "Pentagram" || collision.gameObject.tag == "Cannon" || collision.gameObject.tag == "Slide")
         {
             interactPromt.SetActive(false);
         }

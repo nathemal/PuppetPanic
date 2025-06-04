@@ -61,15 +61,7 @@ public class SceneTransitionScript : MonoBehaviour
 
                 if (WinCondition.canLeaveRoom3 && interactAction.IsPressed())
                 {
-                    StartCoroutine(FadeAndRoom3To2());
-                }
-                break;
-
-            case "Exit":
-
-                if (WinCondition.canWin)
-                {
-                    SceneManager.LoadScene("Room 4");
+                    StartCoroutine(FadeAndRoom3To4());
                 }
                 break;
         }
@@ -117,7 +109,7 @@ public class SceneTransitionScript : MonoBehaviour
         BackgroundMusicHandler.Instance.GetComponent<AudioSource>().Play();
     }
 
-    IEnumerator FadeAndRoom3To2()
+    IEnumerator FadeAndRoom3To4()
     {
         UI.SetActive(false);
         float t = 0f;
@@ -133,12 +125,12 @@ public class SceneTransitionScript : MonoBehaviour
         BackgroundMusicHandler.Instance.GetComponent<AudioSource>().Pause();
         Sliding.Play();
         yield return new WaitForSeconds(Sliding.clip.length);
-        SceneManager.LoadScene("Room 2");
+        SceneManager.LoadScene("Room 4");
         UI.SetActive(true);
         BackgroundMusicHandler.Instance.GetComponent<AudioSource>().Play();
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+        void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {

@@ -11,6 +11,8 @@ public class InventoryUI : MonoBehaviour
 
     public GameObject inventory;
 
+    public GameObject rippedBook;
+
     private void Update()
     {
         if (MainManager.inventoryActive == true)
@@ -44,11 +46,18 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "MagicBook" && Input.GetKey(KeyCode.E))
         {
             MainManager.inventoryActive = true;
+            Instantiate(
+            rippedBook,
+            collision.transform.position,
+            collision.transform.rotation);
+
+            Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.name.Equals("Ring") && Input.GetKey(KeyCode.E))

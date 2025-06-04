@@ -2925,6 +2925,37 @@ Transform:
   - {fileID: 458525719}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &742036183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 742036184}
+  m_Layer: 0
+  m_Name: SlideSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &742036184
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742036183}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 901462239}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &760145544
 GameObject:
   m_ObjectHideFlags: 0
@@ -3473,6 +3504,7 @@ Transform:
   - {fileID: 1954570799}
   - {fileID: 158454672}
   - {fileID: 619602254}
+  - {fileID: 742036184}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &922077995
@@ -3535,6 +3567,8 @@ MonoBehaviour:
   objWinAmount: 5
   manager: {fileID: 2039173839}
   TentExit: {fileID: 2099514702}
+  Room2Gem: {fileID: 1666813980}
+  Room2Fur: {fileID: 1812571454}
 --- !u!1 &923657975
 GameObject:
   m_ObjectHideFlags: 0
@@ -4581,7 +4615,9 @@ MonoBehaviour:
   inRange: 0
   fadeImage: {fileID: 1590830900}
   fadeDuration: 1
+  Sliding: {fileID: 0}
   CannonShot: {fileID: 619602255}
+  EnterTent: {fileID: 0}
   UI: {fileID: 1835455620}
 --- !u!1 &1306510834
 GameObject:
@@ -5923,6 +5959,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1256beb174bd1cf40b93017b3c14c18b, type: 3}
+--- !u!1 &1666813980 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3197450751276947611, guid: 1256beb174bd1cf40b93017b3c14c18b, type: 3}
+  m_PrefabInstance: {fileID: 1666813979}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1733637905
 GameObject:
   m_ObjectHideFlags: 0
@@ -6162,6 +6203,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1256beb174bd1cf40b93017b3c14c18b, type: 3}
+--- !u!1 &1812571454 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3197450751276947611, guid: 1256beb174bd1cf40b93017b3c14c18b, type: 3}
+  m_PrefabInstance: {fileID: 1812571453}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1825082915
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7742,7 +7788,9 @@ MonoBehaviour:
   inRange: 0
   fadeImage: {fileID: 0}
   fadeDuration: 1
+  Sliding: {fileID: 0}
   CannonShot: {fileID: 0}
+  EnterTent: {fileID: 0}
   UI: {fileID: 0}
 --- !u!61 &2099514704
 BoxCollider2D:

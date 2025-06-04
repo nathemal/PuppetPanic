@@ -1,15 +1,19 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class WinCondition : MonoBehaviour
 {
     public int objWinAmount = 5;
+    public static bool EnteredRoom3 = false;
     public static bool canEnterRoom2 = false;
     public static bool canEnterRoom3 = false;
     public static bool canLeaveRoom3 = false;
     public static bool canWin = false;
     public Manager manager;
     public GameObject TentExit;
+    public GameObject Room2Gem;
+    public GameObject Room2Fur;
 
     private void Start()
     {
@@ -32,11 +36,7 @@ public class WinCondition : MonoBehaviour
         if (MainManager.objectCounter == 5)
         {
             canLeaveRoom3 = true;
-        }
-
-        if (canWin)
-        {
-            TentExit.SetActive(true);
+            canWin = true;
         }
     }
 

@@ -65,7 +65,7 @@ public class Manager : MonoBehaviour
     {
         if (wonGame) 
         {
-            BackgroundMusicHandler.Instance.GetComponent<AudioSource>().Stop();
+            //BackgroundMusicHandler.Instance.GetComponent<AudioSource>().Stop();
             WinScreen.SetActive(true);
             userInterface.SetActive(false); //for showcasing purposes
             timer.stopTimer();
