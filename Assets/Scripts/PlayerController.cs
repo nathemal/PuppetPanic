@@ -102,7 +102,6 @@ public class PlayerController : MonoBehaviour
             playerCollider2D.offset = colliderOffset;
         }
 
-        if (jumpAction.IsPressed() && isGrounded && Time.time >= lastJumpTime + jumpCooldown)
         if (crouchAction.IsPressed() && !moveAction.IsPressed())
         {
             animator.enabled = false;
@@ -120,7 +119,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("Crouching", false);
         }
 
-        if(jumpAction.IsPressed() && isGrounded)
+        if (jumpAction.IsPressed() && isGrounded && Time.time >= lastJumpTime + jumpCooldown)
         {
             animator.enabled = false;
             playerSpriteRenderer.sprite = jumpSprite;
@@ -149,8 +148,8 @@ public class PlayerController : MonoBehaviour
 
         if(!moveAction.IsPressed())
         {
-            //animator.SetBool("Walking", false);
-            animator.SetFloat("Speed", Mathf.Abs(moveInput));
+            animator.SetBool("Walking", false);
+            //animator.SetFloat("Speed", Mathf.Abs(moveInput));
         }
     }
 
