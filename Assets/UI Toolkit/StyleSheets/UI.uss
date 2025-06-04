@@ -46,10 +46,19 @@
     right: -75px;
 }
 
+.sand {
+    transform-origin: bottom;
+}
+
 .healthbar {
     width: 640px;
     height: 440px;
     position: absolute;
     bottom: 1px;
     left: -22px;
+}
+
+.sand-container {
+    width: 76px;
+    height: 53px;
 }

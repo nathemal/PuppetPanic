@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
+// This script controls the healthbar in the ui
+
 public class HealthBarUI : MonoBehaviour
 {
     VisualElement Heart;
@@ -46,6 +48,8 @@ public class HealthBarUI : MonoBehaviour
                 Ticket5.visible = false;
 
                 Heart.visible = false;
+
+                // TODO: Trigger the heart breaking animation here
                 break;
             case 1:
                 Ticket1.visible = true;
