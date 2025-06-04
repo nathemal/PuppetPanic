@@ -4,10 +4,12 @@ using System.Collections;
 
 public class PlayerHealth : MonoBehaviour
 {
-    static public bool isAlive = true;
-
     public float cameraShakeAmount;
     public float cameraShakeTime;
+
+    public HealthBarUI healthBarUI;
+
+    private bool isAlive = true;
 
     public AudioSource takeDamageSound;
     public AudioSource lowHealthSound;
@@ -33,6 +35,9 @@ public class PlayerHealth : MonoBehaviour
         
         Camera.main.GetComponent<CameraShake>().ShakeCamera(cameraShakeAmount, cameraShakeTime, true, true);
         
+
+        healthBarUI.UpdateHealthBar();
+
         takeDamageSound.Play();
 
         takeDamageVolume.weight = 1;

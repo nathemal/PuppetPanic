@@ -1,33 +1,33 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class Timer : MonoBehaviour
 {
-    public Manager mainManager; // TODO: Remember to rename "Manager" here once the branches has been merged
+    public Manager manager; // TODO: Remember to rename "Manager" here once the branches has been merged
     public UIDocument uiDocument_WinScreen;
     public UIDocument uiDocument_UI;
     
     public bool timerIsRunning = false; // TODO: Make this variable private when done implementing everything
 
     private Label timerLabel_WinScreen;
-    private Label timerLabel_UI;
 
     private void Update()
     {
         if (timerIsRunning)
         {
-            if (Manager.remainingTime >= 0)
+            if (MainManager.remainingTime >= 0)
             {
-                Manager.remainingTime -= Time.deltaTime;
+                MainManager.remainingTime -= Time.deltaTime;
                 
-                Debug.Log("Time remaining: " + Manager.remainingTime);
+                // Debug.Log("Time remaining: " + Manager.remainingTime);
             }
             else
             {
                 Debug.Log("Time has run out!");
-                Manager.remainingTime = 0;
+                MainManager.remainingTime = 0;
                 
-                mainManager.PuppetIsCaught();
+                manager.PuppetIsCaught();
                 stopTimer();
             }
         }
@@ -65,7 +65,7 @@ public class Timer : MonoBehaviour
 
     private string formatTime()
     {
-        string time = string.Format((int)Manager.remainingTime + "s");
+        string time = string.Format((int)MainManager.remainingTime + "s");
 
         return time;
     }

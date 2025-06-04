@@ -41,7 +41,7 @@ public class Manager : MonoBehaviour
         if (reduceHealth) // THIS IS PURELY FOR DEBUGGING - DO NOT USE FOR ANYTHING ELSE
         {
             MainManager.currentHealth--;
-            healthBarUI.SetHealth(MainManager.currentHealth);
+            healthBarUI.UpdateHealthBar();
             reduceHealth = false;
         }
 
@@ -58,6 +58,8 @@ public class Manager : MonoBehaviour
             BackgroundMusicHandler.Instance.GetComponent<AudioSource>().Stop();
             CaughtScreen.SetActive(true);
             userInterface.SetActive(false); //for showcasing purposes
+
+            Time.timeScale = 0;
         }
     }
 
@@ -70,6 +72,8 @@ public class Manager : MonoBehaviour
             userInterface.SetActive(false); //for showcasing purposes
             timer.stopTimer();
             timer.displayFinalTime();
+
+            Time.timeScale = 0;
         }
     }
 

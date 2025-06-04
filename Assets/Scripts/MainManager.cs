@@ -12,4 +12,7 @@ public class MainManager : MonoBehaviour
     public static bool furCollected;
     public static bool ringCollected;
     public static bool flowerCollected;
+    
+    public const float maxTime = 100; // TODO: Change this variable to the desire timer lenght
+    public static float remainingTime = maxTime; 
 }

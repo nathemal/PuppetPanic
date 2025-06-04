@@ -1,9 +1,0 @@
-<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI%20Toolkit/StyleSheets/UI.uss?fileID=7433441132597879392&amp;guid=9f84d52dc8109c64097f796254a1b306&amp;type=3#UI" />
-    <ui:VisualElement name="Container" class="base-container" style="flex-grow: 1;">
-        <ui:Label text="Timer" name="Timer" class="text" style="position: absolute; top: 1%; right: 1%;" />
-        <ui:VisualElement name="HealthBarContainer" class="health-bar-container" style="flex-grow: 1; position: absolute;">
-            <ui:VisualElement name="HealthFill" class="health-bar-fill" style="flex-grow: 1;" />
-        </ui:VisualElement>
-    </ui:VisualElement>
-</ui:UXML>
