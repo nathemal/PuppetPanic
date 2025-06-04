@@ -14,6 +14,7 @@ public class SceneTransitionScript : MonoBehaviour
     public Image fadeImage;
     public float fadeDuration = 1f;
     public AudioSource CannonShot;
+    public AudioSource EnterTent;
     public GameObject UI;
 
     void Start()
@@ -44,14 +45,14 @@ public class SceneTransitionScript : MonoBehaviour
 
                 if (WinCondition.canEnterRoom2)
                 {
-                    SceneManager.LoadScene("Room 2");
+                    StartCoroutine(FadeAndRoom1To2());
                 }
                 break;
 
             case "Cannon":
                 if (WinCondition.canEnterRoom3 && interactAction.WasPressedThisFrame())
                 {
-                    StartCoroutine(FadeAndLoadScene("Room 3"));
+                    StartCoroutine(FadeAndRoom2To3());
                 }
                 break;
 
@@ -73,7 +74,7 @@ public class SceneTransitionScript : MonoBehaviour
         }
     }
 
-    IEnumerator FadeAndLoadScene(string sceneName)
+    IEnumerator FadeAndRoom1To2()
     {
         UI.SetActive(false);
         float t = 0f;
@@ -86,10 +87,33 @@ public class SceneTransitionScript : MonoBehaviour
             fadeImage.color = color;
             yield return null;
         }
+        BackgroundMusicHandler.Instance.GetComponent<AudioSource>().Pause();
+        EnterTent.Play();
+        yield return new WaitForSeconds(EnterTent.clip.length);
+        SceneManager.LoadScene("Room 2");
+        UI.SetActive(true);
+        BackgroundMusicHandler.Instance.GetComponent<AudioSource>().Play();
+    }
+
+    IEnumerator FadeAndRoom2To3()
+    {
+        UI.SetActive(false);
+        float t = 0f;
+        Color color = fadeImage.color;
+
+        while (t < fadeDuration)
+        {
+            t += Time.deltaTime;
+            color.a = Mathf.Clamp01(t / fadeDuration);
+            fadeImage.color = color;
+            yield return null;
+        }
+        BackgroundMusicHandler.Instance.GetComponent<AudioSource>().Pause();
         CannonShot.Play();
         yield return new WaitForSeconds(CannonShot.clip.length);
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene("Room 3");
         UI.SetActive(true);
+        BackgroundMusicHandler.Instance.GetComponent<AudioSource>().Play();
     }
 
     void OnTriggerEnter2D(Collider2D other)
