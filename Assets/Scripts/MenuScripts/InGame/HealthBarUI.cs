@@ -3,15 +3,25 @@ using UnityEngine.UIElements;
 
 public class HealthBarUI : MonoBehaviour
 {
+    VisualElement Heart;
+
     VisualElement Ticket1;
     VisualElement Ticket2;
     VisualElement Ticket3;
     VisualElement Ticket4;
     VisualElement Ticket5;
 
+    public Texture2D Heart1;
+    public Texture2D Heart2;
+    public Texture2D Heart3;
+    public Texture2D Heart4;
+    public Texture2D Heart5;
+
     private void OnEnable()
     {
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
+
+        Heart = root.Q<VisualElement>("Heart");
 
         Ticket1 = root.Q<VisualElement>("Ticket1");
         Ticket2 = root.Q<VisualElement>("Ticket2");
@@ -34,6 +44,8 @@ public class HealthBarUI : MonoBehaviour
                 Ticket3.visible = false;
                 Ticket4.visible = false;
                 Ticket5.visible = false;
+
+                Heart.visible = false;
                 break;
             case 1:
                 Ticket1.visible = true;
@@ -41,6 +53,8 @@ public class HealthBarUI : MonoBehaviour
                 Ticket3.visible = false;
                 Ticket4.visible = false;
                 Ticket5.visible = false;
+
+                Heart.style.backgroundImage = new StyleBackground(Heart1);
                 break;
             case 2:
                 Ticket1.visible = true;
@@ -48,6 +62,8 @@ public class HealthBarUI : MonoBehaviour
                 Ticket3.visible = false;
                 Ticket4.visible = false;
                 Ticket5.visible = false;
+
+                Heart.style.backgroundImage = new StyleBackground(Heart2);
                 break;
             case 3:
                 Ticket1.visible = true;
@@ -55,6 +71,8 @@ public class HealthBarUI : MonoBehaviour
                 Ticket3.visible = true;
                 Ticket4.visible = false;
                 Ticket5.visible = false;
+
+                Heart.style.backgroundImage = new StyleBackground(Heart3);
                 break;
             case 4:
                 Ticket1.visible = true;
@@ -62,6 +80,8 @@ public class HealthBarUI : MonoBehaviour
                 Ticket3.visible = true;
                 Ticket4.visible = true;
                 Ticket5.visible = false;
+
+                Heart.style.backgroundImage = new StyleBackground(Heart4);
                 break;
             case 5:
                 Ticket1.visible = true;
@@ -69,6 +89,8 @@ public class HealthBarUI : MonoBehaviour
                 Ticket3.visible = true;
                 Ticket4.visible = true;
                 Ticket5.visible = true;
+
+                Heart.style.backgroundImage = new StyleBackground(Heart5);
                 break;
         }
     }
