@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System.Collections;
 
 // This Script handles transitioning between the different Scenes
 public class SceneTransitionScript : MonoBehaviour
@@ -8,6 +10,11 @@ public class SceneTransitionScript : MonoBehaviour
     public bool inRange = false;
 
     InputAction interactAction;
+
+    public Image fadeImage;
+    public float fadeDuration = 1f;
+    public AudioSource CannonShot;
+    public GameObject UI;
 
     void Start()
     {
@@ -42,9 +49,9 @@ public class SceneTransitionScript : MonoBehaviour
                 break;
 
             case "Cannon":
-                if (WinCondition.canEnterRoom3 && interactAction.IsPressed())
+                if (WinCondition.canEnterRoom3 && interactAction.WasPressedThisFrame())
                 {
-                    SceneManager.LoadScene("Room 3");
+                    StartCoroutine(FadeAndLoadScene("Room 3"));
                 }
                 break;
 
@@ -64,6 +71,25 @@ public class SceneTransitionScript : MonoBehaviour
                 }
                 break;
         }
+    }
+
+    IEnumerator FadeAndLoadScene(string sceneName)
+    {
+        UI.SetActive(false);
+        float t = 0f;
+        Color color = fadeImage.color;
+
+        while (t < fadeDuration)
+        {
+            t += Time.deltaTime;
+            color.a = Mathf.Clamp01(t / fadeDuration);
+            fadeImage.color = color;
+            yield return null;
+        }
+        CannonShot.Play();
+        yield return new WaitForSeconds(CannonShot.clip.length);
+        SceneManager.LoadScene(sceneName);
+        UI.SetActive(true);
     }
 
     void OnTriggerEnter2D(Collider2D other)
