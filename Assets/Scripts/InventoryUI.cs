@@ -13,27 +13,27 @@ public class InventoryUI : MonoBehaviour
 
     private void Update()
     {
-        if(MainManager.ringCollected == true)
+        if(MainManager.ringCollected)
         {
             ringUI.SetActive(true);
         }
 
-        if (MainManager.featherCollected == true)
+        if (MainManager.featherCollected)
         {
             featherUI.SetActive(true);
         }
 
-        if(MainManager.flowerCollected == true)
+        if(MainManager.flowerCollected)
         {
             flowerUI.SetActive(true);
         }
 
-        if (MainManager.furCollected == true)
+        if (MainManager.furCollected)
         {
             furUI.SetActive(true);
         }
 
-        if (MainManager.gemCollected == true)
+        if (MainManager.gemCollected)
         {
             gemUI.SetActive(true);
         }
