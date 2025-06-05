@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InventoryUI : MonoBehaviour
 {
@@ -12,6 +13,21 @@ public class InventoryUI : MonoBehaviour
     public GameObject inventory;
 
     public GameObject rippedBook;
+
+    private void Start()
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+
+        if (sceneName == "Room 1")
+        {
+            inventory.SetActive(false);
+            ringUI.SetActive(false);
+            featherUI.SetActive(false);
+            flowerUI.SetActive(false);
+            furUI.SetActive(false);
+            gemUI.SetActive(false);
+        }
+    }
 
     private void Update()
     {

@@ -27,17 +27,7 @@ public class Manager : MonoBehaviour
 
     private void Start()
     {
-        string sceneName = SceneManager.GetActiveScene().name;
-
-        if (sceneName == "Room 1")
-        {
-            isCaught = false;
-            wonGame = false;
-            Timer.timerIsRunning = false;
-            MainManager.objectCounter = 0;
-            MainManager.currentHealth = MainManager.maxHealth;
-            PlayerHealth.isAlive = true;
-        }
+        
     }
 
     void Update()
@@ -63,6 +53,29 @@ public class Manager : MonoBehaviour
         }
     }
 
+    public static void ResetGame()
+    {
+
+        Time.timeScale = 1f;
+        isCaught = false;
+        wonGame = false;
+        Timer.timerIsRunning = false;
+        MainManager.objectCounter = 0;
+        MainManager.currentHealth = 5;
+        //healthBarUI.UpdateHealthBar();
+        PlayerHealth.isAlive = true;
+        Failsave.triggered = false;
+
+        MainManager.inventoryActive = false;
+        MainManager.ringCollected = false;
+        MainManager.featherCollected = false;
+        MainManager.flowerCollected = false;
+        MainManager.gemCollected = false;
+        MainManager.furCollected = false;
+
+        MainManager.remainingTime = MainManager.maxTime;
+    }
+
     private void ActivateCaughtScreen()
     {
         if (isCaught)
@@ -71,7 +84,7 @@ public class Manager : MonoBehaviour
             CaughtScreen.SetActive(true);
             userInterface.SetActive(false); //for showcasing purposes
 
-            Time.timeScale = 0;
+            Time.timeScale = 0.001f;
         }
     }
 
@@ -85,7 +98,7 @@ public class Manager : MonoBehaviour
             timer.stopTimer();
             timer.displayFinalTime();
 
-            Time.timeScale = 0;
+            Time.timeScale = 0.001f;
         }
     }
 

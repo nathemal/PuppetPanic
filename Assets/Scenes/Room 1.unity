@@ -1034,7 +1034,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5493634876269100827, guid: 3cd0e6457ffb4f14d9089d49c913b791, type: 3}
       propertyPath: m_Size.x
-      value: 3.7188468
+      value: 2.808915
       objectReference: {fileID: 0}
     - target: {fileID: 5493634876269100827, guid: 3cd0e6457ffb4f14d9089d49c913b791, type: 3}
       propertyPath: m_Size.y
@@ -1042,7 +1042,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5493634876269100827, guid: 3cd0e6457ffb4f14d9089d49c913b791, type: 3}
       propertyPath: m_Offset.x
-      value: -1.1371272
+      value: -1.5920931
       objectReference: {fileID: 0}
     - target: {fileID: 5493634876269100827, guid: 3cd0e6457ffb4f14d9089d49c913b791, type: 3}
       propertyPath: m_Offset.y
@@ -3604,9 +3604,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objWinAmount: 5
   manager: {fileID: 2039173839}
-  TentExit: {fileID: 0}
-  Room2Gem: {fileID: 0}
-  Room2Fur: {fileID: 0}
 --- !u!1 &923657975
 GameObject:
   m_ObjectHideFlags: 0
@@ -7752,7 +7749,6 @@ MonoBehaviour:
   manager: {fileID: 0}
   uiDocument_WinScreen: {fileID: 876923519}
   uiDocument_UI: {fileID: 1459646756}
-  timerIsRunning: 0
 --- !u!114 &2039173839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8014,14 +8010,14 @@ EdgeCollider2D:
   - {x: -2.9582574, y: 9.446854}
   - {x: -0.009858765, y: 9.122871}
   - {x: 0.015491933, y: 1.3415278}
-  - {x: 0.43456388, y: -0.90049297}
-  - {x: 1.771015, y: -0.6233213}
-  - {x: 2.3489695, y: -1.3257279}
-  - {x: 2.515411, y: -3.2729328}
-  - {x: 2.97493, y: -3.389224}
-  - {x: 3.0547652, y: -5.271812}
-  - {x: 0.7054446, y: -8.429649}
-  - {x: 0.75964725, y: -8.460377}
+  - {x: 0.38136375, y: -0.39939362}
+  - {x: 0.8311031, y: -1.0743108}
+  - {x: 1.2671845, y: -1.8268272}
+  - {x: 2.0011182, y: -3.2729325}
+  - {x: 2.0882225, y: -4.22439}
+  - {x: 2.132587, y: -6.6581883}
+  - {x: 0.9359888, y: -8.696902}
+  - {x: 0.830585, y: -8.794444}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -8060,11 +8056,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3359549873044366926, guid: 3cd0e6457ffb4f14d9089d49c913b791, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.25
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3359549873044366926, guid: 3cd0e6457ffb4f14d9089d49c913b791, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.25
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3359549873044366926, guid: 3cd0e6457ffb4f14d9089d49c913b791, type: 3}
       propertyPath: m_LocalScale.z
@@ -8076,7 +8072,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3359549873044366926, guid: 3cd0e6457ffb4f14d9089d49c913b791, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.6
+      value: 10.9
       objectReference: {fileID: 0}
     - target: {fileID: 3359549873044366926, guid: 3cd0e6457ffb4f14d9089d49c913b791, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8160,7 +8156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8308838245927558319, guid: 3cd0e6457ffb4f14d9089d49c913b791, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8308838245927558319, guid: 3cd0e6457ffb4f14d9089d49c913b791, type: 3}
       propertyPath: m_IsActive

@@ -17,8 +17,6 @@ public class EndingScreenController : MonoBehaviour
     {
         InitializeUiToolkit();
         ButtonActionsSubscribe();
-
-        mainMenuButton.Focus();
     }
 
     private void OnDisable()
@@ -62,11 +60,13 @@ public class EndingScreenController : MonoBehaviour
     private void PlayAgainButtonClicked()
     {
         menuEvents.LoadScene(startGame);
+        Manager.ResetGame();
     }
 
     private void MainMenuButtonClicked()
     {
         menuEvents.LoadScene(mainMenu);
+        Manager.ResetGame();
     }
 
     private void OnAllButtonsClicked()
