@@ -4,9 +4,8 @@ using UnityEngine.UIElements;
 
 public class Timer : MonoBehaviour
 {
-    public Manager manager; // TODO: Remember to rename "Manager" here once the branches has been merged
+    public Manager manager;
     public UIDocument uiDocument_WinScreen;
-    public UIDocument uiDocument_UI;
     
     public bool timerIsRunning = false; // TODO: Make this variable private when done implementing everything
 
@@ -31,8 +30,6 @@ public class Timer : MonoBehaviour
                 stopTimer();
             }
         }
-
-        displayTimerUI();
     }
 
     public void startTimer()
@@ -52,15 +49,6 @@ public class Timer : MonoBehaviour
         timerLabel_WinScreen = root.Q<Label>("Time");
 
         timerLabel_WinScreen.text = "You had " + formatTime() + " left";
-    }
-
-    private void displayTimerUI()
-    {
-        //VisualElement root = uiDocument_UI.rootVisualElement;
-
-        //timerLabel_UI = root.Q<Label>("Timer");
-
-        //timerLabel_UI.text = formatTime();
     }
 
     private string formatTime()
