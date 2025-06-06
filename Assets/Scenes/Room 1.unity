@@ -2673,6 +2673,7 @@ MonoBehaviour:
   ringUI: {fileID: 1270550571}
   inventory: {fileID: 502789019}
   rippedBook: {fileID: 6380686575917512625, guid: 0f3b62c7140b538468b0bee006a8ef19, type: 3}
+  timerUI: {fileID: 1459646758}
 --- !u!1 &646583832
 GameObject:
   m_ObjectHideFlags: 0

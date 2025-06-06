@@ -15,7 +15,7 @@ public class TimerUI : MonoBehaviour
         sandTop = root.Q<VisualElement>("SandTop");
         sandBottom = root.Q<VisualElement>("SandBottom");
 
-        StartCoroutine(AnimateSandFillOld(MainManager.maxTime));
+        //StartCoroutine(AnimateSandFillOld(MainManager.maxTime));
         //StartCoroutine(AnimateSandFillNew(5f));
     }
 
@@ -39,6 +39,11 @@ public class TimerUI : MonoBehaviour
 
             yield return null;
         }
+    }
+
+    public void TimerUIWorks()
+    {
+        StartCoroutine(AnimateSandFillOld(MainManager.maxTime));
     }
 
     IEnumerator AnimateSandFillNew(float duration)

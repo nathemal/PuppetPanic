@@ -14,6 +14,8 @@ public class InventoryUI : MonoBehaviour
 
     public GameObject rippedBook;
 
+    public TimerUI timerUI;
+
     private void Start()
     {
         string sceneName = SceneManager.GetActiveScene().name;
@@ -35,6 +37,7 @@ public class InventoryUI : MonoBehaviour
         {
             inventory.SetActive(true);
             Timer.timerIsRunning = true;
+            timerUI.TimerUIWorks();
         }
 
         if (MainManager.ringCollected == true)
