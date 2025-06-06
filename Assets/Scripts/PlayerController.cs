@@ -295,7 +295,7 @@ public class PlayerController : MonoBehaviour
             MainManager.objectCounter++;
         }
 
-        if (collision.gameObject.tag == "Pentagram" && Input.GetKey(KeyCode.E))
+        if (collision.gameObject.tag == "Pentagram" && Input.GetKey(KeyCode.E) && MainManager.objectCounter == 5)
         {
             Manager.PuppetEscapes();
         }

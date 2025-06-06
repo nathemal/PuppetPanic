@@ -8,6 +8,8 @@ public class Scne1ReloadCondition : MonoBehaviour
     public GameObject player;
     private void Start()
     {
+        Debug.Log(MainManager.objectCounter.ToString());
+
         if(MainManager.objectCounter == 5)
         {
             RearangeScene();
