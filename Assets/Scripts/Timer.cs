@@ -20,7 +20,7 @@ public class Timer : MonoBehaviour
             {
                 MainManager.remainingTime -= Time.deltaTime;
                 
-                Debug.Log("Time remaining: " + MainManager.remainingTime);
+                //Debug.Log("Time remaining: " + MainManager.remainingTime);
             }
             else
             {
