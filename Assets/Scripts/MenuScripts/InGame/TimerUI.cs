@@ -15,11 +15,11 @@ public class TimerUI : MonoBehaviour
         sandTop = root.Q<VisualElement>("SandTop");
         sandBottom = root.Q<VisualElement>("SandBottom");
 
-        //StartCoroutine(AnimateSandFillOld(MainManager.maxTime));
-        //StartCoroutine(AnimateSandFillNew(5f));
+        //StartCoroutine(AnimateSandFill(MainManager.maxTime));
+        StartCoroutine(AnimateSandFill(10));
     }
 
-    IEnumerator AnimateSandFillOld(float duration)
+    IEnumerator AnimateSandFill(float duration)
     {
         float elapsed = 0f;
 
@@ -28,7 +28,7 @@ public class TimerUI : MonoBehaviour
             elapsed += Time.deltaTime;
             float t = Mathf.Clamp01(elapsed / duration);
 
-            sandTop.style.scale = new Scale(new Vector2(1 - (t * 1.15f), 1 - t)); // shrink vertically
+            sandTop.style.scale = new Scale(new Vector2(1, 1 - t)); // shrink vertically
 
             sandBottom.style.scale = new Scale(new Vector2(1, 0 + t)); // grow vertically
 
@@ -36,36 +36,6 @@ public class TimerUI : MonoBehaviour
 
             //float streamOpacity = Mathf.PingPong(Time.time * 5f, 1f);
             //sandStream.style.opacity = streamOpacity;
-
-            yield return null;
-        }
-    }
-
-    public void TimerUIWorks()
-    {
-        StartCoroutine(AnimateSandFillOld(MainManager.maxTime));
-    }
-
-    IEnumerator AnimateSandFillNew(float duration)
-    {
-        float elapsed = 0f;
-        float maxHeight = 90f;
-
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime;
-            float t = Mathf.Clamp01(elapsed / duration);
-
-            float smoothT = Mathf.SmoothStep(0, 1, t);
-
-            float topH = Mathf.Lerp(maxHeight, 0, smoothT);
-            float bottomH = Mathf.Lerp(0, maxHeight, smoothT);
-
-            sandTop.style.height = topH;
-            sandTop.style.scale = new Scale(new Vector2(1 - (t * 1.15f), 1));
-            sandBottom.style.height = bottomH;
-
-            Debug.Log((90 - topH) + " / " + bottomH);
 
             yield return null;
         }
