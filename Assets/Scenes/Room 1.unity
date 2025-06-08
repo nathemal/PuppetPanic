@@ -7962,7 +7962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12fa1ffef9e5f5648be2ee253345d88c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
+  manager: {fileID: 2039173839}
   uiDocument_WinScreen: {fileID: 876923519}
 --- !u!114 &2039173839
 MonoBehaviour:
@@ -7980,7 +7980,7 @@ MonoBehaviour:
   userInterface: {fileID: 1459646754}
   CaughtScreen: {fileID: 1878531832}
   WinScreen: {fileID: 876923517}
-  healthBarUI: {fileID: 0}
+  healthBarUI: {fileID: 1459646759}
   timer: {fileID: 2039173838}
 --- !u!4 &2039173840
 Transform:

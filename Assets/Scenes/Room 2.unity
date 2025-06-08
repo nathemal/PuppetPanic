@@ -490,6 +490,7 @@ GameObject:
   - component: {fileID: 144938966}
   - component: {fileID: 144938967}
   - component: {fileID: 144938968}
+  - component: {fileID: 144938969}
   m_Layer: 6
   m_Name: Box
   m_TagString: Ground
@@ -598,7 +599,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.055541515, y: -0.2102418}
@@ -613,6 +614,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.1475496, y: 1.8384266}
   m_EdgeRadius: 0
+--- !u!251 &144938969
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144938965}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 45
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 260
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &146554845
 GameObject:
   m_ObjectHideFlags: 0
@@ -1328,6 +1348,7 @@ GameObject:
   - component: {fileID: 250614528}
   - component: {fileID: 250614529}
   - component: {fileID: 250614530}
+  - component: {fileID: 250614531}
   m_Layer: 6
   m_Name: Box (1)
   m_TagString: Ground
@@ -1436,7 +1457,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.09719467, y: -0.23604536}
@@ -1451,6 +1472,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.3049164, y: 1.7497911}
   m_EdgeRadius: 0
+--- !u!251 &250614531
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250614527}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 170
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &337110686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1753,6 +1793,7 @@ GameObject:
   - component: {fileID: 479000583}
   - component: {fileID: 479000584}
   - component: {fileID: 479000585}
+  - component: {fileID: 479000586}
   m_Layer: 6
   m_Name: Box (2)
   m_TagString: Ground
@@ -1861,7 +1902,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.24066997, y: -0.22216016}
@@ -1876,6 +1917,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.8883662, y: 1.962696}
   m_EdgeRadius: 0
+--- !u!251 &479000586
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479000582}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 170
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &527502756
 GameObject:
   m_ObjectHideFlags: 0
@@ -7642,7 +7702,7 @@ MonoBehaviour:
   ringUI: {fileID: 60440518}
   inventory: {fileID: 1099381896}
   rippedBook: {fileID: 0}
-  timerUI: {fileID: 0}
+  timerUI: {fileID: 1835455624}
 --- !u!114 &2095947842 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6116328779957926450, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}

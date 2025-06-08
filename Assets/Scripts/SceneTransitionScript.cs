@@ -152,13 +152,13 @@ public class SceneTransitionScript : MonoBehaviour
             fadeImage.color = color;
             yield return null;
         }
-        //BackgroundMusicHandler.Instance.GetComponent<AudioSource>().Stop();
+        BackgroundMusicHandler.Instance.GetComponent<AudioSource>().Stop();
         Sliding.Play();
         yield return new WaitForSeconds(CannonShot.clip.length);
         SceneManager.LoadScene("Room 1");
         //Manager.PuppetEscapes();
-        //UI.SetActive(true);
-        //BackgroundMusicHandler.Instance.GetComponent<AudioSource>().Play();
+        UI.SetActive(true);
+        BackgroundMusicHandler.Instance.GetComponent<AudioSource>().Play();
     }
 
         void OnTriggerEnter2D(Collider2D other)
