@@ -16,7 +16,12 @@ public class TimerUI : MonoBehaviour
         sandBottom = root.Q<VisualElement>("SandBottom");
 
         //StartCoroutine(AnimateSandFill(MainManager.maxTime));
-        StartCoroutine(AnimateSandFill(10));
+        //StartCoroutine(AnimateSandFill(10));
+    }
+
+    public void UIStart()
+    {
+        StartCoroutine(AnimateSandFill(MainManager.maxTime));
     }
 
     IEnumerator AnimateSandFill(float duration)
