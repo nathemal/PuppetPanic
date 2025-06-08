@@ -16,6 +16,9 @@ public class TimerUI : MonoBehaviour
         sandMiddle = root.Q<VisualElement>("SandMiddle");
         sandBottom = root.Q<VisualElement>("SandBottom");
 
+        sandTop.visible = false;
+        sandMiddle.visible = false;
+
         //StartCoroutine(AnimateSandFill(MainManager.maxTime));
         StartCoroutine(AnimateSandFill(10));
     }
@@ -40,5 +43,18 @@ public class TimerUI : MonoBehaviour
 
             yield return null;
         }
+    }
+
+    public void TimerStarted()
+    {
+        sandTop.visible = true;
+        sandMiddle.visible = true;
+        sandBottom.visible = true;
+    }
+
+    public void TimerFinished()
+    {
+        sandTop.visible = false;
+        sandMiddle.visible = false;
     }
 }
