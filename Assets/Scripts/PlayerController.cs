@@ -342,7 +342,7 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Object" || collision.gameObject.tag == "PushableObject" || collision.gameObject.tag == "MagicBook" && MainManager.inventoryActive == false || collision.gameObject.tag == "Pentagram" || collision.gameObject.tag == "Cannon" || collision.gameObject.tag == "Slide")
+        if(collision.gameObject.tag == "Object" || collision.gameObject.tag == "PushableObject" || collision.gameObject.tag == "MagicBook" && MainManager.inventoryActive == false || collision.gameObject.tag == "Pentagram" && MainManager.objectCounter == 5 || collision.gameObject.tag == "Cannon" || collision.gameObject.tag == "Slide")
         {
             interactPromt.SetActive(true);
         }
@@ -354,5 +354,15 @@ public class PlayerController : MonoBehaviour
         {
             interactPromt.SetActive(false);
         }
+    }
+
+    public void ActivatePrompt()
+    {
+        interactPromt.SetActive(true);
+    }
+
+    public void DeactivatePrompt()
+    {
+        interactPromt.SetActive(false);
     }
 }

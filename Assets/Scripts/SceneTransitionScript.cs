@@ -17,6 +17,8 @@ public class SceneTransitionScript : MonoBehaviour
     public AudioSource CannonShot;
     public AudioSource EnterTent;
     public GameObject UI;
+    public GameObject notEnoughFoundText;
+    public PlayerController playerController;
 
     void Start()
     {
@@ -48,12 +50,20 @@ public class SceneTransitionScript : MonoBehaviour
                 {
                     StartCoroutine(FadeAndRoom1To2());
                 }
+                else if (WinCondition.canEnterRoom2 == false)
+                {
+                    StartCoroutine(NotEnoughFound1());
+                }
                 break;
 
             case "Cannon":
                 if (WinCondition.canEnterRoom3 && interactAction.WasPressedThisFrame())
                 {
                     StartCoroutine(FadeAndRoom2To3());
+                }
+                else if (WinCondition.canEnterRoom3 == false && interactAction.IsPressed())
+                {
+                    StartCoroutine(NotEnoughFound());
                 }
                 break;
 
@@ -63,8 +73,28 @@ public class SceneTransitionScript : MonoBehaviour
                 {
                     StartCoroutine(FadeAndRoom3To4());
                 }
+                else if (WinCondition.canLeaveRoom3 == false && interactAction.IsPressed())
+                {
+                    StartCoroutine(NotEnoughFound());
+                }
                 break;
         }
+    }
+
+    IEnumerator NotEnoughFound()
+    {
+        playerController.DeactivatePrompt();
+        notEnoughFoundText.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        notEnoughFoundText.SetActive(false);
+        playerController.ActivatePrompt();
+    }
+
+    IEnumerator NotEnoughFound1()
+    {
+        notEnoughFoundText.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        notEnoughFoundText.SetActive(false);
     }
 
     IEnumerator FadeAndRoom1To2()

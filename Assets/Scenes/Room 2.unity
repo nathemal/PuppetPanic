@@ -3244,7 +3244,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -4408,8 +4408,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00036621094, y: 147.86462}
-  m_SizeDelta: {x: 466.4495, y: 71.3546}
+  m_AnchoredPosition: {x: 22, y: 153}
+  m_SizeDelta: {x: 518.2753, y: 71.3546}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1238612903
 MonoBehaviour:
@@ -4464,8 +4464,8 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -4664,6 +4664,8 @@ MonoBehaviour:
   CannonShot: {fileID: 619602255}
   EnterTent: {fileID: 0}
   UI: {fileID: 1835455620}
+  notEnoughFoundText: {fileID: 1238612901}
+  playerController: {fileID: 2095947842}
 --- !u!1 &1306510834
 GameObject:
   m_ObjectHideFlags: 0
@@ -7641,6 +7643,17 @@ MonoBehaviour:
   inventory: {fileID: 1099381896}
   rippedBook: {fileID: 0}
   timerUI: {fileID: 0}
+--- !u!114 &2095947842 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6116328779957926450, guid: f85509eabcd7907429c73f8fc4bb8513, type: 3}
+  m_PrefabInstance: {fileID: 2095947830}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840962316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 789963ca7f53cec4a9831ec1d0c5cf53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2111544148
 GameObject:
   m_ObjectHideFlags: 0
