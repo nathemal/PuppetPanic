@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6385a5f453341c84288afdb1c47c9058
+guid: 66fbebeb4ab08ea408915d4e61f317c7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2006801288160901199
-    second: Heart_Hp_3_0
+      213: -2390665884387540921
+    second: Hourglass_Bottom_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Heart_Hp_3_0
+      name: Hourglass_Bottom_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 16
-        width: 504
-        height: 450
+        x: 161
+        y: 191
+        width: 369
+        height: 113
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1b78f546cd86624e0800000000000000
-      internalID: -2006801288160901199
+      spriteID: 7408f606b06a2ded0800000000000000
+      internalID: -2390665884387540921
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Heart_Hp_3_0: -2006801288160901199
+      Hourglass_Bottom_0: -2390665884387540921
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
