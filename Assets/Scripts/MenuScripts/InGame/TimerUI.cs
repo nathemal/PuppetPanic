@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -30,36 +29,12 @@ public class TimerUI : MonoBehaviour
         float remainingTime = Mathf.Clamp(MainManager.remainingTime, 0, MainManager.maxTime);
         float progress = 1f - (remainingTime / MainManager.maxTime); 
 
-        // Animate sand fill
         sandTop.style.scale = new Scale(new Vector2(1f, 1f - progress));
         sandBottom.style.scale = new Scale(new Vector2(1f, progress));
 
-        // Animate stream opacity (middle part)
         float rawT = Mathf.Sin(Time.time * 2f) * 0.5f + 0.5f;
         float easedT = Mathf.SmoothStep(0f, 1f, rawT);
         float streamOpacity = Mathf.Lerp(0.5f, 1f, easedT);
         sandMiddle.style.opacity = streamOpacity;
-    }
-
-    IEnumerator AnimateSandFill(float duration)
-    {
-        float elapsed = 0f;
-
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime;
-            float timeDifference = Mathf.Clamp01(elapsed / duration);
-
-            sandTop.style.scale = new Scale(new Vector2(1, 1 - timeDifference)); 
-
-            sandBottom.style.scale = new Scale(new Vector2(1, 0 + timeDifference)); 
-
-            float rawT = Mathf.Sin(Time.time * 2f) * 0.5f + 0.5f;  
-            float easedT = Mathf.SmoothStep(0f, 1f, rawT);          
-            float streamOpacity = Mathf.Lerp(0.5f, 1f, easedT);     
-            sandMiddle.style.opacity = streamOpacity;
-
-            yield return null;
-        }
     }
 }

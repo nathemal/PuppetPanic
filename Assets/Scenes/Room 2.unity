@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 144938967}
   - component: {fileID: 144938968}
   - component: {fileID: 144938969}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Box
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1209,7 +1209,7 @@ GameObject:
   - component: {fileID: 241527515}
   - component: {fileID: 241527516}
   - component: {fileID: 241527517}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Square
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1349,7 +1349,7 @@ GameObject:
   - component: {fileID: 250614529}
   - component: {fileID: 250614530}
   - component: {fileID: 250614531}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Box (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1794,7 +1794,7 @@ GameObject:
   - component: {fileID: 479000584}
   - component: {fileID: 479000585}
   - component: {fileID: 479000586}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Box (2)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -3536,8 +3536,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcf61cc96ac2b6349acf90aa965d7628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objWinAmount: 5
-  manager: {fileID: 2039173839}
 --- !u!1 &923657975
 GameObject:
   m_ObjectHideFlags: 0
@@ -5237,7 +5235,7 @@ GameObject:
   - component: {fileID: 1515810219}
   - component: {fileID: 1515810221}
   - component: {fileID: 1515810222}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Cage
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -5990,7 +5988,7 @@ GameObject:
   - component: {fileID: 1733637906}
   - component: {fileID: 1733637908}
   - component: {fileID: 1733637907}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Square (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}

@@ -22,7 +22,6 @@ public class SceneTransitionScript : MonoBehaviour
 
     void Start()
     {
-
         interactAction = InputSystem.actions.FindAction("Interact");
 
         string sceneName = SceneManager.GetActiveScene().name; //TODO: Remove once objectCounter variable is carried over between scenes.

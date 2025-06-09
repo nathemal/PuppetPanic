@@ -37,7 +37,6 @@ public class InventoryUI : MonoBehaviour
         {
             inventory.SetActive(true);
             Timer.timerIsRunning = true;
-            timerUI.UIStart();
         }
 
         if (MainManager.ringCollected == true)
@@ -105,5 +104,4 @@ public class InventoryUI : MonoBehaviour
             MainManager.gemCollected = true;
         }
     }
-
 }

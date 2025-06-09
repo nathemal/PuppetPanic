@@ -5,17 +5,11 @@ using UnityEngine.SceneManagement;
 public class WinCondition : MonoBehaviour
 {
     public const int objWinAmount = 5;
-    public static bool EnteredRoom3 = false;
+    public static bool EnteredRoom3 = false; // This variable is never used?
     public static bool canEnterRoom2 = false;
     public static bool canEnterRoom3 = false;
     public static bool canLeaveRoom3 = false;
     public static bool canWin = false;
-    public Manager manager;
-
-    private void Start()
-    {
-
-    }
 
     private void Update()
     {
