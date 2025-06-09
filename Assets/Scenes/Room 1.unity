@@ -3679,7 +3679,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcf61cc96ac2b6349acf90aa965d7628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objWinAmount: 5
   manager: {fileID: 2039173839}
 --- !u!1 &923657975
 GameObject:
@@ -7315,7 +7314,7 @@ GameObject:
   - component: {fileID: 1928574207}
   - component: {fileID: 1928574208}
   - component: {fileID: 1928574209}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: OutsideBackgroundTemplate (1)
   m_TagString: Door
   m_Icon: {fileID: 0}
@@ -7444,9 +7443,10 @@ EdgeCollider2D:
   - {x: -0.30734873, y: -9.363668}
   - {x: 0.54056084, y: -10.023645}
   - {x: 4.108364, y: -9.994693}
-  - {x: 4.2231474, y: -4.6655}
-  - {x: -5.2505555, y: -4.604071}
-  - {x: -5.679032, y: -4.5930934}
+  - {x: 4.1085906, y: -4.003604}
+  - {x: -1.328113, y: -3.9862728}
+  - {x: -5.122467, y: -3.9956615}
+  - {x: -5.668357, y: -3.995358}
   - {x: -5.6744447, y: -6.542119}
   - {x: -5.2556243, y: -6.6609983}
   m_AdjacentStartPoint: {x: 0, y: 0}

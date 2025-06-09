@@ -161,7 +161,7 @@ public class SceneTransitionScript : MonoBehaviour
         BackgroundMusicHandler.Instance.GetComponent<AudioSource>().Play();
     }
 
-        void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
