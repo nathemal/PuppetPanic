@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class WinCondition : MonoBehaviour
 {
-    public int objWinAmount = 5;
+    public const int objWinAmount = 5;
     public static bool EnteredRoom3 = false;
     public static bool canEnterRoom2 = false;
     public static bool canEnterRoom3 = false;
@@ -16,9 +16,18 @@ public class WinCondition : MonoBehaviour
     {
 
     }
+
     private void Update()
     {
         CheckForObjects();
+
+        if (MainManager.objectCounter == 0)
+        {
+            canEnterRoom2 = false;
+            canEnterRoom3 = false;
+            canLeaveRoom3 = false;
+            canWin = false;
+        }
 
         if (MainManager.objectCounter == 1)
         {

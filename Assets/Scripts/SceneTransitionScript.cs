@@ -29,7 +29,7 @@ public class SceneTransitionScript : MonoBehaviour
 
         if (sceneName == "Room 2") //TODO: Remove once objectCounter variable is carried over between scenes.
         {
-            MainManager.objectCounter = 1;
+            MainManager.objectCounter = 1; // This shouldn't be needed anymore, right?
         }
 
         if (sceneName == "Room 3") //TODO: Remove once objectCounter variable is carried over between scenes.
@@ -50,7 +50,7 @@ public class SceneTransitionScript : MonoBehaviour
                 {
                     StartCoroutine(FadeAndRoom1To2());
                 }
-                else if (WinCondition.canEnterRoom2 == false)
+                else if (!WinCondition.canEnterRoom2)
                 {
                     StartCoroutine(NotEnoughFound1());
                 }
