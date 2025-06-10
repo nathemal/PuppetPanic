@@ -14,6 +14,9 @@ public class TimerUI : MonoBehaviour
         sandTop = root.Q<VisualElement>("SandTop");
         sandMiddle = root.Q<VisualElement>("SandMiddle");
         sandBottom = root.Q<VisualElement>("SandBottom");
+		
+        sandTop.visible = false;
+        sandMiddle.visible = false;
     }
 
     private void Update()
@@ -23,6 +26,7 @@ public class TimerUI : MonoBehaviour
             UpdateSandAnimation();
         }
     }
+
 
     private void UpdateSandAnimation()
     {
@@ -36,5 +40,18 @@ public class TimerUI : MonoBehaviour
         float easedT = Mathf.SmoothStep(0f, 1f, rawT);
         float streamOpacity = Mathf.Lerp(0.5f, 1f, easedT);
         sandMiddle.style.opacity = streamOpacity;
+	}
+	
+    public void TimerStarted()
+    {
+        sandTop.visible = true;
+        sandMiddle.visible = true;
+        sandBottom.visible = true;
+    }
+
+    public void TimerFinished()
+    {
+        sandTop.visible = false;
+        sandMiddle.visible = false;
     }
 }
