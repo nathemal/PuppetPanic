@@ -37,6 +37,8 @@ public class InventoryUI : MonoBehaviour
         {
             inventory.SetActive(true);
             Timer.timerIsRunning = true;
+
+            timerUI.TimerStarted();
         }
 
         if (MainManager.ringCollected == true)

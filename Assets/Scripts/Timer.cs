@@ -40,6 +40,8 @@ public class Timer : MonoBehaviour
     public void stopTimer() 
     {
         timerIsRunning = false;
+
+        // TimerUI.TimerFinished();
     }
 
     public void displayFinalTime()
