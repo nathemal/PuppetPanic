@@ -35,6 +35,11 @@ public class SceneTransitionScript : MonoBehaviour
         {
             MainManager.objectCounter = 3;
         }
+
+        if (sceneName == "Room 4")
+        {
+            WinCondition.canEnterRoom2 = false;
+        }
     }
 
     void Update()
