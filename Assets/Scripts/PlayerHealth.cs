@@ -34,16 +34,15 @@ public class PlayerHealth : MonoBehaviour
     {   
         MainManager.currentHealth--;
         
-        //Camera.main.GetComponent<CameraShake>().ShakeCamera(cameraShakeAmount, cameraShakeTime, true, true);
+        Camera.main.GetComponent<CameraShake>().ShakeCamera(cameraShakeAmount, cameraShakeTime, true, true);
         
-
         healthBarUI.UpdateHealthBar();
 
         takeDamageSound.Play();
 
         takeDamageVolume.weight = 1;
         
-        //StartCoroutine(Waiter());
+        StartCoroutine(Waiter());
     }
 
     IEnumerator Waiter()
